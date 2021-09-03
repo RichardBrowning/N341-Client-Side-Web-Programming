@@ -31,5 +31,5 @@ RETURN VALUE:
 // A $( document ).ready() block.
 $(document).ready(function(){
 	// Pop up a window that says "Hello World!"
-	alert("Hello World!");
+	alert("Hello World");
 }); // end of $(document).ready()
