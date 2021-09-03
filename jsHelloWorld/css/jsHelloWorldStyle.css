@@ -1,25 +1,20 @@
 /**************************************
- TITLE: coursePageStylesheet.css					
+ TITLE: jsHelloWorldStyle.css					
  AUTHOR: Luxi Liao	(LL)	
  PURPOSE: to display a custom course page
- ORIGINALLY CREATED ON: 21 August 2021
+ ORIGINALLY CREATED ON: 31 August 2021
  LAST MODIFIED ON: 26 August 2021
  LAST MODIFIED BY: Luxi Liao (LL)	
  MODIFICATION HISTORY:
- 21 August 2021 - Added basic format
-    to make page looks like the demo page. (LL)	
- 23 August 2021 - Redefining some properties to refine details, addign optimization for different display sizes
-    to add personal style and fix unproper displayed portions. (LL)	
- 24 August 2021 - Refining the effect of background images, and Debugging for terminal mistakes
-    to make page work more effectively and without bugs. (LL)	
- 26 August 2021 - Adding Link Effects
-    to make Hover effect better. (LL)	
+ 01 September 2021 - Added basic format
+    to make page aesthetically good. (LL)	
+ 02 September 2021 - adding style to the page (LL)
+ 03 September 2021 - Revise path to make resources load
+    according to directory re-structure(LL)
 ***************************************/
 
 body{
-    background-image: url(hello-world.png);
-    background-size: 100%; 
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(0, 30, 56, 255);
     background-blend-mode: lighten;
     align-items: center;
 }
@@ -29,6 +24,12 @@ hr { display: block; height: 1px;
 }
 
 #box-container{
+    background-image: url(../resources/hello-world.png);
+    background-color: rgba(0, 30, 56, 255);
+    background-blend-mode: lighten;
+    background-size: 100%; 
+    background-repeat: no-repeat;
+
     margin: 0 auto; 
     margin-top: 30px;
     width: 60%; 
@@ -39,13 +40,15 @@ hr { display: block; height: 1px;
 
 .title{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color: #79aff7;
+    color: #108f78;
     text-align:center;
     font-size: 64px;
+    padding:5%
 }
 .subtitle{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #88b3f7;
     text-align:center;
+    padding:5%
 }
 
