@@ -9,27 +9,35 @@
  01 September 2021 - Added basic format
     to make page aesthetically good. (LL)	
  02 September 2021 - adding style to the page (LL)
+ 02 September 2021 - editting comment 
+    to explain styling (LL)
  03 September 2021 - Revise path to make resources load
     according to directory re-structure(LL)
 ***************************************/
 
+/*applied style for whole webpage*/
 body{
+    /*megical transparent background*/
     background-color: rgba(0, 30, 56, 255);
     background-blend-mode: lighten;
+    /*centralize*/
     align-items: center;
 }
+/*adding aesthetical style to the line inside box-container*/
 hr { display: block; height: 1px;
     border: 0; border-top: 1px solid #ccc;
     margin: 1em 0; padding: 0; 
 }
-
+/*emulate apperance of a windows on webpage*/
 #box-container{
+    /*megical transparent background image*/
     background-image: url(../resources/hello-world.png);
     background-color: rgba(0, 30, 56, 255);
     background-blend-mode: lighten;
     background-size: 100%; 
     background-repeat: no-repeat;
 
+    /*beautify window*/
     margin: 0 auto; 
     margin-top: 30px;
     width: 60%; 
@@ -38,6 +46,7 @@ hr { display: block; height: 1px;
     border-color: #228265;
 }
 
+/*title and subtitle font in the pseudo-window*/
 .title{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: #108f78;
