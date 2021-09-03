@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--
+ TITLE: N341 Student Course Page.html				
+ AUTHOR: Luxi Liao	(LL)	
+ PURPOSE: to display a custom course page
+ ORIGINALLY CREATED ON: 21 August 2021
+ LAST MODIFIED ON: 24 August 2021
+ LAST MODIFIED BY: Luxi Liao (LL)	
+ MODIFICATION HISTORY:
+ 21 August 2021 - Added basic content
+    to finish basic structure. (LL)	
+ 23 August 2021 - refine web view, re-design html with CSS changes
+    to add personal style and fix unproper displayed portions. (LL)	
+ 24 August 2021 - Refining the effect of background images
+    to make page work more effectively. (LL)	
+-->
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>
+            N341 Student Course Page
+        </title>
+
+        <link rel="stylesheet" href="css/coursePageStylesheet.css">
+
+        	<!-- Links to the external jQuery library 
+         Always include this before js code -->
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    </head>
+    <body style="background-image: url(resources/bg.png); background-size: 100%; background-color: rgba(255, 255, 255, 0.5); background-blend-mode: lighten;">
+        <header>
+            <h1 class="title"> <!--begain of largest font title-->
+                CSCI N341 Course Page
+            </h1>
+            <p class="subtitle">
+                By Luxi Liao
+            </p>
+        </header>
+        <div id = "horizontal_bar">
+            <ul>    <!-- Beginning of unordered list -->
+                <li><a href="#">Course Work</a></li>    <!--list item-->
+            </ul>   <!-- End of second list item -->
+        </div>
+        <div id="assignments">
+            <ul>  <!-- Beginning of unordered list -->
+                <li>
+                    <a href="./testFile.html" target="blank">Test File</a>  <!-- link to the Test File To Launch Our N341 Journey -->
+                </li>    <!--list item-->
+                <li>
+                    <a href="./jsHelloWorld.html" target="blank">JS Hello World</a>  <!-- link to jsHelloWorld lab -->
+                </li>    <!--list item-->
+            </ul>  <!-- End of unordered list -->
+        </div>
+    </body>
+</html>
+
+
+

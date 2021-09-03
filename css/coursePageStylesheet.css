@@ -1,0 +1,128 @@
+/**************************************
+ TITLE: coursePageStylesheet.css					
+ AUTHOR: Luxi Liao	(LL)	
+ PURPOSE: to define style of a custom course page
+ ORIGINALLY CREATED ON: 21 August 2021
+ LAST MODIFIED ON: 26 August 2021
+ LAST MODIFIED BY: Luxi Liao (LL)	
+ MODIFICATION HISTORY:
+ 21 August 2021 - Added basic format
+    to make page looks like the demo page. (LL)	
+ 23 August 2021 - Redefining some properties to refine details, addign optimization for different display sizes
+    to add personal style and fix unproper displayed portions. (LL)	
+ 24 August 2021 - Refining the effect of background images, and Debugging for terminal mistakes
+    to make page work more effectively and without bugs. (LL)	
+ 26 August 2021 - Adding Link Effects
+    to make Hover effect better. (LL)	
+***************************************/
+
+/*definning page styling*/
+body{
+    background-image: url(bg.png); 
+    background-size: 100%; 
+    background-color: rgba(255, 255, 255, 0.5);
+    background-blend-mode: lighten;
+}
+/*titile of the page*/
+header{
+    width: 90%;
+    text-align: center;
+    margin: 10px auto;
+    border-radius: 10px;
+    padding:10px 20px ;
+
+    background-size: 100%;
+    background-image: url("../resources/headerbg.jpg");
+    background-color: rgba(17, 116, 70, 0.3);
+    background-blend-mode: lighten;
+    
+    color: #acacac;/*font color*/
+}
+
+/*only for below-header navigation bar*/
+#horizontal_bar{
+    width: 95%;
+    background-color: #2b9d68;
+    border-radius: 6px;
+    margin: 10px auto;
+
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:18px;
+    /*flexBox to centralise*/
+    display: flex;
+    justify-content: center;
+}
+
+/*This section is for horizontal menu below header*/
+#horizontal_bar ul{
+    list-style-type:none;
+    margin:0;
+    padding:0;
+    overflow:hidden;
+}
+#horizontal_bar li{
+    float: left;
+    margin: auto;
+    padding: 0px 5px;
+}
+
+/*page basic elements*/
+.title{
+    font-family:'Dosis', sans-serif;
+    font-size: 44px;
+}
+.subtitle{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size:large;
+}
+/*iframe page container*/
+.container{
+    width: 98%;
+    height: 450px;
+    border-radius: 20px;
+    /*
+    display: flex;
+    justify-content: center;
+    */
+    margin: 10px 10px;
+}
+
+/* Setting the formatting for the id="asssignments" division */
+#assignments{			
+	width: 70%;
+	margin: 0 auto;
+	box-shadow: 0 2px 15px #EEE;
+	min-height: 300px;
+	padding: 15px;
+	border-radius: 10px;
+	background-color: white;
+}
+/*setting the format for unordered list and its items in id="asssignments" division*/
+#assignments ul{
+	float: left;
+	width: 300px;
+    
+}
+/* Define the formatting for the links to html pages */
+#assignments li{
+	list-style: none;
+	background-color: #43ABA4;
+	text-align: center;
+	color: white;
+	border-radius: 5px;
+	padding: 2px;
+    margin: 10px;
+}
+
+/*Link buttons style*/
+a:link,a:visited{
+    display:block;
+    color:#FFFFFF;
+    text-align:center;
+    padding:4px;
+    text-decoration:none;
+}
+a:hover,a:active{
+    background-color:#388b86 ;
+    border-radius: 6px;
+}
