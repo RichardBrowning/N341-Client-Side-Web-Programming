@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--
+ TITLE: jsHelloWorld.html		
+ AUTHOR: Luxi Liao	(LL)	
+ PURPOSE: jsHelloWorld Page
+ ORIGINALLY CREATED ON: 21 August 2021
+ LAST MODIFIED ON:  2021
+ LAST MODIFIED BY: Luxi Liao (LL)	
+ MODIFICATION HISTORY:
+ 21 August 2021 - Adding basic content 
+ 	Give the page a basic look (LL)
+ 01 August 2021 - Changing the Purpose of the page
+	Change the purpose in header comment and change content accordingly
+ 02 August 2022 - Extracting CSS style
+ 	Move CSS style to a seperate CSS file
+-->
+
+<html lang="en-us">
+    <head>
+        <!--basic configuration-->
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <!-- This <title> displays in the page tab -->
+        <title>Hello World</title>
+		<!-- This will link to your CSS stylesheet for formatting as soon as you create the file. The page will work without it, though. -->	
+		<link rel="stylesheet" href="helloWorldStyle.css">
+
+
+		<!-- This links to the jQuery library so your js code will work 
+			 Always include this *before* your own js code (extremely important) -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		
+		<!-- This links to the js code specific for this page -->
+		<script src="HelloWorld.js"></script>
+        
+    </head> <!--end of head-->
+    
+    <body>
+        <!--div start-->
+        <div id="box-container">
+            <!--begain of largest font title-->
+            <h1 class = "title">
+                Hello World!
+            <!--end of largest font title-->
+            </h1>
+            <!--draw a line-->
+            <hr class = "line">
+            <!--This page ... -->
+            <!--begain of h3-->
+            <h3 class = "subtitle">
+                This page is to show you a Hello World message with the help of JavaScript.
+            <!--end of h3-->
+            </h3>
+            <!--end of div-->
+        </div>
+    <!--end of body-->
+    </body>
+</html>
