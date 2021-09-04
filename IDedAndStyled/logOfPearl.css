@@ -11,6 +11,7 @@
 ***************************************/
 
 body{
+    /*the background image comes from https://www.blackcatssvg.com/products/trust-me-im-a-pirate-svg-file-cutting-file-clipart-in-svg-eps-dxf-png-for-cricut-silhouette-pirate-ship-svg*/
     background-image: url(./sources/background.jpg);
     background-color: rgba(128, 128, 128, 0.4);
     background-size: 100%;
