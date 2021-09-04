@@ -11,7 +11,7 @@
 ***************************************/
 
 body{
-    background-image: url(./sources/R-C.png);
+    background-image: url(./sources/background.jpg);
     background-color: rgba(128, 128, 128, 0.4);
     background-size: 100%;
     background-blend-mode: lighten;
@@ -40,9 +40,17 @@ body{
 }
 
 #lupo{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: lighter;
+    font-style: oblique;
+    font-size: x-large;
     color: orange;
 }
 
 #karabiner{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    font-style: inherit;
+    font-size: large;
     color: brown;
 }
