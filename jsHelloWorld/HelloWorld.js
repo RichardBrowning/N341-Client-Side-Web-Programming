@@ -1,5 +1,5 @@
 /**************************************
- TITLE: HelloWorld.js							<----- Updated the file name
+ TITLE: HelloWorld.js
  AUTHOR: Luxi Liao	(LL)	
  PURPOSE: print message at the page load
  ORIGINALLY CREATED ON: 31 August 2021
