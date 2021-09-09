@@ -4,13 +4,13 @@
  AUTHOR: Luxi Liao	(LL)	
  PURPOSE: Displaying a Page for JavaScript to add content with multiple methods
  ORIGINALLY CREATED ON: 03 September 2021 
- LAST MODIFIED ON: 07 September 2021 
+ LAST MODIFIED ON: 08 September 2021 
  LAST MODIFIED BY: Luxi Liao (LL)	
  MODIFICATION HISTORY:
- 03 September 2021  - Adding basic content 
+ 03 September 2021 - Adding basic content 
  	Give the page a basic look (LL)
- 07 August 2021 - 
-  September 2021 - Revise path according to directory re-structure(LL)
+ 07 September 2021 - Revise path according to directory re-structure (LL)
+ 08 September 2021 - Attempts to move Script to a seperate file (LL)
 -->
 
 <html lang="en-us">
@@ -19,7 +19,7 @@
         <!--meta http-equiv="Content-Type" content="text/html; charset=UTF-8"-->
         <meta charset="utf-8">
         <!-- This <title> displays in the page tab -->
-        <title>&#62;Hello World!_</title>
+        <title>Multi Writes with JS</title>
 		<!-- This will link to your CSS stylesheet for formatting as soon as you create the file. The page will work without it, though. -->	
 		<link rel="stylesheet" type="text/css" href="css/multiWrites.css">
 
@@ -32,15 +32,20 @@
     </head> <!--end of head-->
     
     <body>
-        <!--div start-->
-        <div id="textContentInput"></div>
-        <!--div end-->
-        <!--div start-->
-        <div id="innerHtmlInput"></div>
-        <!--div end-->
-        <!--div start-->
-        <div id="docWriteInput"></div>
-        <!--div end-->
+        <div class="container">
+            <!--div start-->
+            <div id="textContentInput" class="message"></div>
+            <!--div end-->
+            <!--div start-->
+            <div id="innerHtmlInput" class="message"></div>
+            <!--div end-->
+            <!--div start-->
+            <div id="docWriteInput" class="message">
+                <script>document.write('<div id=\"docWriteInput\">This part is inserted using document.write()</div>')</script>
+            </div>
+            <!--div end-->
+        </div>
+        
     <!--end of body-->
     </body>
 </html>
