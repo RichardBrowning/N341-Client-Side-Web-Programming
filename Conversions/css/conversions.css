@@ -6,7 +6,7 @@
  LAST MODIFIED ON: 10 September 2021
  LAST MODIFIED BY: Luxi Liao (LL)	
  MODIFICATION HISTORY:
- 01 September 2021 - Added basic format
+ 10 September 2021 - Added basic format
     to make page aesthetically good. (LL)	
 ***************************************/
 
@@ -36,6 +36,8 @@ body{
 .conversation{
     margin: 1%;
     padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 
     background-color: rgba(211, 211, 211, 0.671);
     border-radius: 10px;
