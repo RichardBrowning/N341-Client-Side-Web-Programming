@@ -14,14 +14,15 @@
     to make page work more effectively and without bugs. (LL)	
  26 August 2021 - Adding Link Effects
     to make Hover effect better. (LL)	
+ 11 September 2021 - change background color (LL) 
 ***************************************/
 
 /*definning page styling*/
 body{
     background-image: url(bg.png); 
     background-size: 100%; 
-    background-color: rgba(255, 255, 255, 0.5);
-    background-blend-mode: lighten;
+    /*background-color: rgba(255, 255, 255, 0.5);
+    background-blend-mode: lighten;*/
 }
 /*titile of the page*/
 header{
