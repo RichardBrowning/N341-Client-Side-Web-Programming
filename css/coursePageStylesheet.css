@@ -19,10 +19,10 @@
 
 /*definning page styling*/
 body{
-    background-image: url(bgm.png); 
+    background-image: url("../resources/bgm.png");
     background-size: 100%; 
-    /*background-color: rgba(255, 255, 255, 0.5);
-    background-blend-mode: lighten;*/
+    background-color: rgba(255, 255, 255, 0.3);
+    background-blend-mode: lighten;
 }
 /*titile of the page*/
 header{
