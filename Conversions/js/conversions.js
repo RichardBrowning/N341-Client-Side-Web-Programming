@@ -13,13 +13,17 @@
  09 September 2021 - Adding comment
     to describe each function and some key statements. (LL)
  10 September 2021 - Small changes according to HTML change. (LL)
+ 11 September 2021 - Typo in variable name
+    fixed. (LL)
 ***************************************/
 
 
 // A $( document ).ready() block.
 $(document).ready(function(){
-    const PRICE = 287;
-    const TARGET = "message";
+    //conversion rate
+    const price = 287;
+    //target document to write the message
+    const target = "message";
     /******************
     NAME: strPromptName
     PURPOSE:	
@@ -70,7 +74,7 @@ $(document).ready(function(){
         equivilent dollars
     *******************/
     $.fn.intDoubloonToUSD = function(intDoubloonNum){
-        var intUSD = intDoubloonNum*PRICE;
+        var intUSD = intDoubloonNum*price;
         return intUSD;
     }
     //prompt name and doubloons, store with str prefix
@@ -82,7 +86,7 @@ $(document).ready(function(){
     var intUSD = $.fn.intDoubloonToUSD(intDoubloonNum);
 	//add content to div using textContent
     var strMessage = "I, " + strName + ", have plundered "+ intDoubloonNum.toString() +" gold doubloons for a total profit of $"+ intUSD.toString() +". Argh!"
-    var elOutput = document.getElementById(TARGET); 
+    var elOutput = document.getElementById(target); 
     //write content
     elOutput.textContent = strMessage;
     
