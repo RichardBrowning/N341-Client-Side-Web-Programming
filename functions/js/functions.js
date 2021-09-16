@@ -50,8 +50,8 @@ function giveOrder (strDiv, strSentence, intNumber, strUnit){
         "The quartermaster steers the ship in route to intercept the enemy, passing within a mere",
         "Gunner, Form crossfire on the enemy ship starboard, direction",
         "Chief Engineer, set cruise speed at",
-        "CIC, lock on the ship with radar at ",
-        "XO, watch out for the possible enemy reinforcement 34"
+        "CIC, lock on the ship with radar at",
+        "XO, watch out for the possible enemy reinforcement"
     ]
     let arrayNumber = [
         5,
