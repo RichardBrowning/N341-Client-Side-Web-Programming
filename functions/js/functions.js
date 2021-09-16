@@ -65,7 +65,7 @@ function giveOrder (strDiv, strSentence, intNumber, strUnit){
         ", relative orientation!",
         "Knots!",
         "GigaHertz!",
-        "miles and approaching!"
+        "miles away and approaching!"
     ]
     //add content to div using textContent
     for (let i = 0; i < 5; i++) {
