@@ -1,0 +1,43 @@
+/**************************************
+ TITLE: functions.css				
+ AUTHOR: Luxi Liao	(LL)	
+ PURPOSE: to define style of the multiWrites.html
+ ORIGINALLY CREATED ON: 14 September 2021 
+ LAST MODIFIED ON: 15 September 2021 
+ LAST MODIFIED BY: Luxi Liao (LL)	
+ MODIFICATION HISTORY:
+ 14 September 2021 - Adding the functions according to Requirement. (LL)
+ 15 September 2021 - Writing the main fucntion. (LL)
+ 15 September 2021 - Adding comment
+    to describe each function and some key statements (LL)
+ 08 September 2021 - Small changes according to renaming. (LL)
+***************************************/
+
+
+body {
+    background-image: url(background.jpg); 
+    background-size: 100%; 
+    background-color: rgba(255, 255, 255, 0.5); 
+    background-blend-mode: lighten;
+    background-repeat: no-repeat;
+}
+/*Class:The messages container*/
+.container{
+    height: 90%;
+    width: 90%;
+    margin: 0 auto;
+    padding: 1%;
+
+    background-color: rgba(128, 128, 128, 0.596);
+    border-radius: 15px;
+}
+/*Class:The individual message*/
+.message{
+    margin: 1%;
+    padding-left: 10px;
+
+    background-color: rgba(211, 211, 211, 0.671);
+    border-radius: 10px;
+    border-style: solid;
+    border-color: rgba(0,0, 0, 0.8);
+}
