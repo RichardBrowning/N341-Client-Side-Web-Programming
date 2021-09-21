@@ -101,7 +101,7 @@ header{
 /*setting the format for unordered list and its items in id="asssignments" division*/
 #assignments ul{
 	float: left;
-	width: 300px;
+	width: 270px;
     
 }
 /* Define the formatting for the links to html pages */

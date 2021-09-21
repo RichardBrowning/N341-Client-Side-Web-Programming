@@ -16,49 +16,151 @@
 // A $( document ).ready() block.
 $(document).ready(
     function(){
-        var Pirate = {
+        function Pirate(rank, guess, div) {
             //Properties
-            name: this.name,
-            rank: this.rank,
-            guess: this.guess,
+            this.rank= rank;
+            this.guess= guess,
+            this.div= div;
 
             /******************
-            NAME: giveOrder
-            PURPOSE:	
+            NAME: speak
+            PURPOSE:
                 insert content using textContent
             PARAMETERS:
                 The target div id name, the complete as content to print to the div
             RETURN VALUE:
                 void, but a output to the desired div in the HTML doc
             *******************/
-            speak : function(strDiv, sentense){
+            this.speak = function(sentense){
                 try {
+                    
                     //get target for adding content
-                    var elOutput = document.getElementById(strDiv); 
+                    var elOutput = document.getElementById(this.div); 
                     //write content
                     elOutput.textContent = sentense;
                 } catch (e) {
+                    // cannot find location
                     console.log(e);
                 }
+                /*
+                console.log(sentense);//debug line
+                console.log("THIS IS GOING TO "+this.div);//debug line
+                */
             },
-            strGuess : function(){
-                this.guess = Math.floor(Math.random()*10);
-                var sentense = this.rank + " " + this.name + " guesses " + this.guess + "Argh!";
-                return this.guess;
+            this.intGenerateNumber = function(){
+                this.guess = Math.floor(Math.random()*10 + 1);
             },
-            strAnnounce : function(hit, name, rank){
-                if (hit == true) {
-                    var sentense = "Direct hit, "+ rank + name + "! The correct answer is " + this.guess + "!"
+            /******************
+            NAME: strGuess
+            PURPOSE:
+            PARAMETERS:
+            RETURN VALUE:
+            *******************/
+            this.strGuess = function(){
+                this.intGenerateNumber();
+                console.log(this.guess);//debug line
+                var sentense = this.rank + " " + " guesses " + this.guess + "\. Argh!";
+                return sentense;
+            },
+            /******************
+            NAME: strAnnounce
+            PURPOSE: 
+                CAPTAIN EXECUTIVE
+            PARAMETERS:
+            RETURN VALUE:
+            *******************/
+            this.strAnnounce = function(hit, rank){
+                var sentense;
+                if (hit) {
+                    sentense = "Direct hit, "+ rank + "! The correct answer is " + this.guess + "! You get this bottle of Grog!"
                 } else {
-                    var sentense = "The correct answer is " + this.guess + ". Looks like Lady Luck ain't with you today gentlemen! I am a good man though, I know how to share!"
+                    sentense = "The correct answer is " + this.guess + ". Looks like Lady Luck ain't with you today gentlemen! I am a good man though, I know how to share!"
                 }
+                return sentense;
             }
         };
     //create captain
-    //captain speak
-    //add content to div using textContent
+    var captain = new Pirate("Captain", undefined, undefined);
     //captain generate random number
-    
+    captain.intGenerateNumber();
+    console.log(captain.guess);
+    //captain announce
+    let description = "Gentlemen, Good job in the last battle! I have a bottle of Grog, and a number in 10. Anyone who can guess the number in my mind will be rewarded this!";
+    captain.div = "description";
+    captain.speak(description);
+    //for crew 1 to 10
+    var arrayCrews = [];//array storing crews
+    var ranks = ["Midshipman", 
+                "Lieutenant",
+                "Lieutenant-commander",
+                "Sub-lieutenant",
+                "Helmsman",
+                "Chief Engineer",
+                "On-deck Sailor",
+                "Off-deck Sailor", 
+                "First Officer",
+                "Logistics Chief"]//array fir ranks
+    for (let i = 0; i < 10; i++) {
+        //create crew put to array of CREWS
+        eval("arrayCrews[" + i + "] = new Pirate(ranks[" + i + "], undefined, \"guess" + (i+1) + "\");")
+    }
+    console.log(arrayCrews);
+    //correct guess info
+    var hit = {
+        result: false,
+        winnerRank: undefined
+    }
+    /*for crew in CREWS
+    for (let i = 0; i < arrayCrews.length; i++) {
+        if (!hit.result) {
+            //crew generate random number
+            arrayCrews[i].intGenerateNumber();
+            console.log( arrayCrews[i].guess);//debug line
+            //crew generate guessing sentence
+            var sentense =  arrayCrews[i].strGuess();
+            //crew speak
+            arrayCrews[i].speak(sentense);
+            if ( arrayCrews[i].guess == captain.guess){
+                hit.result = true;
+                hit.winnerRank =  arrayCrews[i].rank;
+                break;
+            }
+        }
+    }
+*/
+    arrayCrews.some(crew=> {
+        if (!hit.result) {
+            //crew generate random number
+            crew.intGenerateNumber();
+            console.log(crew.guess);
+            //crew generate guessing sentence
+            sentense = crew.strGuess();
+            //crew speak
+            crew.speak(sentense);
+            if (crew.guess == captain.guess){
+                hit.result = true;
+                hit.winnerRank = crew.rank;
+                return true;
+            }
+        }
+    });
+
+    if (hit.result){
+    //CHECK IF the guessing number is the same as the answer of the captain
+        //Captain generate answer and the winner
+        var announcement = captain.strAnnounce(hit.result, hit.winnerRank)
+        //Captain speak
+        captain.div = "announce";
+        captain.speak(announcement);
+    }else{
+    //ELSE 
+        //Captain generate answer
+        var announcement = captain.strAnnounce(hit.result, null)
+        //Captain speak 
+        captain.div = "announce";
+        captain.speak(announcement);
+    }
+   
     
 }); // end of $(document).ready()
 

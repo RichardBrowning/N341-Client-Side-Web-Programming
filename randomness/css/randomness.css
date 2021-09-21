@@ -32,12 +32,20 @@ body {
     border-radius: 15px;
 }
 /*Class:The individual message*/
-.message{
+.captain{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    font-style: inherit;
+    font-size: xx-large;
+    color:red;
+}
+.crew{
     margin: 1%;
     padding-left: 10px;
 
+    font-family:'Courier New', Courier, monospace;
     background-color: rgba(211, 211, 211, 0.671);
     border-radius: 10px;
     border-style: solid;
-    border-color: rgba(0,0, 0, 0.8);
+    border-color: rgba(0, 140, 255, 0.8);
 }
