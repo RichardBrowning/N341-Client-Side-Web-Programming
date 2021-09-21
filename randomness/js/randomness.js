@@ -1,5 +1,5 @@
 /**************************************
- TITLE: functions.js
+ TITLE: randomness.js
  AUTHOR: Luxi Liao	(LL)	
  PURPOSE: print messages at the page
  ORIGINALLY CREATED ON: 14 September 2021 
@@ -15,61 +15,50 @@
 
 // A $( document ).ready() block.
 $(document).ready(
-
     function(){
+        var Pirate = {
+            //Properties
+            name: this.name,
+            rank: this.rank,
+            guess: this.guess,
+
             /******************
-    NAME: giveOrder
-    PURPOSE:	
-        insert content using textContent
-    PARAMETERS:
-        The target div id name, The First part of the sentence, The Integer of the important number, and the Unit of the number
-    RETURN VALUE:
-        void, but a output to the desired div in the HTML doc
-    *******************/
-function giveOrder (strDiv, strSentence, intNumber, strUnit){
-    var arrayOrderParts = [strSentence, intNumber, strUnit];
-    var strOrder = arrayOrderParts.join(' ');
-    try {
-        //get target for adding content
-        var elOutput = document.getElementById(strDiv); 
-        //write content
-        elOutput.textContent = strOrder;
-    } catch (e) {
-        console.log(e);
-    }
-}
-	//defining content 
-    let arrayTargetDiv = [
-        "firstOrder",
-        "secondOrder",
-        "thirdOrder",
-        "forthOrder",
-        "fifthOrder"
-    ]
-    let arrayFirstString = [
-        "The quartermaster steers the ship in route to intercept the enemy, passing within a mere",
-        "Gunner, Form crossfire on the enemy ship starboard, direction",
-        "Chief Engineer, set cruise speed at",
-        "CIC, lock on the ship with radar at",
-        "XO, watch out for the possible enemy reinforcement"
-    ]
-    let arrayNumber = [
-        5,
-        170,
-        25,
-        10,
-        34
-    ]
-    let arraySecondString = [
-        "feet!",
-        ", relative orientation!",
-        "Knots!",
-        "GigaHertz!",
-        "miles away and approaching!"
-    ]
+            NAME: giveOrder
+            PURPOSE:	
+                insert content using textContent
+            PARAMETERS:
+                The target div id name, the complete as content to print to the div
+            RETURN VALUE:
+                void, but a output to the desired div in the HTML doc
+            *******************/
+            speak : function(strDiv, sentense){
+                try {
+                    //get target for adding content
+                    var elOutput = document.getElementById(strDiv); 
+                    //write content
+                    elOutput.textContent = sentense;
+                } catch (e) {
+                    console.log(e);
+                }
+            },
+            strGuess : function(){
+                this.guess = Math.floor(Math.random()*10);
+                var sentense = this.rank + " " + this.name + " guesses " + this.guess + "Argh!";
+                return this.guess;
+            },
+            strAnnounce : function(hit, name, rank){
+                if (hit == true) {
+                    var sentense = "Direct hit, "+ rank + name + "! The correct answer is " + this.guess + "!"
+                } else {
+                    var sentense = "The correct answer is " + this.guess + ". Looks like Lady Luck ain't with you today gentlemen! I am a good man though, I know how to share!"
+                }
+            }
+        };
+    //create captain
+    //captain speak
     //add content to div using textContent
-    for (let i = 0; i < 5; i++) {
-        giveOrder(arrayTargetDiv[i], arrayFirstString[i], arrayNumber[i].toString(), arraySecondString[i]);
-    }
+    //captain generate random number
+    
+    
 }); // end of $(document).ready()
 
