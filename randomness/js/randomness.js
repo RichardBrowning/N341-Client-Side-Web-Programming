@@ -52,14 +52,27 @@ $(document).ready(
                 console.log("THIS IS GOING TO "+this.div);//debug line
                 */
             },
+            /******************
+            NAME: intGenerateNumber
+            PURPOSE:
+	    	Generate guess a number from 1 to 10
+            PARAMETERS:
+	    	no external parameters
+            RETURN VALUE:
+	    	void, but assign the value to guess property
+            *******************/
+ 
             this.intGenerateNumber = function(){
                 this.guess = Math.floor(Math.random()*10 + 1);
             },
             /******************
             NAME: strGuess
             PURPOSE:
+	    	Generate sentense of the guess
             PARAMETERS:
+	    	properties, no external parameters
             RETURN VALUE:
+	    	String that represent the guessing sentense 
             *******************/
             this.strGuess = function(){
                 this.intGenerateNumber();
@@ -70,9 +83,11 @@ $(document).ready(
             /******************
             NAME: strAnnounce
             PURPOSE: 
-                CAPTAIN EXECUTIVE
+                CAPTAIN EXECUTIVE: announce the result
             PARAMETERS:
+	    	hit, for judging if someone guessed correct, and rank, for indicating who guessed correctly
             RETURN VALUE:
+	    	String that represent the announcement sentense
             *******************/
             this.strAnnounce = function(hit, rank){
                 var sentense;
@@ -115,7 +130,7 @@ $(document).ready(
         result: false,
         winnerRank: undefined
     }
-    /*for crew in CREWS
+    /*for crew in crew array, this is the original version
     for (let i = 0; i < arrayCrews.length; i++) {
         if (!hit.result) {
             //crew generate random number
@@ -133,6 +148,7 @@ $(document).ready(
         }
     }
 */
+	    //for crews in crew array, this is using the method of array object
     arrayCrews.some(crew=> {
         if (!hit.result) {
             //crew generate random number
