@@ -1,16 +1,21 @@
 /**************************************
  TITLE: randomness.js
  AUTHOR: Luxi Liao	(LL)	
- PURPOSE: print messages at the page
- ORIGINALLY CREATED ON: 14 September 2021 
- LAST MODIFIED ON: 15 September 2021 
+ PURPOSE: print messages at the page and conduct the guessing game
+ ORIGINALLY CREATED ON: 19 September 2021 
+ LAST MODIFIED ON: 21 September 2021 
  LAST MODIFIED BY: Luxi Liao (LL)	
  MODIFICATION HISTORY:
- 14 September 2021 - Adding the functions according to Requirement. (LL)
- 15 September 2021 - Writing the main fucntion. (LL)
- 15 September 2021 - Adding comment
-    to describe each function and some key statements (LL)
- 08 September 2021 - Small changes according to renaming. (LL)
+ 19 September 2021 - Adding the object according to Requirement. 
+    including its main properties and mothods (LL)
+ 20 September 2021 - Revising the methods. (LL)
+ 20 September 2021 - Adding comment to design the script
+    to describe each property and method, and some key statements (LL)
+ 21 September 2021 - Writing the main function part of the script
+    Alternatively write the content to the Console for more convenient debugging (LL)
+ 21 Septmeber 2021 - Change writing destination to the Web page using textContent (LL)
+    Fitting data to divs 
+ 21 September 2021 - Optimize the script for faster execution (LL)
 ***************************************/
 
 // A $( document ).ready() block.
@@ -58,7 +63,7 @@ $(document).ready(
             *******************/
             this.strGuess = function(){
                 this.intGenerateNumber();
-                console.log(this.guess);//debug line
+                //console.log(this.guess);//debug line
                 var sentense = this.rank + " " + " guesses " + this.guess + "\. Argh!";
                 return sentense;
             },
@@ -83,7 +88,7 @@ $(document).ready(
     var captain = new Pirate("Captain", undefined, undefined);
     //captain generate random number
     captain.intGenerateNumber();
-    console.log(captain.guess);
+    //console.log(captain.guess);//debug line
     //captain announce
     let description = "Gentlemen, Good job in the last battle! I have a bottle of Grog, and a number in 10. Anyone who can guess the number in my mind will be rewarded this!";
     captain.div = "description";
@@ -104,7 +109,7 @@ $(document).ready(
         //create crew put to array of CREWS
         eval("arrayCrews[" + i + "] = new Pirate(ranks[" + i + "], undefined, \"guess" + (i+1) + "\");")
     }
-    console.log(arrayCrews);
+    //console.log(arrayCrews);//debug line
     //correct guess info
     var hit = {
         result: false,
@@ -132,7 +137,7 @@ $(document).ready(
         if (!hit.result) {
             //crew generate random number
             crew.intGenerateNumber();
-            console.log(crew.guess);
+            //console.log(crew.guess);//debug line
             //crew generate guessing sentence
             sentense = crew.strGuess();
             //crew speak
