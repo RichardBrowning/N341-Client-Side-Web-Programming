@@ -105,7 +105,7 @@ $(document).ready(
     captain.intGenerateNumber();
     //console.log(captain.guess);//debug line
     //captain announce
-    let description = "Gentlemen, Good job in the last battle! I have a bottle of Grog, and a number in 10. Anyone who can guess the number in my mind will be rewarded this!";
+    let description = "Gentlemen, Good job in the last battle! I have a bottle of Grog, and a number in 1 to 10. Anyone who can guess the number will be rewarded the wine!";
     captain.div = "description";
     captain.speak(description);
     //for crew 1 to 10
@@ -166,22 +166,11 @@ $(document).ready(
         }
     });
 
-    if (hit.result){
     //CHECK IF the guessing number is the same as the answer of the captain
         //Captain generate answer and the winner
         var announcement = captain.strAnnounce(hit.result, hit.winnerRank)
         //Captain speak
         captain.div = "announce";
         captain.speak(announcement);
-    }else{
-    //ELSE 
-        //Captain generate answer
-        var announcement = captain.strAnnounce(hit.result, null)
-        //Captain speak 
-        captain.div = "announce";
-        captain.speak(announcement);
-    }
-   
-    
 }); // end of $(document).ready()
 
