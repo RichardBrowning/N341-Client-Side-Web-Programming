@@ -1,5 +1,5 @@
 /**************************************
- TITLE: moreIfs.js
+ TITLE: iffyProgramming.js
  AUTHOR: Luxi Liao	(LL)	
  PURPOSE: prompt user for input, do conversion, and print messages on the page
  ORIGINALLY CREATED ON: 28 September 2021
@@ -20,75 +20,90 @@
 
 // A $( document ).ready() block.
 $(document).ready(function(){
-    //conversion rate
-    const price = 287;
-    //target document to write the message
-    const target = "message";
-    /******************
-    NAME: strPromptName
-    PURPOSE:	
-        prompt pirate's name
-    PARAMETERS:
-        void
-    RETURN VALUE:
-        prompted name or default name
-    *******************/
-    $.fn.strPromptName = function(){ 
-        //variable for name string
-        var strName;
-        //variable for question string
-        var strQuestion = "Howdy! What's your name, Captain?";
-        //variable for _default string
-        var strDefault = "Fritz Rogge";
-        //use prompt(message?: string, _default?: string): string function to ask for name
-        strName = prompt(strQuestion, strDefault);
-        return strName;
+    //prompter
+    let Prompter = {
+        //current latitude
+        intCurrentLatitude : 0,
+        //current longitude
+        intCurrentLongitude : 0,
+        //dest latitude
+        intDestinationLatitude : 0, 
+        //dest longitude
+        intDestinationLongitude : 0,
+
+        moveVector: {
+            intLatitudeChange: intDestinationLatitude - intCurrentLatitude, 
+            intLongitudeChange: intDestinationLongitude - intCurrentLongitude,
+        },
+
+        promptCoordinate : function() {
+            var arrayPrompt = ["What's your current latitude","What's your current longitude","What's your destination latitude","What's your destination longitude"];
+            var arrayVar = [this.intCurrentLatitude, this.intCurrentLongitude, this.intDestinationLatitude, this.intDestinationLongitude];
+            for (let i = 0; i < array.length; i++) {
+                arrayVar[i] = prompt(arrayPrompt[i]);
+            }
+        },
+        
+        strPathIfElse : function(){
+            if (this.moveVector.intLatitudeChange > 0) {
+                if (this.moveVector.intLongitudeChange > 0) {
+                    
+                } else if(this.moveVector.intLatitudeChange < 0) {
+                    
+                } else {
+
+                }
+            } else if(this.moveVector.intLatitudeChange < 0){
+                if (this.moveVector.intLongitudeChange > 0) {
+                    
+                } else if(this.moveVector.intLatitudeChange < 0) {
+                    
+                } else {
+                    
+                }
+            } else {
+                if (this.moveVector.intLongitudeChange > 0) {
+                    
+                } else if(this.moveVector.intLatitudeChange < 0) {
+                    
+                } else {
+                    //not moving
+                }
+            }
+        },
+        strPathSwitch : function () {
+            switch (true) {
+                case ():
+                    
+                    break;
+                case ():
+                    
+                    break;
+                case ():
+                    
+                    break;         
+                case ():
+                    
+                    break;  
+                case ():
+                    
+                    break;
+                case ():
+                            
+                    break;
+                case ():
+                            
+                    break;         
+                case ():
+                            
+                    break;  
+                case ():
+
+                    break;                                 
+                default:
+                    break;
+            }
+        }
     }
-    /******************
-    NAME: strPromptDoubloonNum
-    PURPOSE:	
-        prompt number of gold doubloons
-    PARAMETERS:
-        void
-    RETURN VALUE:
-        number of gold doubloons
-    *******************/
-    $.fn.strPromptDoubloonNum = function(){
-        //variable for doubloon number string
-        var strDoubloonNum;
-        //variable for question string
-        var strQuestion = "How many gold doubloons, Captain?";
-        //variable for _default string
-        var strDefault = "12";
-        //use prompt(message?: string, _default?: string): string function to ask for name
-        strDoubloonNum = prompt(strQuestion, strDefault);
-        return strDoubloonNum; 
-    }
-    /******************
-    NAME: intDoubloonToUSD
-    PURPOSE:
-        calculate conversion into dollars
-    PARAMETERS:
-        number of gold doubloons
-    RETURN VALUE:
-        equivilent dollars
-    *******************/
-    $.fn.intDoubloonToUSD = function(intDoubloonNum){
-        var intUSD = intDoubloonNum*price;
-        return intUSD;
-    }
-    //prompt name and doubloons, store with str prefix
-    var strName = $.fn.strPromptName();
-    var strDoubloonNum = $.fn.strPromptDoubloonNum();
-    //convert into int
-    var intDoubloonNum = parseInt(strDoubloonNum);
-    //convert into USD
-    var intUSD = $.fn.intDoubloonToUSD(intDoubloonNum);
-	//add content to div using textContent
-    var strMessage = "I, " + strName + ", have plundered "+ intDoubloonNum.toString() +" gold doubloons for a total profit of $"+ intUSD.toString() +". Argh!"
-    var elOutput = document.getElementById(target); 
-    //write content
-    elOutput.textContent = strMessage;
-    
 }); // end of $(document).ready()
 

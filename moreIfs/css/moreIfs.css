@@ -13,7 +13,7 @@
 /*Style of the entire page background*/
 body{
     /*the background image comes from https://www.blackcatssvg.com/products/trust-me-im-a-pirate-svg-file-cutting-file-clipart-in-svg-eps-dxf-png-for-cricut-silhouette-pirate-ship-svg*/
-    background-image: url(./background.jpg);
+    background-image: url(./worldmap.jpeg);
     background-color: rgba(128, 128, 128, 0.4);
     background-size: 100%;
     background-blend-mode: lighten;
@@ -36,7 +36,7 @@ body{
 .conversation{
     margin: 1%;
     padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 10px;
     padding-top: 5px;
     padding-bottom: 5px;
 
@@ -44,12 +44,4 @@ body{
     border-radius: 10px;
     border-style: solid;
     border-color: rgba(0,0, 0, 0.8);
-}
-/*ID: message*/ 
-#message{
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-weight: bold;
-    font-style: inherit;
-    font-size: xx-large;
-    color:red;
 }

@@ -1,6 +1,6 @@
 <!doctype html>
 <!--
- TITLE: moreIfs.html		
+ TITLE: iffyProgramming.html		
  AUTHOR: Luxi Liao	(LL)	
  PURPOSE: display a simple web page
  ORIGINALLY CREATED ON: 28 September 2021
@@ -18,19 +18,27 @@
    <!--configuration-->
    <meta charset="utf-8">
    <!--page title-->
-   <title>Conversion into USD</title>
+   <title>Arrive Time Report</title>
    <!--link to CSS file-->
-   <link rel="stylesheet" type="text/css" href="css/conversions.css">
+   <link rel="stylesheet" type="text/css" href="css/iffyProgramming.css">
    <!-- This links to the jQuery library so your js code will work -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<!-- This links to the js code specific for this page -->
-	<script src="js/conversions.js"></script>
+	<script src="js/iffyProgramming.js"></script>
 </head>
 
 <body>
    <div class = "container">
       <!--message to be printed out by JavaScript-->
-      <div class="conversation" id="message"></div>
+      <div class="holder">
+         <div class="conversation" id="prompt"></div>
+      </div>
+      <div class="holder">
+         <div class="reply" id="answer"></div>
+      </div>
+      <div class="holder">
+         <div class="conversation" id="response"></div>
+      </div>
    </div>
 </body>
 </html>
