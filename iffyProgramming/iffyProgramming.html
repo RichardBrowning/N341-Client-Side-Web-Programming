@@ -1,0 +1,44 @@
+<!doctype html>
+<!--
+ TITLE: iffyProgramming.html		
+ AUTHOR: Luxi Liao	(LL)	
+ PURPOSE: display a simple web page
+ ORIGINALLY CREATED ON: 28 September 2021
+ LAST MODIFIED ON: 29 September 2021
+ LAST MODIFIED BY: Luxi Liao (LL)
+ MODIFICATION HISTORY:
+ 08 Septmber 2021 - Adding basic content 
+ 	Give the page a basic look (LL)
+ 10 September 2021 - change page layout
+   to adjust to CSS file (LL)
+-->
+
+<html lang="en">
+<head>
+   <!--configuration-->
+   <meta charset="utf-8">
+   <!--page title-->
+   <title>Arrive Time Report</title>
+   <!--link to CSS file-->
+   <link rel="stylesheet" type="text/css" href="css/iffyProgramming.css">
+   <!-- This links to the jQuery library so your js code will work -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<!-- This links to the js code specific for this page -->
+	<script src="js/iffyProgramming.js"></script>
+</head>
+
+<body>
+   <div class = "container">
+      <!--message to be printed out by JavaScript-->
+      <div class="holder">
+         <div class="conversation" id="prompt"></div>
+      </div>
+      <div class="holder">
+         <div class="reply" id="answer"></div>
+      </div>
+      <div class="holder">
+         <div class="conversation" id="response"></div>
+      </div>
+   </div>
+</body>
+</html>
