@@ -40,10 +40,10 @@ $(document).ready(function(){
 
         promptCoordinate : function() {
             var arrayPrompt = ["What's your current latitude?", "What's your current longitude?", "What's your destination latitude?", "What's your destination longitude?"];
-            this.intCurrentLatitude = prompt(arrayPrompt[1])
-            this.intCurrentLongitude = prompt(arrayPrompt[2])
-            this.intDestinationLatitude = prompt(arrayPrompt[3])
-            this.intDestinationLongitude = prompt(arrayPrompt[4])
+            this.intCurrentLatitude = prompt(arrayPrompt[0])
+            this.intCurrentLongitude = prompt(arrayPrompt[1])
+            this.intDestinationLatitude = prompt(arrayPrompt[2])
+            this.intDestinationLongitude = prompt(arrayPrompt[3])
             //console.log(this.intCurrentLatitude);//debug line
         },
         
@@ -51,7 +51,7 @@ $(document).ready(function(){
             if (this.moveVector.intLatitudeChange >= 0) {
                 if (this.moveVector.intLongitudeChange >= 0) {
                     this.strPath = "Head North East";
-                } else if(this.moveVector.intLatitudeChange <= 0) {
+                } else if(this.moveVector.intLongitudeChange <= 0) {
                     this.strPath = "Head North West";
                 } else {
                     this.strPath="Land Ho!"
@@ -59,8 +59,8 @@ $(document).ready(function(){
             } else if(this.moveVector.intLatitudeChange <= 0){
                 if (this.moveVector.intLongitudeChange >= 0) {
                     this.strPath = "Head South East";
-                } else if(this.moveVector.intLatitudeChange <= 0) {
-                    this.strPath = "Head Sorth West";
+                } else if(this.moveVector.intLongitudeChange <= 0) {
+                    this.strPath = "Head South West";
                 } else {
                     this.strPath="Land Ho!";
                 }
@@ -70,16 +70,16 @@ $(document).ready(function(){
         },
         strPathSwitch : function () {
             switch (true) {
-                case (this.moveVector.intLongitudeChange >= 0 && this.moveVector.intLongitudeChange >= 0):
+                case (this.moveVector.intLatitudeChange >= 0 && this.moveVector.intLongitudeChange >= 0):
                     this.strPath = "Head North East";
                     break;
-                case (this.moveVector.intLongitudeChange >= 0 && this.moveVector.intLongitudeChange <= 0):
+                case (this.moveVector.intLatitudeChange >= 0 && this.moveVector.intLongitudeChange <= 0):
                     this.strPath = "Head North West";
                     break;     
-                case (this.moveVector.intLongitudeChange <= 0 && this.moveVector.intLongitudeChange >= 0):
+                case (this.moveVector.intLatitudeChange <= 0 && this.moveVector.intLongitudeChange >= 0):
                     this.strPath = "Head South East";
                     break;
-                case (this.moveVector.intLongitudeChange <= 0 && this.moveVector.intLongitudeChange <= 0):
+                case (this.moveVector.intLatitudeChange <= 0 && this.moveVector.intLongitudeChange <= 0):
                     this.strPath = "Head South West";
                     break;                        
                 default:
