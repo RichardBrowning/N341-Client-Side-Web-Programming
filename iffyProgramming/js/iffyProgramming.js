@@ -6,14 +6,12 @@
  LAST MODIFIED ON: 29 September 2021
  LAST MODIFIED BY: Luxi Liao (LL)	
  MODIFICATION HISTORY:
- 09 September 2021 - Adding functions according to Requirement
+ 28 September 2021 - Adding functions according to Requirement
 	to make page functional. (LL)
- 09 September 2021 - Adding functions
-    to complete prompts and verversions. (LL)
- 09 September 2021 - Adding comment
-    to describe each function and some key statements. (LL)
- 10 September 2021 - Small changes according to HTML change. (LL)
- 11 September 2021 - Typo in variable name
+ 29 September 2021 - Adding functions
+    to complete prompts and judgement. (LL)
+ 29 September 2021 - Small changes to make HTML more interactive. (LL)
+ 29 September 2021 - Typo in variable name
     fixed. (LL)
 ***************************************/
 
@@ -28,13 +26,21 @@ $(document).ready(function(){
         strRecieved:"Maybe",
         //response sentense
         strResponse:"",
-
+        /******************
+        NAME: prompt
+        PURPOSE:	
+            prompt user for input, judge if the input is valid
+        PARAMETERS:
+            none
+        RETURN VALUE:
+            none but set Recieved
+        *******************/
         prompt : function(){
             //variable for Valid Input condition
             var arrayValidInput = ["yes", "no"];
             //while input is not valid
             while (arrayValidInput.indexOf(this.strRecieved) == -1) {
-                //prompt
+                //prompt and convert
                 this.strRecieved = prompt(this.strPrompt, this.strRecieved).toLowerCase();
                 //insert a alert if not valid input!
                 if (arrayValidInput.indexOf(this.strRecieved) == -1){
@@ -43,6 +49,15 @@ $(document).ready(function(){
             /*At the end of the function, the strRecieved will be set a Valid value*/
             }
         },
+        /******************
+        NAME: generateResponse
+        PURPOSE:	
+            generate response sentense according to user input
+        PARAMETERS:
+            none
+        RETURN VALUE:
+            none but set the response sentense
+        *******************/
         generateResponse : function(){
             if (this.strRecieved == "yes") {
                 this.strResponse = "Great! You will earn extra doubloons!"
@@ -52,6 +67,15 @@ $(document).ready(function(){
                 console.log(this.strResponse);
             }
         },
+        /******************
+        NAME: printSpeak
+        PURPOSE:	
+            print string to element of the HTML page
+        PARAMETERS:
+            element id, string sentense to print
+        RETURN VALUE:
+            none but a string printed to page location
+        *******************/
         printSpeak : function(strElement, strSentense) {
             var strElOutput = document.getElementById(strElement);
             strElOutput.textContent = strSentense;
