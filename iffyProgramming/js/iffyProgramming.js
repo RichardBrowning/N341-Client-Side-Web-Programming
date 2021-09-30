@@ -31,20 +31,20 @@ $(document).ready(function(){
 
         prompt : function(){
             //variable for Valid Input condition
-            var arrayValidInput = ["Yes", "yes", "No", "no"];
+            var arrayValidInput = ["yes", "no"];
             //while input is not valid
             while (arrayValidInput.indexOf(this.strRecieved) == -1) {
                 //prompt
-                this.strRecieved = prompt(this.strPrompt, this.strRecieved);
+                this.strRecieved = prompt(this.strPrompt, this.strRecieved).toLowerCase();
                 //insert a alert if not valid input!
                 if (arrayValidInput.indexOf(this.strRecieved) == -1){
-                    alert("You input "+this.strRecieved+" . Please input 'Yes/yes' or 'NO/no'! Or walk the plank! ");
+                    alert("You input "+this.strRecieved+" . Please input 'yes' or 'no'! Or walk the plank! ");
                 }
             /*At the end of the function, the strRecieved will be set a Valid value*/
             }
         },
         generateResponse : function(){
-            if (this.strRecieved == "Yes" || this.strRecieved == "yes") {
+            if (this.strRecieved == "yes") {
                 this.strResponse = "Great! You will earn extra doubloons!"
                 console.log(this.strResponse);
             } else {
