@@ -1,0 +1,53 @@
+/**************************************
+ TITLE: loopingThroughArrays.css					
+ AUTHOR: Luxi Liao	(LL)	
+ PURPOSE: to stylize the conversions.html
+ ORIGINALLY CREATED ON: October 03 2021
+ LAST MODIFIED ON: October 04 2021
+ LAST MODIFIED BY: Luxi Liao (LL)	
+ MODIFICATION HISTORY:
+ October 03 2021 - Added basic format
+    to make page aesthetically good. (LL)	
+ October 04 2021 - Change basic layout
+    for better display of binary digits. (LL)	
+***************************************/
+
+/*Style of the entire page background*/
+body{
+    /*the background image comes from https://www.blackcatssvg.com/products/trust-me-im-a-pirate-svg-file-cutting-file-clipart-in-svg-eps-dxf-png-for-cricut-silhouette-pirate-ship-svg*/
+    background-image: url(./telegraghRoom.jpg);
+    background-color: rgba(128, 128, 128, 0.4);
+    background-size: 100%;
+    background-blend-mode: lighten;
+    background-repeat: no-repeat;
+
+    align-items: center;
+}
+
+/*Class:The messages container*/
+.container{
+    height: 90%;
+    width: 90%;
+    margin: 0 auto;
+    padding: 1%;
+
+    background-color: rgba(128, 128, 128, 0.596);
+    border-radius: 15px;
+}
+/*Class:The individual message of each ship*/
+.holder{
+    height: 50px;
+}
+.conversation{
+    margin: 1%;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    float: left;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgba(211, 211, 211, 0.671);
+    border-radius: 10px;
+    border-style: solid;
+    border-color: rgba(0,0, 0, 0.8);
+}
