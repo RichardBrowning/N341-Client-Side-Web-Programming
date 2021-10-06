@@ -10,6 +10,7 @@
 *	your arrays and loopiness assignment
 * MODIFICATION HISTORY
     October 03 - Adding essential functions and ultilities
+    October 05 - Adding main function
 **************************************/
 
 /*TODO */
@@ -106,13 +107,14 @@ $(document).ready(function(){
 
     //ask and velidarte the user's input
     var strLetter = promptLetter();
-    //converto to ascii and the to binary
-    var strBinary = parseBin(parseAscii(strLetter));
-    console.log(strBinary);
-    console.log(typeof(strBinary));
+    //converto to ascii and then to binary
+    var intAscii = parseAscii(strLetter);
+    var strBinary = parseBin(intAscii);
+    //console.log(strBinary);//debug line
+    //console.log(typeof(strBinary));//debug line
     //binary string to array
     arrayBinary = strBinary.split('');
-    console.log(arrayBinary);
+    //console.log(arrayBinary);//debug line
     //print to desired areas of the page
     for (let index = 0; index < arrayBinary.length; index++) {
         insertTextTextContent(index, arrayBinary[index]);
