@@ -19,13 +19,12 @@ body{
     background-size: 100%;
     background-blend-mode: lighten;
     background-repeat: no-repeat;
-
     align-items: center;
 }
 
 /*Class:The messages container*/
 .container{
-    height: 90%;
+    height: 100%;
     width: 90%;
     margin: 0 auto;
     padding: 1%;
@@ -35,7 +34,8 @@ body{
 }
 /*Class:The individual message of each ship*/
 .holder{
-    height: 50px;
+    height: 80px;
+    
 }
 .conversation{
     margin: 1%;

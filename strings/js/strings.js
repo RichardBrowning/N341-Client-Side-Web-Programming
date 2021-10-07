@@ -23,11 +23,13 @@ $(document).ready(function(){
 	*****/
 	function promptWord(){
         //declare name var
-        var strName = prompt("Please input the name of the queen's significant other." );
+        var strName = ""; 
         do{
+            strName = prompt("Please input the name of the queen's significant other." );
             //if not valid, alert
             if (strName.length < 1) {
                 alert("Please input a valid name");
+                
             }
             //while the input is not valid (empty)
         } while(strName.length < 1)
@@ -48,7 +50,7 @@ $(document).ready(function(){
         var arrayShipNames = [];
         //charAt() 
         var strName0 = "Big " + originalName.charAt(0);
-        var strName1 = "Mr. " + originalName.trim().charAt(originalName.length-1)
+        var strName1 = "Mr. " + originalName.trim().charAt(originalName.length-1).toUpperCase();
         //indexOf()
         var strName2 = "Good'O "+ originalName.indexOf('a');
         var strName3 = "Lucky "+ originalName.indexOf('o');
@@ -98,7 +100,7 @@ $(document).ready(function(){
     var arrayShipNames = generateShipNames(strOriginalName);
     console.log(arrayShipNames);//debug line
     //for names in the array, 
-    for (let index = 0; index <= arrayShipNames.length; index++) {
+    for (let index = 0; index <= arrayShipNames.length-1; index++) {
         //print to according areas of the page
         insertTextTextContent(index, arrayShipNames[index]);
     }
