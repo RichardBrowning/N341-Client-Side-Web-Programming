@@ -50,3 +50,8 @@ body{
     border-style: solid;
     border-color: rgba(0,0, 0, 0.8);
 }
+
+img{
+    height: 20px;
+    width: auto;
+}

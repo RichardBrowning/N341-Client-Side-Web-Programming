@@ -9,117 +9,97 @@
 *	you are encouraged to use the following code to start 
 *	your arrays and loopiness assignment
 * MODIFICATION HISTORY
-    04 October 2021 - Adding essential functions and ultilities
-
+    05 October 2021 - Adding essential functions, design algorithms (LL)
+    06 October 2021 - implement algorithms and debugging (LL)
 **************************************/
 
-/*TODO */
+/* the document ready wrapper */
 $(document).ready(function(){
-	/*****	
-    NAME: isLetter		
-	PURPOSE: check if a letter (single one )(Expanding the PROTOTYPE of the String object)
-	PARAMETER: A SINGLE letter	
-	RETURN: the letter input
-	*****/
-    String.prototype.isLetter = function(){
-        try {
-            //if it is letter, return true
-            return this.length === 1 && this.toUpperCase() != this.toLowerCase();
-        } catch (e) {
-            console.log(e);
-        }
-    }
     /*****	
-    NAME: promptLetter		
-	Purpose: prompt user for their input, and validate it. (not accepted: digit, symbol, > / < length of 1)	Loop until valid input detected
-	Parameters: none prompt to get input		
-	Return: the letter input
+    NAME: promptWord		
+	Purpose: prompt user for their input, and validate it (empty is not accepted)
+	Parameters: none, prompt to get input		
+	Return: the word input
 	*****/
-	function promptLetter(){
-        //declare Letter var
-        var strLetter = "X";
-        //IMPORTANT: the fucntion need to run at least once for teh user to input a letter (a sample answer is ultilized here)
+	function promptWord(){
+        //declare name var
+        var strName = prompt("Please input the name of the queen's significant other." );
         do{
-            //Letter case are not converted  (case-sensative ascii code) 
-            strLetter = prompt("Please input a SINGLE letter.", strLetter);
-            //if not, alert
-            if (!strLetter.isLetter()) {
-                alert("Please input a SINGLE Letter")
+            //if not valid, alert
+            if (strName.length < 1) {
+                alert("Please input a valid name");
             }
-            //while the input is not valid (not a single letter)
-        } while(!strLetter.isLetter())
-        //return the letter
-        return strLetter;
+            //while the input is not valid (empty)
+        } while(strName.length < 1)
+        //return the word
+        return strName;
     }
-	/*****	
-    NAME: parseAscii		
-	Purpose: convert individual characters to int inteh ascii table		
-	Parameters: single character / letter		
-	Return: integer representing an ascii value
-	*****/
-	function parseAscii(chrCharacter)
-	{
-		intAscii = chrCharacter.charCodeAt(0);
-		return intAscii;
-	}
-	
-	/*****			
-	NAME: parseBin
-    Purpose: get binary of the ascii code
-	Parameters: single integer representing an ascii value	
-	Return: binary, base 2 representation of the number passed to this function
-	*****/
-	function parseBin(intAscii)
-	{
-		strBin = parseInt(intAscii, 10).toString(2);
-		if(strBin.length < 8)
-		{
-			var intPlaceHolders = 8 - strBin.length;
-			for(var i = 0; i < intPlaceHolders; i++)
-			{
-				strBin = "0" + strBin;
-			}
-			
-		}
-		return strBin;
-	}
-
+    /******************
+    NAME: generateShipNames
+    PURPOSE:  
+        Generate ship names according to the name input
+    PARAMETERS:
+        mame input
+    RETURN VALUE:
+        array of Generated names
+    *******************/
+   function generateShipNames(originalName){
+        //declare array
+        var arrayShipNames = [];
+        //charAt() 
+        var strName0 = "Big " + originalName.charAt(0);
+        var strName1 = "Mr. " + originalName.trim().charAt(originalName.length-1)
+        //indexOf()
+        var strName2 = "Good'O "+ originalName.indexOf('a');
+        var strName3 = "Lucky "+ originalName.indexOf('o');
+        //substring()
+        var strName4 = originalName.substring(0, 3);
+        var strName5 = originalName.substring(0, 6);
+        //trim()
+        var strName6 = "General " + originalName.trim();
+        //replace()
+        var strName7 = "King " + originalName.trim().replace('p', 'b');
+        var strName8 = "Prince " + originalName.trim().replace('t', 'd');
+        //toUpperCase()
+        var strName9 = originalName.trim().toUpperCase();
+        //toLowerCase()
+        var strName10 = originalName.trim().toLowerCase();
+        //Normal 
+        var strName11 = "Sir " + originalName.trim();
+       //each of the names is generated, push into array
+        for (let i = 0; i <= 11; i++) {
+            eval("arrayShipNames.push(strName" + i + ")");
+        }
+        console.log(arrayShipNames);//debugline
+       //return
+       return arrayShipNames;
+   }
     /******************
     NAME: insertTextTextContent
-    PURPOSE:	
+    PURPOSE:  
         Print message using textContent
     PARAMETERS:
         target number in ID, desired content
     RETURN VALUE:
         void
     *******************/
-    function insertTextTextContent(number, digit){
-        //name variable for storage of content
-        var strMessage = (digit == '1')? 'true':'false';
-        console.log("the content: "+strMessage+" . Outputing to: " + "digit"+number.toString());
+    function insertTextTextContent(intNumber, strName){
+        console.log("the content: " + strName + " . Outputing to: " + "name"+intNumber.toString());//debug line
         //get target for adding content
-        var elOutput = document.getElementById("digit"+number.toString()); 
+        var elOutput = document.getElementById("name"+intNumber.toString()); 
         //write content
-        elOutput.textContent = strMessage;
+        elOutput.textContent = strName;
     }
-    alert("Hoist the secret message ye scurvy dawgs!");
 	//Your code here
-
-    //ask and velidarte the user's input
-    var strLetter = promptLetter();
-    //converto to ascii and the to binary
-    var strBinary = parseBin(parseAscii(strLetter));
-    console.log(strBinary);
-    console.log(typeof(strBinary));
-    //binary string to array
-    arrayBinary = strBinary.split('');
-    console.log(arrayBinary);
-    //print to desired areas of the page
-    for (let index = 0; index < arrayBinary.length; index++) {
-        insertTextTextContent(index, arrayBinary[index]);
+    //prompt name
+    /* NAME USED FOR TESTING: Elizabeth DiCaprio         */
+    var strOriginalName = promptWord();
+    //generate names with core fucntion
+    var arrayShipNames = generateShipNames(strOriginalName);
+    console.log(arrayShipNames);//debug line
+    //for names in the array, 
+    for (let index = 0; index <= arrayShipNames.length; index++) {
+        //print to according areas of the page
+        insertTextTextContent(index, arrayShipNames[index]);
     }
-    /*
-    Mothod is abandoned
-    arrayBinary.every(bit => insertTextTextContent(i++, toString(bit)));
-    */
 });
