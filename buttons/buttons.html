@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--
+ TITLE: buttons.html		
+ AUTHOR: Luxi Liao	(LL)	
+ PURPOSE: Displaying a Page for JavaScript to add content with textContent
+ ORIGINALLY CREATED ON: 12 October 2021 
+ LAST MODIFIED ON: 13 October 2021 
+ LAST MODIFIED BY: Luxi Liao (LL)	
+ MODIFICATION HISTORY:
+ 12 October 2021 - Adding basic content 
+ 	Give the page a basic look (LL)
+ 13 October 2021 - Revise path according to rename (LL)
+-->
+
+<html lang="en-us">
+    <head>
+        <!--basic configuration-->
+        <!--meta http-equiv="Content-Type" content="text/html; charset=UTF-8"-->
+        <meta charset="utf-8">
+        <!-- This <title> displays in the page tab -->
+        <title>Captain's Orders</title>
+		<!-- This will link to your CSS stylesheet for formatting as soon as you create the file. The page will work without it, though. -->	
+		<link rel="stylesheet" type="text/css" href="css/buttons.css">
+
+		<!-- This links to the jQuery library so your js code will work -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		
+		<!-- This links to the js code specific for this page -->
+		<script src="js/buttons.js"></script>
+        
+    </head> <!--end of head-->
+    
+    <body>
+        <div class="container">
+            <!--div start-->
+            <div id="armament" class="message"></div>
+            <!--div end-->
+            <button type="button" id="updateArmour">UPGRADE</button>
+<br>
+            <!--div start-->
+            <div id="mainGun" class="message"></div>
+            <!--div end-->
+            <button type="button" id="updateMainGun">UPGRADE</button>
+<br>
+            <!--div start-->
+            <div id="aimingSystem" class="message"></div>
+            <!--div end-->
+            <button type="button" id="updateAimingSystem">UPGRADE</button>
+<br>
+            <!--div start-->
+            <div id="radarAndSonar" class="message"></div>
+            <!--div end-->
+            <button type="button" id="updateRadarAndSonar">UPGRADE</button>
+<br>
+            <!--div start-->
+            <div id="torpedoe" class="message"></div>
+            <!--div end-->
+            <button type="button" id="updateTorpedoe">UPGRADE</button>
+            
+        </div>
+        
+    <!--end of body-->
+    </body>
+</html>
