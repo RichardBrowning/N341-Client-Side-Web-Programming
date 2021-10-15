@@ -129,12 +129,12 @@ $(document).ready(
    equipRadarSonar.print();
    equipTorpedoe.print();
 
-   //listen for button click
-   equipArmour.elButton.onclick = function(){equipArmour.upgrade();};
-   equipGun.elButton.onclick = function(){equipGun.upgrade()};
-   equipAiming.elButton.onclick = function(){equipAiming.upgrade()};
-   equipRadarSonar.elButton.onclick = function(){equipRadarSonar.upgrade()};
-   equipTorpedoe.elButton.onclick = function(){equipTorpedoe.upgrade()};
+   //add event listener
+   equipArmour.elButton.addEventListener("click",equipArmour.upgrade(),false);
+   equipGun.elButton.addEventListener("click",equipGun.upgrade(),false);
+   equipAiming.elButton.addEventListener("click",equipAiming.upgrade(),false);
+   equipRadarSonar.elButton.addEventListener("click",equipRadarSonar.upgrade(),false);
+   equipTorpedoe.elButton.addEventListener("click",equipTorpedoe.upgrade(),false);
     
 }); // end of $(document).ready()
 
