@@ -1,0 +1,50 @@
+/**************************************
+ TITLE: ahoyJQueryChallenge.css					
+ AUTHOR: Luxi Liao	(LL)	
+ PURPOSE: to stylize the ahoyJQuery.html
+ ORIGINALLY CREATED ON: 20 October 2021
+ LAST MODIFIED ON: 20 October 2021
+ LAST MODIFIED BY: Luxi Liao (LL)	
+ MODIFICATION HISTORY:
+ October 20 2021 - Duplicated from base version (LL)	
+***************************************/
+
+/*Class:The messages container*/
+.container{
+    height: auto;
+    width: 90%;
+    margin: 0 auto;
+    padding: 1%;
+    
+    background-color: rgba(128, 128, 128, 0.596);
+    border-radius: 15px;
+}
+/*Class:The messages container*/
+.container{
+    height: 90%;
+    width: 90%;
+    margin: 0 auto;
+    padding: 1%;
+    
+    background-color: rgba(128, 128, 128, 0.596);
+    border-radius: 15px;
+}
+
+#newFont {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    font-style: inherit;
+    font-size: xx-large;
+    color:aqua;
+}
+
+/*apply for all buttons*/
+button{
+    display: inline-block;
+}
+
+img{
+    height: 15%;
+    width: 15%;
+    float: left;
+}
