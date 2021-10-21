@@ -130,11 +130,11 @@ $(document).ready(
    equipTorpedoe.print();
 
    //add event listener
-   equipArmour.elButton.addEventListener("click",equipArmour.upgrade(),false);
-   equipGun.elButton.addEventListener("click",equipGun.upgrade(),false);
-   equipAiming.elButton.addEventListener("click",equipAiming.upgrade(),false);
-   equipRadarSonar.elButton.addEventListener("click",equipRadarSonar.upgrade(),false);
-   equipTorpedoe.elButton.addEventListener("click",equipTorpedoe.upgrade(),false);
+   equipArmour.elButton.addEventListener('click',equipArmour.upgrade,false);
+   equipGun.elButton.addEventListener('click',equipGun.upgrade,false);
+   equipAiming.elButton.addEventListener('click',equipAiming.upgrade,false);
+   equipRadarSonar.elButton.addEventListener('click',equipRadarSonar.upgrade,false);
+   equipTorpedoe.elButton.addEventListener('click',equipTorpedoe.upgrade,false);
     
 }); // end of $(document).ready()
 

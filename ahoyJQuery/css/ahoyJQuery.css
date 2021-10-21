@@ -1,0 +1,37 @@
+/**************************************
+ TITLE: ahoyJQuery.css					
+ AUTHOR: Luxi Liao	(LL)	
+ PURPOSE: to stylize the ahoyJQuery.html
+ ORIGINALLY CREATED ON: 20 October 2021
+ LAST MODIFIED ON: 20 October 2021
+ LAST MODIFIED BY: Luxi Liao (LL)	
+ MODIFICATION HISTORY:
+ October 20 2021 - Added basic format
+    give page a basic look. (LL)	
+ October 20 2021 - Attempting to add symbols to output area. (LL)	
+***************************************/
+
+/*Class:The messages container*/
+.container{
+    height: 90%;
+    width: 90%;
+    margin: 0 auto;
+    padding: 1%;
+    
+    background-color: rgba(128, 128, 128, 0.596);
+    border-radius: 15px;
+}
+/*Class:The messages container*/
+.container{
+    height: 90%;
+    width: 90%;
+    margin: 0 auto;
+    padding: 1%;
+    
+    background-color: rgba(128, 128, 128, 0.596);
+    border-radius: 15px;
+}
+/*apply for all buttons*/
+button{
+    display: inline-block;
+}
