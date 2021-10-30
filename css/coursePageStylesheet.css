@@ -125,9 +125,6 @@ a:link,a:visited{
     text-decoration:none;
 }
 a:hover,a:active{
-    background-color:#388b86 ;
+    background-color:#388b86;
     border-radius: 6px;
-}
-.line li{
-    background-color: lightgrey;
 }
