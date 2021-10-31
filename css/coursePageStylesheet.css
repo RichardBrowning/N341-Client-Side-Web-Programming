@@ -3,7 +3,7 @@
  AUTHOR: Luxi Liao	(LL)	
  PURPOSE: to define style of a custom course page
  ORIGINALLY CREATED ON: 21 August 2021
- LAST MODIFIED ON: 26 August 2021
+ LAST MODIFIED ON: 30 October 2021
  LAST MODIFIED BY: Luxi Liao (LL)	
  MODIFICATION HISTORY:
  21 August 2021 - Added basic format
@@ -15,6 +15,7 @@
  26 August 2021 - Adding Link Effects
     to make Hover effect better. (LL)	
  11 September 2021 - change background color (LL) 
+ 30 October 2021 - change assignment area properties (LL)
 ***************************************/
 
 /*definning page styling*/
@@ -90,7 +91,7 @@ header{
 
 /* Setting the formatting for the id="asssignments" division */
 #assignments{			
-	width: 70%;
+	width: 80%;
     height: 100%;
 	margin: 0 auto;
 	box-shadow: 0 2px 15px #EEE;
