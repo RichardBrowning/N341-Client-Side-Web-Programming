@@ -73,7 +73,7 @@ $(document).ready(
         }
         //jQuery filtered selection by id name that shows visible results
         function IdFilteredChangeProp(){
-            var elId = $("#text6" + ":first");
+            var elId = $("#text6" + ":visible");
             console.log(elId);//debug line
             elId.css("font-family", "fantasy, cursive, serif");
         }
