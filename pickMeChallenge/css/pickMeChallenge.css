@@ -1,0 +1,41 @@
+/**************************************
+ TITLE: pickMe.css					
+ AUTHOR: Luxi Liao	(LL)	
+ PURPOSE: to stylize the ahoyJQuery.html
+ ORIGINALLY CREATED ON: 30 October 2021
+ LAST MODIFIED ON: 30 October 2021
+ LAST MODIFIED BY: Luxi Liao (LL)	
+ MODIFICATION HISTORY:
+ October 30 2021 - Added basic format
+    give page a basic look. (LL)	
+ October 30 2021 - Attempting to add symbols to output area. (LL)	
+***************************************/
+
+/*Class:The messages container*/
+.container{
+    height: 90%;
+    width: 90%;
+    margin: 0 auto;
+    padding: 1%;
+    
+    background-color: rgba(128, 128, 128, 0.596);
+    border-radius: 15px;
+}
+/*Class:The message*/
+.class1, .class2, .class3{
+    margin: 1%;
+    width: fit-content;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgba(211, 211, 211, 0.671);
+    border-radius: 10px;
+    border-style: solid;
+    border-color: rgba(0,0, 0, 0.8);
+}
+/*apply for all buttons*/
+button{
+    display: inline-block;
+}
