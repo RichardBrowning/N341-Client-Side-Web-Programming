@@ -72,7 +72,7 @@ $(document).ready(
             elClass.css("letter-spacing", "0.2em");
         }
         //jQuery filtered selection by id name that shows visible results
-        function IdFilteredChangeProp(){
+        function idFilteredChangeProp(){
             var elId = $("#text6" + ":visible");
             console.log(elId);//debug line
             elId.css("font-family", "fantasy, cursive, serif");
@@ -84,5 +84,5 @@ $(document).ready(
         $('#multiInstruction').click(multipleInstruction);
         $('#tagF').click(tagFilteredChangeProp);
         $('#classF').click(classFilteredChangeProp);
-        $('#idF').click(IdFilteredChangeProp);
+        $('#idF').click(idFilteredChangeProp);
 }); // end of $(document).ready()
