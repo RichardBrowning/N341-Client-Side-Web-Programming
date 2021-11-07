@@ -1,0 +1,74 @@
+/*******************************
+ TITLE: moversAndShakers.css	
+ AUTHOR: Luxi Liao	(LL)	
+ PURPOSE: Displaying a Page for jQuery to modify content
+ ORIGINALLY CREATED ON: 05 November 2021 
+ LAST MODIFIED ON: 05 November 2021 
+ LAST MODIFIED BY: Luxi Liao (LL)	
+ MODIFICATION HISTORY:
+ 05 November 2021 - Adding basic content 
+ 	Give the page a basic look (LL)
+*********************************/
+
+
+fieldset{
+	border-radius: 5px;
+	border-style: solid;
+	border-color: black;
+}
+.animationconsole #controls { 
+	width: 24%; 
+	height: 680px; 
+	padding: 4px;
+
+	float: left; 
+	background-color: lightgray; 
+
+	border: 3px #666;
+	border-style: solid;
+	border-radius: 5px;
+}
+
+.animationconsole #actor {
+	width: 100px;
+	height: 100px;
+	margin: -50px 0 0 -50px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	text-align: center;
+	box-shadow: 10px 10px 5px #888888;
+	border: 3px solid rgb(99, 99, 99);
+	border-radius: 50%;
+	background-color: rgb(238, 238, 72);
+}
+
+#box_text {  
+	padding-top: 15px; 
+}
+.animationconsole #stage {  
+	width: 73%; 
+	height: 680px; 
+
+	position: relative; 
+	border-radius: 7px;
+	margin-left: 26%; 
+	border: 7px solid #333; 
+	background-color: #fff; 
+	
+	z-index: -3; }
+p.box_text {  padding-top: 15px; }
+
+  /*Link buttons style*/
+button{
+	width:90%;
+    display:block;
+    color:#111;
+    text-align:center;
+    padding:4px;
+    text-decoration:none;
+}
+button:hover, button:active{
+    background-color:#777;
+    border-radius: 6px;
+}

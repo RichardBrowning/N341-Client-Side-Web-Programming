@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--
+ TITLE: moversAndShakers.html		
+ AUTHOR: Luxi Liao	(LL)	
+ PURPOSE: Displaying a Page for jQuery to modify content
+ ORIGINALLY CREATED ON: 05 November 2021 
+ LAST MODIFIED ON: 05 November 2021 
+ LAST MODIFIED BY: Luxi Liao (LL)	
+ MODIFICATION HISTORY:
+ 05 November 2021 - Adding basic content 
+ 	Give the page a basic look (LL)
+-->
+<!-- Tested on Microsoft Edge, Apple Safari, Google Chromium, and Mozilla FireFox -->
+<!-- button style differs across browsers -->
+
+<html lang="en-us">
+    <head>
+        <!--basic configuration-->
+        <!--meta http-equiv="Content-Type" content="text/html; charset=UTF-8"-->
+        <meta charset="utf-8">
+        <!-- This <title> displays in the page tab -->
+        <title>Animation</title>
+		<!-- This will link to your CSS stylesheet for formatting as soon as you create the file. The page will work without it, though. -->	
+		<link rel="stylesheet" type="text/css" href="css/moversAndShakersChallenge.css">
+
+		<!-- This links to the jQuery library so your js code will work -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		
+		<!-- This links to the js code specific for this page -->
+		<script src="js/moversAndShakersChallenge.js"></script>
+        
+    </head> <!--end of head-->
+
+    <body>
+        <div class="animationconsole">
+            <div id="controls">
+                <form>
+                <fieldset>
+                    <legend>show</legend>
+                    <button type="button" id="show">show</button>
+                    <button type="button" id="hide">hide</button>
+                    <button type="button" id="toggleSpeed">toggle with speed</button>
+                    <button type="button" id="toggleSwitch">toggle with switch</button>
+                </fieldset>
+                <fieldset>
+                    <legend>fade</legend>
+                    <button type="button" id="fadeIn">Fade In</button>
+                    <button type="button" id="fadeOut">Fade Out</button>
+                    <button type="button" id="fadeTo">% Fade</button>
+                    <button type="button" id="fadeToggle">Toggle Fade</button>
+                    <button type="button" id="fadeDelay">Delay Fade</button>
+                </fieldset>
+                <fieldset>
+                    <legend>move</legend>
+                    <button type="button" id="topLeft">top-left</button>
+                    <button type="button" id="topRight">top-right</button>
+                    <button type="button" id="botLeft">bot-left</button>
+                    <button type="button" id="botRight">bot-right</button>
+                </fieldset>
+                <fieldset>
+                    <legend>animation</legend>
+                    <button type="button" id="glide">glide</button>   
+                </fieldset>
+                <fieldset>
+                    <legend>nudge</legend>
+
+                    <button type="button" id="left">&lt;--</button>
+                    <button type="button" id="right">--></button>
+                </fieldset>
+                <fieldset>
+                    <legend>reset</legend>
+                    <button type="button" id="reset">reset</button>
+                </fieldset>
+
+                </form>
+            </div>
+
+            <div id="stage">
+                <!--element ot be moved-->
+                <div id="actor">
+                    <h2 id="box_text">move me</h2>
+                </div>
+            </div>
+        </div>
+    <!--end of body-->
+    </body>
+</html>
