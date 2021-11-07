@@ -13,7 +13,8 @@
 $(document).ready(function(){
 /******************
 NAME: showActor
-PURPOSE:	            
+PURPOSE:	
+    Display Animation with jQuery  	            
 PARAMETERS:
     event
 RETURN VALUE:
@@ -25,7 +26,8 @@ RETURN VALUE:
     }
 /******************
 NAME: hideActor
-PURPOSE:	            
+PURPOSE:	
+    Display Animation with jQuery  	            
 PARAMETERS:
     event
 RETURN VALUE:
@@ -37,7 +39,8 @@ RETURN VALUE:
     }
 /******************
 NAME: toggleActor
-PURPOSE:	            
+PURPOSE:	
+    Display Animation with jQuery  	            
 PARAMETERS:
     event
 RETURN VALUE:
@@ -49,7 +52,8 @@ RETURN VALUE:
 }
 /******************
 NAME: toggleActor
-PURPOSE:	            
+PURPOSE:	
+    Display Animation with jQuery  	            
 PARAMETERS:
     event
 RETURN VALUE:
@@ -65,7 +69,8 @@ RETURN VALUE:
     }
 /******************
 NAME: slideUpActor
-PURPOSE:	            
+PURPOSE:	
+    Display Animation with jQuery  	            
 PARAMETERS:
     event
 RETURN VALUE:
@@ -77,7 +82,8 @@ RETURN VALUE:
 }
 /******************
 NAME: slideDownActor
-PURPOSE:	            
+PURPOSE:	
+    Display Animation with jQuery  	            
 PARAMETERS:
     event
 RETURN VALUE:
@@ -89,7 +95,8 @@ RETURN VALUE:
     }
 /******************
 NAME: fadeInActor
-PURPOSE:	            
+PURPOSE:	
+    Display Animation with jQuery  	            
 PARAMETERS:
     event
 RETURN VALUE:
@@ -101,7 +108,8 @@ RETURN VALUE:
     }
 /******************
 NAME: fadeOutActor
-PURPOSE:	            
+PURPOSE:	
+    Display Animation with jQuery  	            
 PARAMETERS:
     event
 RETURN VALUE:
@@ -113,7 +121,9 @@ RETURN VALUE:
     }
 /******************
 NAME: fadeToActor
-PURPOSE:	            
+PURPOSE:	
+    Display Animation with jQuery  	
+    Display Animation with jQuery        
 PARAMETERS:
     event
 RETURN VALUE:
@@ -126,7 +136,8 @@ RETURN VALUE:
     }  
 /******************
 NAME: fadeToggleActor
-PURPOSE:	            
+PURPOSE:	
+    Display Animation with jQuery  	            
 PARAMETERS:
     event
 RETURN VALUE:
@@ -138,7 +149,8 @@ RETURN VALUE:
     }
 /******************
 NAME: fadeDelayActor
-PURPOSE:	            
+PURPOSE:	
+    Display Animation with jQuery  	            
 PARAMETERS:
     event
 RETURN VALUE:
@@ -153,7 +165,8 @@ RETURN VALUE:
 /*ANIMATION*/   
 /******************
 NAME: topEdge
-PURPOSE:	            
+PURPOSE:	
+    Display Animation with jQuery  	            
 PARAMETERS:
     event
 RETURN VALUE:
@@ -166,7 +179,8 @@ function topEdge(event) {
 }  
 /******************
 NAME: leftEdge
-PURPOSE:	            
+PURPOSE:	
+    Display Animation with jQuery  	            
 PARAMETERS:
     event
 RETURN VALUE:
@@ -179,7 +193,8 @@ function leftEdge(event) {
 }  
 /******************
 NAME: rightEdge
-PURPOSE:	            
+PURPOSE:	
+    Display Animation with jQuery  	            
 PARAMETERS:
     event
 RETURN VALUE:
@@ -193,7 +208,8 @@ function rightEdge(event) {
 }  
 /******************
 NAME: bottomEdge
-PURPOSE:	            
+PURPOSE:	
+    Display Animation with jQuery  	            
 PARAMETERS:
     event
 RETURN VALUE:
@@ -207,7 +223,8 @@ function bottomEdge(event) {
 }  
 /******************
 NAME: nudgeRight
-PURPOSE:	            
+PURPOSE:	
+    Display Animation with jQuery  	            
 PARAMETERS:
     event
 RETURN VALUE:
@@ -218,7 +235,8 @@ function nudgeRight(event) {
 }
 /******************
 NAME: nudgeLeft
-PURPOSE:	            
+PURPOSE:	
+    Display Animation with jQuery  	            
 PARAMETERS:
     event
 RETURN VALUE:
@@ -229,7 +247,8 @@ function nudgeLeft(event) {
 }
 /******************
 NAME: glide
-PURPOSE:	            
+PURPOSE:	
+    Display Animation with jQuery  	            
 PARAMETERS:
     event
 RETURN VALUE:
@@ -245,7 +264,8 @@ function glide(event) {
 }
 /******************
 NAME: easing
-PURPOSE:	            
+PURPOSE:	
+    Display Animation with jQuery  	            
 PARAMETERS:
     event
 RETURN VALUE:
@@ -262,7 +282,8 @@ function easing(event) {
 
 /******************
 NAME: resetActor
-PURPOSE:	            
+PURPOSE:	
+    Display Animation with jQuery  	            
 PARAMETERS:
     event
 RETURN VALUE:

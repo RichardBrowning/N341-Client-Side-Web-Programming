@@ -14,6 +14,7 @@ $(document).ready(function(){
         /******************
         NAME: showActor
         PURPOSE:	
+            Display Animation with jQuery  	
             
         PARAMETERS:
             none
@@ -27,6 +28,7 @@ $(document).ready(function(){
         /******************
         NAME: hideActor
         PURPOSE:	
+            Display Animation with jQuery  	
             
         PARAMETERS:
             none
@@ -40,6 +42,7 @@ $(document).ready(function(){
         /******************
         NAME: toggleActor
         PURPOSE:	
+            Display Animation with jQuery  	
             Switch case version of judging when direction to move
         PARAMETERS:
             none
@@ -53,6 +56,7 @@ $(document).ready(function(){
         /******************
         NAME: toggleActor
         PURPOSE:	
+            Display Animation with jQuery  	
         PARAMETERS:
             none
         RETURN VALUE:
@@ -71,6 +75,7 @@ $(document).ready(function(){
         /******************
         NAME: slideUpActor
         PURPOSE:	
+            Display Animation with jQuery  	
         PARAMETERS:
             none
         RETURN VALUE:
@@ -83,6 +88,7 @@ $(document).ready(function(){
         /******************
         NAME: slideDownActor
         PURPOSE:	
+            Display Animation with jQuery  	
         PARAMETERS:
             none
         RETURN VALUE:
@@ -95,6 +101,7 @@ $(document).ready(function(){
         /******************
         NAME: fadeInActor
         PURPOSE:	
+            Display Animation with jQuery  	
         PARAMETERS:
             none
         RETURN VALUE:
@@ -107,6 +114,7 @@ $(document).ready(function(){
         /******************
         NAME: fadeOutActor
         PURPOSE:	
+            Display Animation with jQuery  	
         PARAMETERS:
             none
         RETURN VALUE:
@@ -119,6 +127,7 @@ $(document).ready(function(){
         /******************
         NAME: fadeOutActor
         PURPOSE:	
+            Display Animation with jQuery  	
         PARAMETERS:
             none
         RETURN VALUE:
