@@ -16,7 +16,7 @@ fieldset{
 	border-style: solid;
 	border-color: black;
 }
-.animationconsole #controls { 
+.console #controls { 
 	width: 24%; 
 	height: 740px; 
 	padding: 4px;
@@ -29,7 +29,7 @@ fieldset{
 	border-radius: 5px;
 }
 
-.animationconsole #actor {
+.console #actor {
 	width: 100px;
 	height: 100px;
 	margin: -50px 0 0 -50px;
@@ -43,10 +43,10 @@ fieldset{
 	background-color: rgb(238, 238, 72);
 }
 
-#box_text {  
+#actor_text {  
 	padding-top: 15px; 
 }
-.animationconsole #stage {  
+.console #stage {  
 	width: 73%; 
 	height: 740px; 
 
@@ -57,7 +57,7 @@ fieldset{
 	background-color: #fff; 
 	
 	z-index: -3; }
-p.box_text {  padding-top: 15px; }
+p.actor_text {  padding-top: 15px; }
 
   /*Link buttons style*/
 button{

@@ -32,11 +32,15 @@
     </head> <!--end of head-->
 
     <body>
-        <div class="animationconsole">
+        <!--main section-->
+        <div class="console">
+            <!--buttons area-->
             <div id="controls">
+                <!--form to keep field set in a column-->
                 <form>
+                <!--nudge field set-->
                 <fieldset>
-                    <legend>show</legend>
+                    <legend>Show</legend>
                     <button type="button" id="show">show</button>
                     <button type="button" id="hide">hide</button>
                     <button type="button" id="slideUp">slideUp</button>
@@ -44,46 +48,51 @@
                     <button type="button" id="toggleSpeed">toggle with speed</button>
                     <button type="button" id="toggleSwitch">toggle with switch</button>
                 </fieldset>
+                <!--fade field set-->
                 <fieldset>
-                    <legend>fade</legend>
+                    <legend>Fade</legend>
                     <button type="button" id="fadeIn">Fade In</button>
                     <button type="button" id="fadeOut">Fade Out</button>
                     <button type="button" id="fadeTo">50% Fade</button>
                     <button type="button" id="fadeToggle">Toggle Fade</button>
                     <button type="button" id="fadeDelay">Delay Fade</button>
                 </fieldset>
+                <!--move field set-->
                 <fieldset>
-                    <legend>move</legend>
+                    <legend>Move with Animation</legend>
                     <button type="button" id="topEdge">top-edge</button>
                     <button type="button" id="leftEdge">left-edge</button>
                     <button type="button" id="rightEdge">right-edge</button>
                     <button type="button" id="bottomEdge">bottom-edge</button>
                 </fieldset>
-                
+                <!--nudge field set-->
                 <fieldset>
-                    <legend>nudge</legend>
+                    <legend>Nudge</legend>
                     <button type="button" id="left">&lt;--</button>
                     <button type="button" id="right">--></button>
                 </fieldset>
                 <fieldset>
-                    <legend>animation</legend>
+                    <legend>Animation</legend>
                     <button type="button" id="glide">glide</button>   
                     <button type="button" id="easing">easing</button>                 
                 </fieldset>
                 <fieldset>
-                    <legend>reset</legend>
+                    <legend>Reset</legend>
                     <button type="button" id="reset">reset</button>
                 </fieldset>
 
                 </form>
+                <!--end of controls-->
             </div>
 
             <div id="stage">
-                <!--element ot be moved-->
+                <!--element to be moved-->
                 <div id="actor">
-                    <h2 id="box_text">move me</h2>
+                    <h2 id="actor_text">move me</h2>
                 </div>
+            <!--end of stage-->
             </div>
+        <!--end of main-->
         </div>
     <!--end of body-->
     </body>

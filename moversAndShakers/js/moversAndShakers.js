@@ -17,7 +17,7 @@ $(document).ready(function(){
             Display Animation with jQuery  	
             
         PARAMETERS:
-            none
+            event
         RETURN VALUE:
             none, but show animation
         *******************/
@@ -31,7 +31,7 @@ $(document).ready(function(){
             Display Animation with jQuery  	
             
         PARAMETERS:
-            none
+            event
         RETURN VALUE:
             none, but show animation
         *******************/
@@ -40,12 +40,12 @@ $(document).ready(function(){
 			event.data.element.hide(intSpeed);
 		}
         /******************
-        NAME: toggleActor
+        NAME: toggleActorSpeed
         PURPOSE:	
             Display Animation with jQuery  	
             Switch case version of judging when direction to move
         PARAMETERS:
-            none
+            event
         RETURN VALUE:
             none, but show animation
         *******************/
@@ -54,11 +54,11 @@ $(document).ready(function(){
             event.data.element.toggle(intSpeed);
         }
         /******************
-        NAME: toggleActor
+        NAME: toggleActorSwitch
         PURPOSE:	
             Display Animation with jQuery  	
         PARAMETERS:
-            none
+            event
         RETURN VALUE:
             none, but show animation
         *******************/
@@ -77,7 +77,7 @@ $(document).ready(function(){
         PURPOSE:	
             Display Animation with jQuery  	
         PARAMETERS:
-            none
+            event
         RETURN VALUE:
             none, but show animation
         *******************/
@@ -90,7 +90,7 @@ $(document).ready(function(){
         PURPOSE:	
             Display Animation with jQuery  	
         PARAMETERS:
-            none
+            event
         RETURN VALUE:
             none, but show animation
         *******************/
@@ -103,7 +103,7 @@ $(document).ready(function(){
         PURPOSE:	
             Display Animation with jQuery  	
         PARAMETERS:
-            none
+            event
         RETURN VALUE:
             none, but show animation
         *******************/
@@ -116,7 +116,7 @@ $(document).ready(function(){
         PURPOSE:	
             Display Animation with jQuery  	
         PARAMETERS:
-            none
+            event
         RETURN VALUE:
             none, but show animation
         *******************/
@@ -125,11 +125,11 @@ $(document).ready(function(){
                 event.data.element.fadeOut(intSpeed);
             }
         /******************
-        NAME: fadeOutActor
+        NAME: resetActor
         PURPOSE:	
             Display Animation with jQuery  	
         PARAMETERS:
-            none
+            event
         RETURN VALUE:
             none, but show animation
         *******************/
