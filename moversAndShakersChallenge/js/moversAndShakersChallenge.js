@@ -111,11 +111,6 @@ RETURN VALUE:
         var intSpeed = event.data.speed;
         event.data.element.fadeOut(intSpeed);
     }
-    function fadeDelayActor(event) {
-        var intSpeed = event.data.speed;
-        var intDelay = event.data.delay;
-        event.data.element.delay(intDelay).fadeOut(intSpeed);
-    }
 /******************
 NAME: fadeToActor
 PURPOSE:	            
@@ -129,8 +124,67 @@ RETURN VALUE:
         var decOpacity = event.data.opacity;
         event.data.element.fadeTo(intSpeed, decOpacity);
     }  
+/******************
+NAME: fadeToActor
+PURPOSE:	            
+PARAMETERS:
+    target Id
+RETURN VALUE:
+    print content to target Id 
+*******************/
+    function fadeToggleActor(event) {
+        var intSpeed = event.data.speed;
+        event.data.element.fadeToggle(intSpeed);
+    }
+/******************
+NAME: fadeToActor
+PURPOSE:	            
+PARAMETERS:
+    target Id
+RETURN VALUE:
+    print content to target Id 
+*******************/
+    function fadeDelayActor(event) {
+        var intSpeed = event.data.speed;
+        var intDelay = event.data.delay;
+        event.data.element.delay(intDelay).fadeOut(intSpeed);
+    }
+
 /*ANIMATION*/    
-    
+function topEdge(event) {
+    var intMargin = event.data.margin;
+    resetActor(event);
+    event.data.element.animate({top:intMargin});
+}  
+function leftEdge(event) {
+    var intMargin = event.data.margin;
+    resetActor(event);
+    event.data.element.animate({left:intMargin});
+}  
+function rightEdge(event) {
+    var elParent = event.data.element.parent()
+    var intMargin = elParent.width() - event.data.margin - 15;
+    resetActor(event);
+    event.data.element.animate({left:intMargin});
+}  
+function bottomEdge(event) {
+    var elParent = event.data.element.parent()
+    var intMargin = elParent.height() - event.data.margin - 15;
+    resetActor(event);
+    event.data.element.animate({top:intMargin});
+}  
+function nudgeRight(event) {
+
+}
+function nudgeLeft(event) {
+
+}
+function glide(event) {
+
+}
+function easing(event) {
+
+}
 
 /******************
 NAME: resetActor
@@ -142,7 +196,13 @@ RETURN VALUE:
 *******************/
     function resetActor(event) {
         var elActor = event.data.element;
-        elActor.show(450).css('position','absolute');
+        elActor.toggle(false);
+        elActor.css({'position':'absolute',
+                        'top': '50%',
+                        'left': '50%',
+                        'margin': '-50px 0 0 -50px',
+                        'opacity':1
+                    }).fadeIn(1000);
     }        
 
     /******************
@@ -166,22 +226,24 @@ RETURN VALUE:
         $('button#toggleSpeed').on('click',{element: elActor, speed: 1000},toggleActorSpeed);//multiple parameters for one function call
         $('button#toggleSwitch').on('click',{element: elActor},toggleActorSwitch);
 
-        //slide
-        $('button#slideUp').on('click',{element: elActor, speed: 800},slideUpActor);
-        $('button#slideDown').on('click',{element: elActor, speed: 800},slideDownActor);
+        
         //fade
         $('button#fadeIn').on('click',{element: elActor, speed: 1000}, fadeInActor);
         $('button#fadeOut').on('click',{element: elActor, speed: 1000}, fadeOutActor);
         $('button#fadeTo').on('click',{element: elActor, speed: 600, opacity: 0.5}, fadeToActor);
-        $('button#fadeToggle').on('click',{element: elActor, speed: 400}, fadeToActor);
+        $('button#fadeToggle').on('click',{element: elActor, speed: 400}, fadeToggleActor);
         $('button#fadeDelay').on('click',{element: elActor, speed: 600, delay: 500}, fadeDelayActor);
-        
+        1
         //animation
-        $('button#')
-        $('button#')
-        $('button#')
-        $('button#')
-        $('button#')
+        const MARGIN = 50;
+        $('button#topEdge').on('click',{element: elActor, margin: MARGIN}, topEdge);
+        $('button#leftEdge').on('click',{element: elActor, margin: MARGIN}, leftEdge);
+        $('button#rightEdge').on('click',{element: elActor, margin: MARGIN}, rightEdge);
+        $('button#bottomEdge').on('click',{element: elActor, margin: MARGIN}, bottomEdge);
+
+        //slide
+        $('button#slideUp').on('click',{element: elActor, speed: 800},slideUpActor);
+        $('button#slideDown').on('click',{element: elActor, speed: 800},slideDownActor);
         //reset
         $('button#reset').on('click',{element: elActor}, resetActor);
     }())
