@@ -264,9 +264,9 @@ function easing(event) {
 NAME: resetActor
 PURPOSE:	            
 PARAMETERS:
-    target Id
+    event
 RETURN VALUE:
-    print content to target Id 
+    none, but show animation
 *******************/
     function resetActor(event) {
         var elActor = event.data.element;

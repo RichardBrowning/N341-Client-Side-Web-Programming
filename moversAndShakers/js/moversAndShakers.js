@@ -44,7 +44,7 @@ $(document).ready(function(){
         PARAMETERS:
             none
         RETURN VALUE:
-            none but set a string to describe direction
+            none, but show animation
         *******************/
         function toggleActorSpeed(event) {
             var intSpeed = event.data.speed;
@@ -53,11 +53,10 @@ $(document).ready(function(){
         /******************
         NAME: toggleActor
         PURPOSE:	
-            Switch case version of judging when direction to move
         PARAMETERS:
             none
         RETURN VALUE:
-            none but set a string to describe direction
+            none, but show animation
         *******************/
         function toggleActorSwitch(event) {
             var elActor = event.data.element;
@@ -72,11 +71,10 @@ $(document).ready(function(){
         /******************
         NAME: slideUpActor
         PURPOSE:	
-            print to certain element of the HTML page
         PARAMETERS:
-            target Id
+            none
         RETURN VALUE:
-            print content to target Id 
+            none, but show animation
         *******************/
         function slideUpActor(event) {
             var intSpeed = event.data.speed;
@@ -85,11 +83,10 @@ $(document).ready(function(){
         /******************
         NAME: slideDownActor
         PURPOSE:	
-            print to certain element of the HTML page
         PARAMETERS:
-            target Id
+            none
         RETURN VALUE:
-            print content to target Id 
+            none, but show animation
         *******************/
             function slideDownActor(event) {
                 var intSpeed = event.data.speed;
@@ -98,11 +95,10 @@ $(document).ready(function(){
         /******************
         NAME: fadeInActor
         PURPOSE:	
-            print to certain element of the HTML page
         PARAMETERS:
-            target Id
+            none
         RETURN VALUE:
-            print content to target Id 
+            none, but show animation
         *******************/
             function fadeInActor(event) {
                 var intSpeed = event.data.speed;
@@ -111,11 +107,10 @@ $(document).ready(function(){
         /******************
         NAME: fadeOutActor
         PURPOSE:	
-            print to certain element of the HTML page
         PARAMETERS:
-            target Id
+            none
         RETURN VALUE:
-            print content to target Id 
+            none, but show animation
         *******************/
             function fadeOutActor(event) {
                 var intSpeed = event.data.speed;
@@ -124,11 +119,10 @@ $(document).ready(function(){
         /******************
         NAME: fadeOutActor
         PURPOSE:	
-            print to certain element of the HTML page
         PARAMETERS:
-            target Id
+            none
         RETURN VALUE:
-            print content to target Id 
+            none, but show animation
         *******************/
             function resetActor(event) {
                 var elActor = event.data.element;
