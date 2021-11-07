@@ -15,7 +15,7 @@ $(document).ready(function(){
 NAME: showActor
 PURPOSE:	            
 PARAMETERS:
-    none
+    event
 RETURN VALUE:
     none, but show animation
 *******************/
@@ -27,7 +27,7 @@ RETURN VALUE:
 NAME: hideActor
 PURPOSE:	            
 PARAMETERS:
-    none
+    event
 RETURN VALUE:
     none, but show animation
 *******************/
@@ -39,9 +39,9 @@ RETURN VALUE:
 NAME: toggleActor
 PURPOSE:	            
 PARAMETERS:
-    none
+    event
 RETURN VALUE:
-    none but set a string to describe direction
+    none, but show animation
 *******************/
     function toggleActorSpeed(event) {
         var intSpeed = event.data.speed;
@@ -51,9 +51,9 @@ RETURN VALUE:
 NAME: toggleActor
 PURPOSE:	            
 PARAMETERS:
-    none
+    event
 RETURN VALUE:
-    none but set a string to describe direction
+    none, but show animation
 *******************/
     function toggleActorSwitch(event) {
         var elActor = event.data.element;                
@@ -67,9 +67,9 @@ RETURN VALUE:
 NAME: slideUpActor
 PURPOSE:	            
 PARAMETERS:
-    target Id
+    event
 RETURN VALUE:
-    print content to target Id 
+    none, but show animation
 *******************/
     function slideUpActor(event) {
     var intSpeed = event.data.speed;
@@ -79,9 +79,9 @@ RETURN VALUE:
 NAME: slideDownActor
 PURPOSE:	            
 PARAMETERS:
-    target Id
+    event
 RETURN VALUE:
-    print content to target Id 
+    none, but show animation
 *******************/
     function slideDownActor(event) {
         var intSpeed = event.data.speed;
@@ -91,9 +91,9 @@ RETURN VALUE:
 NAME: fadeInActor
 PURPOSE:	            
 PARAMETERS:
-    target Id
+    event
 RETURN VALUE:
-    print content to target Id 
+    none, but show animation
 *******************/
     function fadeInActor(event) {
         var intSpeed = event.data.speed;
@@ -103,9 +103,9 @@ RETURN VALUE:
 NAME: fadeOutActor
 PURPOSE:	            
 PARAMETERS:
-    target Id
+    event
 RETURN VALUE:
-    print content to target Id 
+    none, but show animation
 *******************/
     function fadeOutActor(event) {
         var intSpeed = event.data.speed;
@@ -115,9 +115,9 @@ RETURN VALUE:
 NAME: fadeToActor
 PURPOSE:	            
 PARAMETERS:
-    target Id
+    event
 RETURN VALUE:
-    print content to target Id 
+    none, but show animation
 *******************/
     function fadeToActor(event) {
         var intSpeed = event.data.speed;
@@ -125,24 +125,24 @@ RETURN VALUE:
         event.data.element.fadeTo(intSpeed, decOpacity);
     }  
 /******************
-NAME: fadeToActor
+NAME: fadeToggleActor
 PURPOSE:	            
 PARAMETERS:
-    target Id
+    event
 RETURN VALUE:
-    print content to target Id 
+    none, but show animation
 *******************/
     function fadeToggleActor(event) {
         var intSpeed = event.data.speed;
         event.data.element.fadeToggle(intSpeed);
     }
 /******************
-NAME: fadeToActor
+NAME: fadeDelayActor
 PURPOSE:	            
 PARAMETERS:
-    target Id
+    event
 RETURN VALUE:
-    print content to target Id 
+    none, but show animation
 *******************/
     function fadeDelayActor(event) {
         var intSpeed = event.data.speed;
@@ -150,40 +150,114 @@ RETURN VALUE:
         event.data.element.delay(intDelay).fadeOut(intSpeed);
     }
 
-/*ANIMATION*/    
+/*ANIMATION*/   
+/******************
+NAME: topEdge
+PURPOSE:	            
+PARAMETERS:
+    event
+RETURN VALUE:
+    none, but show animation
+*******************/ 
 function topEdge(event) {
     var intMargin = event.data.margin;
     resetActor(event);
     event.data.element.animate({top:intMargin});
 }  
+/******************
+NAME: leftEdge
+PURPOSE:	            
+PARAMETERS:
+    event
+RETURN VALUE:
+    none, but show animation
+*******************/
 function leftEdge(event) {
     var intMargin = event.data.margin;
     resetActor(event);
     event.data.element.animate({left:intMargin});
 }  
+/******************
+NAME: rightEdge
+PURPOSE:	            
+PARAMETERS:
+    event
+RETURN VALUE:
+    none, but show animation
+*******************/
 function rightEdge(event) {
     var elParent = event.data.element.parent()
     var intMargin = elParent.width() - event.data.margin - 15;
     resetActor(event);
     event.data.element.animate({left:intMargin});
 }  
+/******************
+NAME: bottomEdge
+PURPOSE:	            
+PARAMETERS:
+    event
+RETURN VALUE:
+    none, but show animation
+*******************/
 function bottomEdge(event) {
     var elParent = event.data.element.parent()
     var intMargin = elParent.height() - event.data.margin - 15;
     resetActor(event);
     event.data.element.animate({top:intMargin});
 }  
+/******************
+NAME: nudgeRight
+PURPOSE:	            
+PARAMETERS:
+    event
+RETURN VALUE:
+    none, but show animation
+*******************/
 function nudgeRight(event) {
-
+    event.data.element.animate({left:'+=10'});
 }
+/******************
+NAME: nudgeLeft
+PURPOSE:	            
+PARAMETERS:
+    event
+RETURN VALUE:
+    none, but show animation
+*******************/
 function nudgeLeft(event) {
-
+    event.data.element.animate({left:'-=10'});
 }
+/******************
+NAME: glide
+PURPOSE:	            
+PARAMETERS:
+    event
+RETURN VALUE:
+    none, but show animation
+*******************/
 function glide(event) {
-
+    var elParent = event.data.element.parent()
+    var intMargin = event.data.margin;
+    var intMarginTop = elParent.height() - intMargin - 15;
+    var intMarginLeft = elParent.width() - intMargin - 15;
+    event.data.element.css({top:intMargin, left:intMargin});
+    event.data.element.animate({top:intMarginTop, left:intMarginLeft}, 4000)
 }
+/******************
+NAME: easing
+PURPOSE:	            
+PARAMETERS:
+    event
+RETURN VALUE:
+    none, but show animation
+*******************/
 function easing(event) {
-
+    var elParent = event.data.element.parent()
+    var intMargin = event.data.margin;
+    var intMarginTop = elParent.height() - intMargin - 15;
+    var intMarginLeft = elParent.width() - intMargin - 15;
+    event.data.element.css({top:intMargin, left:intMargin});
+    event.data.element.animate({top:intMarginTop, left:intMarginLeft},4000, 'easeOutBounce')
 }
 
 /******************
@@ -225,7 +299,9 @@ RETURN VALUE:
         //toggle
         $('button#toggleSpeed').on('click',{element: elActor, speed: 1000},toggleActorSpeed);//multiple parameters for one function call
         $('button#toggleSwitch').on('click',{element: elActor},toggleActorSwitch);
-
+        //slide
+        $('button#slideUp').on('click',{element: elActor, speed: 800},slideUpActor);
+        $('button#slideDown').on('click',{element: elActor, speed: 800},slideDownActor);
         
         //fade
         $('button#fadeIn').on('click',{element: elActor, speed: 1000}, fadeInActor);
@@ -240,10 +316,15 @@ RETURN VALUE:
         $('button#leftEdge').on('click',{element: elActor, margin: MARGIN}, leftEdge);
         $('button#rightEdge').on('click',{element: elActor, margin: MARGIN}, rightEdge);
         $('button#bottomEdge').on('click',{element: elActor, margin: MARGIN}, bottomEdge);
+        
+        //nudge
+        $('button#left').on('click',{element: elActor}, nudgeLeft);
+        $('button#right').on('click',{element: elActor}, nudgeRight);
 
-        //slide
-        $('button#slideUp').on('click',{element: elActor, speed: 800},slideUpActor);
-        $('button#slideDown').on('click',{element: elActor, speed: 800},slideDownActor);
+        //glide
+        $('button#glide').on('click',{element: elActor, margin: MARGIN}, glide);
+        //easing
+        $('button#easing').on('click',{element: elActor, margin: MARGIN}, easing);
         //reset
         $('button#reset').on('click',{element: elActor}, resetActor);
     }())
