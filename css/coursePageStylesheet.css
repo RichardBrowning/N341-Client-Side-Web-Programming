@@ -92,8 +92,10 @@ header{
 /* Setting the formatting for the id="asssignments" division */
 #assignments{			
 	width: 80%;
-    height: 100%;
+    height: auto;
 	margin: 0 auto;
+    overflow: hidden;
+
 	box-shadow: 0 2px 15px #EEE;
 	min-height: 300px;
 	padding: 15px;
@@ -114,7 +116,7 @@ header{
 	color: white;
 	border-radius: 5px;
 	padding: 2px;
-    margin: 10px;
+    margin: 5px;
 }
 
 /*Link buttons style*/
