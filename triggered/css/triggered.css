@@ -1,0 +1,59 @@
+/**************************************
+ TITLE: triggered.css					
+ AUTHOR: Luxi Liao	(LL)	
+ PURPOSE: to stylize the triggered.html
+ ORIGINALLY CREATED ON: 10 November 2021
+ LAST MODIFIED ON: 10 November 2021
+ LAST MODIFIED BY: Luxi Liao (LL)	
+ MODIFICATION HISTORY:
+ 10 November 2021 - Added basic format
+    give page a basic look. (LL)	
+ 10 November 2021 - Attempting to add symbols to output area. (LL)	
+***************************************/
+
+/*applied style for whole webpage*/
+body{
+    /*megical transparent background*/
+    background-color: rgba(0, 30, 56, 255);
+    background-blend-mode: lighten;
+    /*centralize*/
+    align-items: center;
+}
+/*adding aesthetical style to the line inside box-container*/
+hr { display: block; height: 1px;
+    border: 0; border-top: 1px solid #ccc;
+    margin: 1em 0; padding: 0; 
+}
+/*emulate apperance of a windows on webpage*/
+#box-container{
+    /*megical transparent background image*/
+    background-image: url(../resources/hello-world.png);
+    background-color: rgba(0, 30, 56, 255);
+    background-blend-mode: lighten;
+    background-size: 100%; 
+    background-repeat: no-repeat;
+
+    /*beautify window*/
+    margin: 0 auto; 
+    margin-top: 30px;
+    width: 60%; 
+    border-radius: 5px; 
+    border-style: dashed; 
+    border-color: #228265;
+}
+
+/*title and subtitle font in the pseudo-window*/
+.title{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #108f78;
+    text-align:center;
+    font-size: 64px;
+    padding:5%
+}
+.subtitle{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #88b3f7;
+    text-align:center;
+    padding:5%
+}
+
