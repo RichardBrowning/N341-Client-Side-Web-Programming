@@ -19,6 +19,15 @@ body{
     /*centralize*/
     align-items: center;
 }
+
+#block{
+    margin: 0 auto; 
+    width: 75%; 
+    border-radius: 5px; 
+    border-style: dashed; 
+    border-color: blueviolet;
+}
+
 /*adding aesthetical style to the line inside box-container*/
 hr { display: block; height: 1px;
     border: 0; border-top: 1px solid #ccc;
@@ -27,7 +36,6 @@ hr { display: block; height: 1px;
 /*emulate apperance of a windows on webpage*/
 #box-container{
     /*megical transparent background image*/
-    background-image: url(../resources/hello-world.png);
     background-color: rgba(0, 30, 56, 255);
     background-blend-mode: lighten;
     background-size: 100%; 
@@ -57,3 +65,41 @@ hr { display: block; height: 1px;
     padding:5%
 }
 
+/*style for keyboard event area*/
+#keyboard {
+    /*megical transparent background image*/
+    background-image: url(../resources/hello-world.png);
+    background-color: rgba(0, 30, 56, 255);
+    background-blend-mode: lighten;
+    background-size: 100%; 
+    background-repeat: no-repeat;
+
+    /*beautify window*/
+    margin: 0 auto; 
+    margin-top: 30px;
+    width: 60%; 
+    border-radius: 5px; 
+    border-style: dashed; 
+    border-color: #228265;
+}
+
+/*style for mouse event area*/
+#mouse button{
+    width: 90%;
+    text-align: center;
+    margin: 10px auto;
+    border-radius: 10px;
+    padding:10px 20px ;
+
+    background-size: 100%;
+    background-color: rgba(17, 116, 70, 0.3);
+    background-blend-mode: lighten;
+    
+    color: #acacac;/*font color*/
+}
+
+#windowHeight {
+    border-radius: 5px; 
+    border-style: dashed; 
+    border-color: blueviolet;
+}

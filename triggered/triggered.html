@@ -16,7 +16,7 @@
         <!--basic configuration-->
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <!-- This <title> displays in the page tab -->
-        <title>No Found</title>
+        <title>Events Triggered</title>
         <!--Style Sheet -->
         <link rel="stylesheet" type="text/css" href="css/triggered.css">
         <!-- Links to the external jQuery library -->
@@ -27,8 +27,15 @@
     </head> <!--end of head-->
     
     <body>
+        <h6 id="windowHeight"></h6>
+        <h6 id="windowWidth"></h6>
         <!--div start-->
-        <div style="margin: 0 auto; width: 75%; border-radius: 5px; border-style: dashed; border-color: blueviolet;">
+        <div id="block">
+            <div id="sizeIndicate">
+                
+                <h6></h6>
+                <h6></h6>
+            </div>
             <!--begain of largest font title-->
             <h2 style="text-align:center; font-size: 64px;">
                 Listening to your Mouse and Keyboard
@@ -39,13 +46,17 @@
             <!--page not found-->
             <!--begain of h3-->
             <h3 style="text-align:center">
-                Please Input on your Keyboard
+                Try Resizing Window, Click on Mouse, and Input on your Keyboard.
             <!--end of h3-->
             </h3>
 
             <!--div for keyboard input-->
-            <div>
+            <div id="keyboard">
 
+            </div>
+            <!--div for mouse event-->
+            <div id="mouse">
+                
             </div>
             <!--end of div-->
         </div>

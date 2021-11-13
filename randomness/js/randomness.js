@@ -23,9 +23,9 @@ $(document).ready(
     function(){
         function Pirate(rank, guess, div) {
             //Properties
-            this.rank= rank;
-            this.guess= guess,
-            this.div= div;
+            this.rank = rank;
+            this.guess = guess,
+            this.div = div;
 
             /******************
             NAME: speak
