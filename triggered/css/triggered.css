@@ -12,15 +12,28 @@
 ***************************************/
 
 /*applied style for whole webpage*/
-body{
+body {
     /*megical transparent background*/
     background-color: rgba(0, 30, 56, 255);
     background-blend-mode: lighten;
     /*centralize*/
     align-items: center;
 }
+span {
+    width: min-content;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: aliceblue;
+    text-align: center;
+    padding: 5%;
+    margin: 5%;
+}
 
-#block{
+input {
+    border-radius: 5px;
+    width: 99%;
+}
+
+#block {
     margin: 0 auto; 
     width: 75%; 
     border-radius: 5px; 
@@ -34,8 +47,9 @@ hr { display: block; height: 1px;
     margin: 1em 0; padding: 0; 
 }
 /*emulate apperance of a windows on webpage*/
-#box-container{
-    /*megical transparent background image*/
+#box-container {
+    /*magical transparent background image*/
+    background-image: url(./hello-world.png);
     background-color: rgba(0, 30, 56, 255);
     background-blend-mode: lighten;
     background-size: 100%; 
@@ -54,9 +68,10 @@ hr { display: block; height: 1px;
 .title{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: #108f78;
-    text-align:center;
+    text-align: center;
     font-size: 64px;
-    padding:5%
+    padding: 5%;
+    margin: 5%;
 }
 .subtitle{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -65,10 +80,16 @@ hr { display: block; height: 1px;
     padding:5%
 }
 
-/*style for keyboard event area*/
+
+/*style for event area*/
+#scroll{
+    margin: 0 auto; 
+    margin-top: 20px;
+    padding: 10px;
+    width: 60%; 
+}
 #keyboard {
     /*megical transparent background image*/
-    background-image: url(../resources/hello-world.png);
     background-color: rgba(0, 30, 56, 255);
     background-blend-mode: lighten;
     background-size: 100%; 
@@ -76,30 +97,45 @@ hr { display: block; height: 1px;
 
     /*beautify window*/
     margin: 0 auto; 
-    margin-top: 30px;
+    margin-top: 20px;
+    padding: 10px;
     width: 60%; 
     border-radius: 5px; 
-    border-style: dashed; 
+    border-style: solid; 
     border-color: #228265;
 }
 
 /*style for mouse event area*/
 #mouse button{
-    width: 90%;
+    width: max-content;
     text-align: center;
-    margin: 10px auto;
+    margin: 20px;
     border-radius: 10px;
     padding:10px 20px ;
 
     background-size: 100%;
-    background-color: rgba(17, 116, 70, 0.3);
+    background-color: rgba(244, 236, 9, 0.975);
     background-blend-mode: lighten;
     
-    color: #acacac;/*font color*/
+    color: #373737;/*font color*/
 }
 
 #windowHeight {
-    border-radius: 5px; 
-    border-style: dashed; 
-    border-color: blueviolet;
+    text-align: center;
+    color: #ccc;
+    font-family: 'Courier New', Courier, monospace;
+}
+#windowWidth {
+    float: right;
+    margin-top: 25%;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    color: #ccc;
+}
+
+#sizeIndicate {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #88b3f7;
+    font-size: small;
+    text-align: center;
 }

@@ -14,39 +14,55 @@ $(document).ready(
     function() {
         /******************
         NAME: 
+            showAndFade
+        PURPOSE:
+            function to run to output fade and delete
+        PARAMETERS:
+            The target element and the text
+        RETURN VALUE:
+            void, but play animation 
+        *******************/
+        function showAndFade(strText, divTargetId){
+            divTargetId.css({
+                            'display': 'unset'
+                        });
+            //put content, delay, fadeout in a chain
+            divTargetId.html(strText).delay(150).fadeOut(300);
+            //delete, not needed, will be overwritten anyway
+        }
+        /******************
+        NAME: 
+            showScroll
+        PURPOSE:
+            function to run when scrolled
+        PARAMETERS:
+            The target div id name
+        RETURN VALUE:
+            void, but play animation 
+        *******************/
+        function showScroll() {
+            var elScrollIndicate = $("#scroll span");
+            //put to the section
+            showAndFade("The page has been scrolled", elScrollIndicate);
+        }
+
+        /******************
+        NAME: 
             showInput
         PURPOSE:
-            fucntion to run when page size changes
+            function to run when keypressed in input field
         PARAMETERS:
             The target div id name
         RETURN VALUE:
             void, but play animation 
         *******************/
-        showInput = function() {
-            //get area for showing
-
-            //put content
-
-            //breathing effect, fade out
-        }
-
-        /******************
-        NAME: 
-            showClick
-        PURPOSE:
-            fucntion to run when page size changes
-        PARAMETERS:
-            The target div id name
-        RETURN VALUE:
-            void, but play animation 
-        *******************/
-        showClick = function() {
-            //get area for showing
-
-            //fade in
-
-            //breathing effect, fade in
-        }
+       function showInput() {
+           //change color of the filed
+           $("input").css("background-color","#D6D6FF");
+           //show and fade out
+           elStatusShow = $('#keyStatus');
+           showAndFade("A key has been pressed", elStatusShow)
+       }
 
         /******************
         NAME: 
@@ -58,39 +74,61 @@ $(document).ready(
         RETURN VALUE:
             void, but play animation 
         *******************/
-        pageResize = function(){
+        function pageResize(){
             //get current windows size
-            var windowHeight = $(window).height();
-            var windowWidth = $(window).width();
-            var blockHeight = $('#block').height();
-            var blockWidth = $('#block').width();
-            //print windows size
-            //
+            var intWindowHeight = $(window).outerHeight();
+            var intWindowWidth = $(window).outerWidth();
+            var intBlockHeight = Math.round($("#box-container").height());
+            var intBlockWidth = Math.round($("#box-container").width());
+            //write window height 
+            $("#windowHeight").html(intWindowHeight);
+            //write window width
+            $("#windowWidth").html(intWindowWidth);
+            //write box-container height
+            $("b.height").html(intBlockHeight);
+            //write box-container width
+            $("b.width").html(intBlockWidth);
         }
+
+        /*initialize outputs*/
         /******************
         NAME: 
-            pageResize
+            IFFY
         PURPOSE:
-            fucntion to run when page size changes
+            fucntion to run to inistailly print 
         PARAMETERS:
-            The target div id name
+            none
         RETURN VALUE:
-            void, but play animation 
+            void
         *******************/
-
-        
+        (function(){
+            
+            pageResize();
+        }());
         /*event listeners*/
 
         //windows and document 
-        $(document).scroll();
+        //resize event
+        $(window).resize(pageResize);
+        //TODO scroll event
+        $(document).scroll(showScroll);
 
-        $(window).resize();
+        //TODO keyboard fucntions
+        $("input").keydown(function(){
+            $("input").css("background-color","#FFFFCC");
+        });   
+        $("input").keyup(showInput);
 
-        //mouse fucntions
-        $().keyup();
-
-        //keyboard fucntions
-        $().click();
+        //TODO mouse fucntions
+        $("button").mousedown(function () { 
+            $("button").html("Holding On");
+        });
+        $("button").mouseup(function () { 
+            $("button").html("Released hold");
+        });
+        $("button").mouseover(function () { 
+            $("button").html("Hovering Over");
+        });
     }
 
 )
