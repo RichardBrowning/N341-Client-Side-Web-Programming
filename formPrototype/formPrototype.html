@@ -1,0 +1,184 @@
+<!doctype html>
+<!--
+ TITLE: formPrototype.html		
+ AUTHOR: Luxi Liao	(LL)	
+ PURPOSE: Page demostrate form prototype
+ ORIGINALLY CREATED ON: 19 November 2021 
+ LAST MODIFIED ON: 19 November 2021 
+ LAST MODIFIED BY: Luxi Liao (LL)
+ MODIFICATION HISTORY:
+ 19 November 2021 - Adding basic content 
+ 	Give the page a basic look (LL)
+-->
+<!-- Tested on Microsoft Edge, Apple Safari, Google Chromium, and Mozilla FireFox -->
+<!-- button style differs across browsers -->
+
+<html lang="en">
+	<head>
+        <!--basic configuration-->
+        <!--meta http-equiv="Content-Type" content="text/html; charset=UTF-8"-->
+        <meta charset="utf-8">
+        <!-- This <title> displays in the page tab -->
+        <title>Sign Up</title>
+		<!-- This will link to your CSS stylesheet for formatting as soon as you create the file. The page will work without it, though. -->	
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+		<link rel="stylesheet" type="text/css" href="css/formPrototype.css">
+		<!-- This links to the jQuery library so js code will work -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+		<script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+		<!-- This links to the js code specific for this page -->
+		<script src="js/formPrototype.js"></script>
+        
+		<!--link rel="stylesheet" href="https://jqueryui.com/resources/demos/style.css"-->
+	</head>
+	<body>
+		<!--accordion as main navigation method-->
+		<div id = "infoForm">
+			<!--form includes senstitve info, so used post method-->
+			<form action="submitForm" method="post" autocomplete="on">
+				<div id="accordion">
+					<h3>
+						Basic Infomation
+					</h3>
+					<div>
+						<!--username-->
+						<p>
+							<label for="userName">User Name </label> 
+							<input id= "userName" name="userName" type="text"/>
+							<!--id for checkRepeatUsername-->
+						</p>
+						<!--real name, if visible-->
+						<p>
+							<label for="firstName">First Name </label> 
+							<input name="userName" type="text"/>
+						</p>
+						<p>
+							<label for="lastName">Last Name </label>
+							<input name="lastName" type="text"/>
+						</p> 
+						<p>
+							<label for="postfix">Postfix </label> 
+							<input id="postfix" name="postfix" type="text"/></p>
+							<!--add id for autocomplete-->
+						<p>
+							<label for="realNameVisable"> Make Real Name Visible? </label>
+							<input type="radio" name="realNameVisable" value="yes" checked />Yes 
+							<input type="radio" name="realNameVisable" value="no" />No
+						</p>
+						<!--pronounce-->
+<p>
+	<label for="pronounce">Pronounce</label>
+	<select name="pronounce">
+		<option value="he/him">He/Him</option>
+		<option value="she/her">She/Her</option>
+		<option value="they/them">They/Them</option>
+	</select>
+</p>
+						<!--birth date-->
+						<p>Date of Birth: <input id="birthday" name="birthdat" type="date" /></p>
+						<!--Phone and email-->
+						<p>Email: <input id="email" name="email" type="email" /></p>
+						<p>Phone: <input id="phone" name="phone" type="tel" /></p>
+						<!--Uplaod Avartar-->
+						<p>Upload Avatar <input id="avatar" type="file" accept="image/jpeg"/></p>
+					</div>
+						
+					<h3>
+						Password
+					</h3>
+					<div>
+							<!--password-->
+							<p>
+								<label for="Password">Password: </label>
+								<input type="password" id="new_password" name="new_password" title="Please Include at least One Uppercase Letter, Lowercase Letter and Digit."/><br/>
+							</p>
+							<!--confirm password-->
+							<p>
+								<label for="Verify Password">Verify Password: </label>
+								<input type="password" id="verifyPassword" name="verifyPassword" /><br/>
+								<input type="hidden" id="uuid" name="uuid" value="{{uuid}}" />
+							</p>
+							
+					</div>
+					<h3>
+						Region and Address 
+					</h3>
+					<div id="tabs">
+						<ul>
+							<li><a href="#tabs-1">Regin</a></li>
+							<li><a href="#tabs-2">Adddress</a></li>
+						  </ul>
+						  <div id="tabs-1">
+							<h3>Select your Region</h3>
+							<!--TODO this will/not be shown-->
+							<select name="country">
+								<option value="United States">United States</option>
+								<option value="Canada">Canada</option>
+								<option value="China">China</option>
+								<option value="United Kindom">United Kindom</option>
+							</select>
+
+							</div>
+						  <div id="tabs-2">
+							<h3>Detailed Adddress</h3>
+							<ul style="list-style-type: none">
+								<li>
+									
+									<label for="address1">Address Line 1 </label>
+									<input type="text" name="address1">
+								</li>
+								<li>
+									<label for="address1">address Line 2</label>
+									<input type="text" name="address2">
+								</li>
+								<li>
+									<label for="city">City</label>
+									<input type="text" name="city">
+								</li>
+								<li>
+									<label for="state">State/Region</label>
+									<input type="text" name="state">
+								</li>
+								<li>
+									<label for="zipcode">ZIP code</label>
+									<input type="number" name="zipcode">
+								</li>
+							</ul>
+							<!--TODO this will not be shown-->
+						  </div>
+					</div>
+					<h3>
+						Artistic Info
+					</h3>
+					<div>
+						<!--Professions Check List-->
+						<p>
+							<label for="profession">Profession: </label>
+							<input type="checkbox" name="profession" title="Select all Applies."/><br/>
+						</p>
+						<!--Biography-->
+						<p>
+							<label for="bio"></label>
+							<textarea name="bio" cols="30" placeholder="Tell people about yourself..."></textarea>
+						</p>
+						
+					</div>
+					<h3>
+						Varification
+					</h3>
+					<div>
+						<!--slidebar-->
+						
+					</div>
+				</div>
+				<p><input id="agree" type="checkbox">I have read and consent to <a href="">Policy</a> and <a href="">Terms of Service</a>.</p>
+				
+				<input type="button">Create Account</button>
+				<button id="reset">Reset</button>
+			</form>
+			
+			</div>
+		</div>
+	</body>
+</html>
