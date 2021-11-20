@@ -17,7 +17,7 @@
 $(document).ready(
 
     function(){
-            /******************
+    /******************
     NAME: giveOrder
     PURPOSE:	
         insert content using textContent

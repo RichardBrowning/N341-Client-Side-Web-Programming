@@ -4,11 +4,12 @@
  AUTHOR: Luxi Liao	(LL)	
  PURPOSE: Page demostrate form prototype
  ORIGINALLY CREATED ON: 19 November 2021 
- LAST MODIFIED ON: 19 November 2021 
+ LAST MODIFIED ON: 20 November 2021 
  LAST MODIFIED BY: Luxi Liao (LL)
  MODIFICATION HISTORY:
  19 November 2021 - Adding basic content 
  	Give the page a basic look (LL)
+ 20 November 2021 - Debugging unsuccessful redirection (LL)
 -->
 <!-- Tested on Microsoft Edge, Apple Safari, Google Chromium, and Mozilla FireFox -->
 <!-- button style differs across browsers -->
@@ -29,14 +30,12 @@
 		<script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 		<!-- This links to the js code specific for this page -->
 		<script src="js/formPrototype.js"></script>
-        
-		<!--link rel="stylesheet" href="https://jqueryui.com/resources/demos/style.css"-->
 	</head>
 	<body>
 		<!--accordion as main navigation method-->
 		<div id = "infoForm">
 			<!--form includes senstitve info, so used post method-->
-			<form action="submitForm" method="post" autocomplete="on">
+			<form action="submittedForm.html" onsubmit="return true" method="post" autocomplete="on" oninput="let currentYear =  new Date().getFullYear(); var birthdate = new Date($('#birthday').val()); age.value = currentYear - birthdate.getFullYear()">
 				<div id="accordion">
 					<h3>
 						Basic Infomation
@@ -67,19 +66,24 @@
 							<input type="radio" name="realNameVisable" value="no" />No
 						</p>
 						<!--pronounce-->
-<p>
-	<label for="pronounce">Pronounce</label>
-	<select name="pronounce">
-		<option value="he/him">He/Him</option>
-		<option value="she/her">She/Her</option>
-		<option value="they/them">They/Them</option>
-	</select>
-</p>
+						<p>
+							<label for="pronounce">Pronounce</label>
+							<select name="pronounce">
+								<option value="he/him">He/Him</option>
+								<option value="she/her">She/Her</option>
+								<option value="they/them">They/Them</option>
+							</select>
+						</p>
 						<!--birth date-->
-						<p>Date of Birth: <input id="birthday" name="birthdat" type="date" /></p>
+						<fieldset>
+							<p>
+								Date of Birth: <input id="birthday" name="birthdate" type="date" />
+								Age: <output id="age" for="userAge" name="age"></output>
+							</p>
+						</fieldset>
 						<!--Phone and email-->
-						<p>Email: <input id="email" name="email" type="email" /></p>
-						<p>Phone: <input id="phone" name="phone" type="tel" /></p>
+						<p>Email <input id="email" name="email" type="email" /></p>
+						<p>Phone <input id="phone" name="phone" type="tel" /></p>
 						<!--Uplaod Avartar-->
 						<p>Upload Avatar <input id="avatar" type="file" accept="image/jpeg"/></p>
 					</div>
@@ -153,14 +157,30 @@
 					</h3>
 					<div>
 						<!--Professions Check List-->
-						<p>
+						<p title="Select all Applies">
 							<label for="profession">Profession: </label>
-							<input type="checkbox" name="profession" title="Select all Applies."/><br/>
+							<input type="checkbox" name="profession" value="Filmmaking"/>Filmmaking<br/>
+							<input type="checkbox" name="profession" value="Digital Art"/>Digital Art<br/>
+							<input type="checkbox" name="profession" value="Traditional Art"/>Traditional Art<br/>
+							<input type="checkbox" name="profession" value="Graphic Design"/>Graphic Design<br/>
+							<input type="checkbox" name="profession" value="Fashion Design"/>Fashion Design<br/>
+							<input type="checkbox" name="profession" value="Spacial Design"/>Spacial Design<br/>
+							<input type="checkbox" name="profession" value="3D Product Design"/>3D Product Design<br/>
+							<input type="checkbox" name="profession" value="Fine Art"/>Fine Art<br/>
+							<input type="checkbox" name="profession" value="Ceramic Art"/>Ceramic Art<br/>							
+							<input type="checkbox" name="profession" value="Illustration"/>Illustration<br/>
+							<input type="checkbox" name="profession" value="Graphic Novel"/>Graphic Novel<br/>
+							<input type="checkbox" name="profession" value="Photography"/>Photography<br/>
+							<input type="checkbox" name="profession" value="Game Dev"/>Game Dev<br/>
+						</p>
+						<!--Artist Career Years-->
+						<p>
+							Artist for <input id="years" name="careerYears" title="How many years on art career"/> years<br/>
 						</p>
 						<!--Biography-->
 						<p>
 							<label for="bio"></label>
-							<textarea name="bio" cols="30" placeholder="Tell people about yourself..."></textarea>
+							<textarea name="bio" style="width:95%" placeholder="Tell people about yourself..."></textarea>
 						</p>
 						
 					</div>
@@ -168,14 +188,17 @@
 						Varification
 					</h3>
 					<div>
+						<h2>Please Verify you are Human</h2>
+						<h4>Please slide the bar to the right</h4>
 						<!--slidebar-->
-						
+						<div id="slider"></div>
+						<h3 id="verificationIndicator" style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color:rgb(32, 170, 255); display: none;">Verification Complete!</h3>
 					</div>
 				</div>
-				<p><input id="agree" type="checkbox">I have read and consent to <a href="">Policy</a> and <a href="">Terms of Service</a>.</p>
+				<p><input id="agree" name="agree" value=”checked_value” type="checkbox">I have read and consent to <a href="">Policy</a> and <a href="">Terms of Service</a>.</p>
 				
-				<input type="button">Create Account</button>
-				<button id="reset">Reset</button>
+				<input type="submit" title="Create Account" disabled>
+				<button type="reset" id="reset">Reset</button>
 			</form>
 			
 			</div>
