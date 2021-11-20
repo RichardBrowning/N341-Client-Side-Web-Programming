@@ -8,6 +8,11 @@
  MODIFICATION HISTORY:
  No modifications
 ***************************************/
+
+body {
+	background-color: rgb(121, 255, 181);
+}
+
 #infoForm {
     width: 85%;
     height: auto;

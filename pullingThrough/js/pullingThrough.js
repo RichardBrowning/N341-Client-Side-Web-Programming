@@ -92,17 +92,35 @@ $(document).ready(function(){
     *******************/
 	function toggleSubmit(){
 		if($("#agree").is(':checked') && $("#verificationIndicator").css('display') === "block"){
-			$("input[type=submit]").removeAttr("disabled");
+			$("#submit").removeAttr("disabled");
 		}else{
-			$("input[type=submit]").attr("disabled", true);
+			$("#submit").attr("disabled", true);
 		}
 	}
 	$( "#agree" ).change(toggleSubmit)
 
+	function verifyPassword() {
+		var newPassword = $('#newPassword').val();
+		var verifyPassword = $('#verifyPassword').val();
+		if(newPassword === verifyPassword){
+			
+		}
+	}
 
-
-	
-
-
-
+	/**create dict for info 
+	 * dict means key/value pairs
+	 * also include an array recording the key names (cancelled)
+	*/
+	var dictUserInfo ={
+		//current design is to left it initially empty
+	}
+	/**parse data from form 
+	 * append to dict
+	*/
+	dictUserInfo["userName"] = new String($('#userName').val());
+	dictUserInfo["firstName"] = new String($('#firstName').val());
+	dictUserInfo["lastName"] = new String($('#lastName').val());
+	dictUserInfo["postfix"] = new String($('#postfix').val());
+	dictUserInfo["ifNameVisible"] = new String($('form input[name="realNameVisable"][checked]').val());
+	dictUserInfo[""]
 }); // end of $(document).ready()
