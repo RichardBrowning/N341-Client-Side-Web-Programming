@@ -15,6 +15,7 @@ $(document).ready(function(){
 	//Init jQ UI
 	$("#accordion").accordion();
 	$("#tabs").tabs();
+	//$( "select" ).selectmenu();
 	
 	var arrayPostfix = ["Jr.", "Sr.", "III"]
 	$("#postfix").autocomplete({source: arrayPostfix});
