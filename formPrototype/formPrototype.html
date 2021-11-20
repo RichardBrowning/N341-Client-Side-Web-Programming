@@ -43,31 +43,31 @@
 					<div>
 						<!--username-->
 						<p>
-							<label for="userName">User Name </label> 
+							User Name
 							<input id= "userName" name="userName" type="text"/>
 							<!--id for checkRepeatUsername-->
 						</p>
 						<!--real name, if visible-->
 						<p>
-							<label for="firstName">First Name </label> 
-							<input name="userName" type="text"/>
+							First Name
+							<input id="firstName" name="firstName" type="text"/>
 						</p>
 						<p>
-							<label for="lastName">Last Name </label>
-							<input name="lastName" type="text"/>
+							Last Name
+							<input id="lastName" name="lastName" type="text"/>
 						</p> 
 						<p>
-							<label for="postfix">Postfix </label> 
+							Postfix
 							<input id="postfix" name="postfix" type="text"/></p>
 							<!--add id for autocomplete-->
 						<p>
-							<label for="realNameVisable"> Make Real Name Visible? </label>
+							Make Real Name Visible?
 							<input type="radio" name="realNameVisable" value="yes" checked />Yes 
 							<input type="radio" name="realNameVisable" value="no" />No
 						</p>
 						<!--pronounce-->
 						<p>
-							<label for="pronounce">Pronounce</label>
+							Pronounce
 							<select name="pronounce">
 								<option value="he/him">He/Him</option>
 								<option value="she/her">She/Her</option>
@@ -94,12 +94,12 @@
 					<div>
 							<!--password-->
 							<p>
-								<label for="Password">Password: </label>
+								Password:
 								<input type="password" id="new_password" name="new_password" title="Please Include at least One Uppercase Letter, Lowercase Letter and Digit."/><br/>
 							</p>
 							<!--confirm password-->
 							<p>
-								<label for="Verify Password">Verify Password: </label>
+								Verify Password:
 								<input type="password" id="verifyPassword" name="verifyPassword" /><br/>
 								<input type="hidden" id="uuid" name="uuid" value="{{uuid}}" />
 							</p>
@@ -129,23 +129,23 @@
 							<ul style="list-style-type: none">
 								<li>
 									
-									<label for="address1">Address Line 1 </label>
+									Address Line 1
 									<input type="text" name="address1">
 								</li>
 								<li>
-									<label for="address1">address Line 2</label>
+									address Line 2
 									<input type="text" name="address2">
 								</li>
 								<li>
-									<label for="city">City</label>
+									City
 									<input type="text" name="city">
 								</li>
 								<li>
-									<label for="state">State/Region</label>
+									State/Region
 									<input type="text" name="state">
 								</li>
 								<li>
-									<label for="zipcode">ZIP code</label>
+									ZIP code
 									<input type="number" name="zipcode">
 								</li>
 							</ul>
@@ -158,7 +158,7 @@
 					<div>
 						<!--Professions Check List-->
 						<p title="Select all Applies">
-							<label for="profession">Profession: </label>
+							Profession: <br/>
 							<input type="checkbox" name="profession" value="Filmmaking"/>Filmmaking<br/>
 							<input type="checkbox" name="profession" value="Digital Art"/>Digital Art<br/>
 							<input type="checkbox" name="profession" value="Traditional Art"/>Traditional Art<br/>
@@ -179,7 +179,7 @@
 						</p>
 						<!--Biography-->
 						<p>
-							<label for="bio"></label>
+							Biography
 							<textarea name="bio" style="width:95%" placeholder="Tell people about yourself..."></textarea>
 						</p>
 						
@@ -200,8 +200,6 @@
 				<input type="submit" title="Create Account" disabled>
 				<button type="reset" id="reset">Reset</button>
 			</form>
-			
-			</div>
 		</div>
 	</body>
 </html>
