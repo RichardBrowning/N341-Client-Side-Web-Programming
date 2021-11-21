@@ -19,7 +19,7 @@ $(document).ready(function(){
 	
 	var arrayPostfix = ["Jr.", "Sr.", "III"]
 	$("#postfix").autocomplete({source: arrayPostfix});
-	//disabled because of conflict with HTML picker. I do need date format to calculate
+	//disabled because of conflict with HTML picker. I do need date format to do calculation
 	//$("#birthDate").datepicker();
 	/******************
     NAME: Anonymous function
