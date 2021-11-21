@@ -103,24 +103,89 @@ $(document).ready(function(){
 		var newPassword = $('#newPassword').val();
 		var verifyPassword = $('#verifyPassword').val();
 		if(newPassword === verifyPassword){
-			
+			//set css property
+			document.getElementById("newPassword").style.borderColor = "#ff0000";
+    		document.getElementById("verifyPassword").style.borderColor = "#ff0000";
+			return true;
+		}else{
+			//no set css property
+			return false;
 		}
 	}
+	function parseInfo() {
+			/**create dict for info 
+		 * dict means key/value pairs
+		 * also include an array recording the key names (cancelled)
+		*/
+		var dictUserInfo ={
+			//current design is to left it initially empty
+		}
+		/**parse data from form 
+		 * append to dict
+		*/
+		dictUserInfo["userName"] = new String($('#userName').val());
+		dictUserInfo["firstName"] = new String($('#firstName').val());
+		dictUserInfo["lastName"] = new String($('#lastName').val());
+		dictUserInfo["postfix"] = new String($('#postfix').val());
+		dictUserInfo["realNameVisible"] = new String($('form input[name="realNameVisable"][checked]').val());
+		dictUserInfo["pronounce"] = new String($("#pronounce").val());
+		dictUserInfo["birthDate"] = new String($("#birthDate").val());
+		dictUserInfo["email"] = new String($("#email").val());
+		dictUserInfo["phone"] = new String($("#phone").val());
 
-	/**create dict for info 
-	 * dict means key/value pairs
-	 * also include an array recording the key names (cancelled)
-	*/
-	var dictUserInfo ={
-		//current design is to left it initially empty
+		dictUserInfo["country"] = new String($("#country").val());
+
+
+		dictUserInfo["address1"] = new String($("#address1").val());
+		dictUserInfo["address2"] = new String($("#address2").val());
+		dictUserInfo["city"] = new String($("#city").val());
+		dictUserInfo["state"] = new String(S("#state").val());
+		dictUserInfo["zipcode"] = new String($("#zipcode").val());
+
+		dictUserInfo["profession"] = new String($('form input[name="profession"][checked]').val());
+		dictUserInfo["careerYears"] = new String($("#careerYears").val());
+		dictUserInfo["bio"] = new String($("#bio").val());
+
+		console.log(dictUserInfo);//debug line
+		return dictUserInfo;
 	}
-	/**parse data from form 
-	 * append to dict
-	*/
-	dictUserInfo["userName"] = new String($('#userName').val());
-	dictUserInfo["firstName"] = new String($('#firstName').val());
-	dictUserInfo["lastName"] = new String($('#lastName').val());
-	dictUserInfo["postfix"] = new String($('#postfix').val());
-	dictUserInfo["ifNameVisible"] = new String($('form input[name="realNameVisable"][checked]').val());
-	dictUserInfo[""]
+	function printInfo(dictUserInfo) {
+		$('#userNameOut').text(dictUserInfo["userName"]);
+		$('#userNameOut').text(dictUserInfo["firstName"]);
+		$('#userNameOut').text(dictUserInfo["lastName"]);
+		$('#userNameOut').text(dictUserInfo["postfix"]);
+		$('#userNameOut').text(dictUserInfo["realNameVisible"]);
+		$('#userNameOut').text(dictUserInfo["pronounce"]);
+		$('#userNameOut').text(dictUserInfo["birthDate"]);
+		$('#userNameOut').text(dictUserInfo["email"]);
+		$('#userNameOut').text(dictUserInfo["phone"]);
+
+		$('#userNameOut').text(dictUserInfo["country"]);
+
+		$('#userNameOut').text(dictUserInfo["address1"]);
+		$('#userNameOut').text(dictUserInfo["address2"]);
+		$('#userNameOut').text(dictUserInfo["city"]);
+		$('#userNameOut').text(dictUserInfo["state"]);
+		$('#userNameOut').text(dictUserInfo["zipcode"]);
+
+		$('#userNameOut').text(dictUserInfo["profession"]);
+		$('#userNameOut').text(dictUserInfo["careerYears"]);
+		$('#bioOut').text(dictUserInfo["bio"]);
+	}
+	function submit(){
+		//check if password match
+		if (verifyPassword()) {
+			//if yes
+			;
+		} else {
+			//if no, indicate and return
+			alert('Please recheck if passwords matches');
+			return false;
+		}
+		//take infomation, store into var
+		var dictUserInfo = parseInfo();
+		//print info
+		printInfo(dictUserInfo);
+	}
+	
 }); // end of $(document).ready()

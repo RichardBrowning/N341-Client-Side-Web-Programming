@@ -77,7 +77,7 @@
 						<!--birth date-->
 						<fieldset>
 							<p>
-								Date of Birth: <input id="birthday" name="birthdate" type="date" required/>
+								Date of Birth: <input id="birthDate" name="birthDate" type="date" required/>
 								Age: <output id="age" for="userAge" name="age"></output>
 							</p>
 						</fieldset>
@@ -114,7 +114,7 @@
 							<li><a href="#tabs-2">Adddress</a></li>
 						  </ul>
 						  <div id="tabs-1">
-							<h3>Select your Region</h3>
+							<h3>Select your Country</h3>
 							<!--TODO this will/not be shown-->
 							<select id="country" name="country" required>
 								<option value="United States">United States</option>
@@ -130,23 +130,23 @@
 								<li>
 									
 									Address Line 1
-									<input type="text" name="address1">
+									<input type="text" id="address1" name="address1">
 								</li>
 								<li>
 									address Line 2
-									<input type="text" name="address2">
+									<input type="text" id="address2" name="address2">
 								</li>
 								<li>
 									City
-									<input type="text" name="city">
+									<input type="text" id="city" name="city">
 								</li>
 								<li>
 									State/Region
-									<input type="text" name="state">
+									<input type="text" id="state" name="state">
 								</li>
 								<li>
 									ZIP code
-									<input type="number" name="zipcode">
+									<input type="number" id="zipcode" name="zipcode">
 								</li>
 							</ul>
 							<!--TODO this will not be shown-->
@@ -175,12 +175,12 @@
 						</p>
 						<!--Artist Career Years-->
 						<p>
-							Artist for <input id="years" name="careerYears" title="How many years on art career"/> years<br/>
+							Artist for <input id="years" id="careerYears" name="careerYears" title="How many years on art career?"/> years<br/>
 						</p>
 						<!--Biography-->
 						<p>
 							Biography
-							<textarea name="bio" style="width:95%" placeholder="Tell people about yourself..."></textarea>
+							<textarea name="bio" id="bio" style="width:95%" placeholder="Tell people about yourself..."></textarea>
 						</p>
 						
 					</div>
@@ -200,6 +200,89 @@
 				<button id="submit" type="button" title="Review Info and Create Account" disabled>Submit</button>
 				<button type="reset" id="reset">Reset</button>
 			</form>
+		</div>
+		<div>
+			<div id="confirmInfo">
+				<legend>Review Information</legend>
+				<table>
+					<tbody>
+						<tr>
+							<td></td>
+							<td id="userNameOut"></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td id="firstNameOut"></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td id="lastNameOut"></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td id="postfixOut"></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td id="pronounceOut"></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td id="birthDateOut"></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td id="emailOut"></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td id="phoneOut"></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td id="realNameVisableOut"></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td id="countryOut"></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td id="address1Out"></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td id="address2Out"></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td id="cityOut"></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td id="stateOut"></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td id="zipcodeOut"></td>
+						</tr>
+
+						<tr>
+							<td></td>
+							<td id="professionOut"></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td id="careerYearsOut"></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td id="bioOut"></td>
+						</tr>
+					</tbody>
+				</table>
+				
+			</div>
 		</div>
 	</body>
 </html>

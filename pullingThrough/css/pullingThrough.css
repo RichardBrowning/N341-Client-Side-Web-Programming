@@ -25,3 +25,26 @@ body {
 	border-radius: 10px;
 	background-color: white;
 }
+
+/* Setting the formatting for the id="confirmInfo" division */
+#confirmInfo{			
+	width: 85%;
+    height: auto;
+	margin: 0 auto;
+    overflow: hidden;
+
+	box-shadow: 0 2px 15px #EEE;
+	min-height: 300px;
+	padding: 15px;
+	border-radius: 10px;
+	background-color: white;
+}
+
+#confirmInfo table{
+	padding: 5px;
+	width: 80%;
+}
+
+#confirmInfo table tbody tr td:first-child{
+	font-weight: bold;
+}
