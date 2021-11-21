@@ -115,6 +115,15 @@ $(document).ready(function(){
 			return false;
 		}
 	}
+	/******************
+    NAME: parseInfo
+    PURPOSE:	
+        insert content using textContent
+    PARAMETERS:
+        The target div id name, The First part of the sentence, The Integer of the important number, and the Unit of the number
+    RETURN VALUE:
+        void, but a output to the desired div in the HTML doc
+    *******************/
 	function parseInfo() {
 			/**create dict for info 
 		 * dict means key/value pairs
@@ -156,6 +165,15 @@ $(document).ready(function(){
 		console.log(dictUserInfo);//debug line
 		return dictUserInfo;
 	}
+	/******************
+    NAME: printInfo
+    PURPOSE:	
+        insert content using textContent
+    PARAMETERS:
+        The target div id name, The First part of the sentence, The Integer of the important number, and the Unit of the number
+    RETURN VALUE:
+        void, but a output to the desired div in the HTML doc
+    *******************/
 	function printInfo(dictUserInfo) {
 		$('#userNameOut').text(dictUserInfo["userName"]);
 		$('#firstNameOut').text(dictUserInfo["firstName"]);
@@ -179,6 +197,15 @@ $(document).ready(function(){
 		$('#careerYearsOut').text(dictUserInfo["careerYears"]);
 		$('#bioOut').text(dictUserInfo["bio"]);
 	}
+	/******************
+    NAME: submit
+    PURPOSE:	
+        insert content using textContent
+    PARAMETERS:
+        The target div id name, The First part of the sentence, The Integer of the important number, and the Unit of the number
+    RETURN VALUE:
+        void, but a output to the desired div in the HTML doc
+    *******************/
 	function submit(){
 		//check if password match
 		if (verifyPassword()) {
