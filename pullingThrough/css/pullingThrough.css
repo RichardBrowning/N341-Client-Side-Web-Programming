@@ -30,7 +30,9 @@ body {
 #confirmInfo{			
 	width: 85%;
     height: auto;
+	
 	margin: 0 auto;
+	margin-top: 30px;
     overflow: hidden;
 
 	box-shadow: 0 2px 15px #EEE;
@@ -40,6 +42,9 @@ body {
 	background-color: white;
 }
 
+form textarea{
+	width:95%
+}
 #confirmInfo table{
 	padding: 5px;
 	width: 80%;
