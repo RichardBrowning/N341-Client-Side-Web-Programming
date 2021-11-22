@@ -221,6 +221,8 @@ $(document).ready(function(){
 		var dictUserInfo = parseInfo();
 		//print info
 		printInfo(dictUserInfo);
+		//make emerge
+		$('#confirmInfo').css('display', 'block');
 	}
 	$("#submit").on("click", {}, submit);
 }); // end of $(document).ready()
