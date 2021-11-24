@@ -58,7 +58,7 @@ $(document).ready(function(){
 
 		slide: function( event, ui ) {
 			//$( "#verificationIndicator" ).html( ui.value ); //debug line
-		  	if(ui.value === 1000){
+		  	if(ui.value > 990){
 				//verification complete
 				$("#verificationIndicator").css("display", "block");
 		  	}else{
