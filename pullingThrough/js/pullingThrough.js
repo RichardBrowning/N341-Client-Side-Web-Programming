@@ -140,7 +140,7 @@ $(document).ready(function(){
 		dictUserInfo["firstName"] = $('#firstName').val();
 		dictUserInfo["lastName"] = $('#lastName').val();
 		dictUserInfo["postfix"] = $('#postfix').val();
-		dictUserInfo["realNameVisible"] = $('form input[name="realNameVisable"][checked]').val();
+		dictUserInfo["realNameVisible"] = $('form input[name="realNameVisable"]:checked').val();
 		dictUserInfo["pronounce"] = $("#pronounce").val();
 		dictUserInfo["birthDate"] = $("#birthDate").val();
 		dictUserInfo["email"] = $("#email").val();
