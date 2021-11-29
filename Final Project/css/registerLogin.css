@@ -1,0 +1,115 @@
+/**************************************
+ TITLE: formPrototype.css				
+ AUTHOR: Luxi Liao	(LL)	
+ PURPOSE: to define style of the formPrototype.html
+ ORIGINALLY CREATED ON: 19 November 2021
+ LAST MODIFIED ON: 19 November 2021
+ LAST MODIFIED BY: Luxi Liao (LL)	
+ MODIFICATION HISTORY:
+ No modifications
+***************************************/
+
+/**overall part*/
+body {
+	/**Color Scheme*/
+	--color-primary: rgb(104, 226, 161);
+	--color-primary-transparent: rgba(104, 226, 161, 0.468);
+	--color-primary-dark: rgb(92, 196, 139);
+	--color-secondary:rgb(61, 210, 182);
+	--color-success: rgb(139, 235, 143);
+	--color-error: rgb(240, 128, 135);
+
+	--border-radius: 7px;
+
+	margin: 0;
+	height: auto;
+	display: flex;
+	align-items: center;
+	/*not items*/
+	justify-content: center;
+	font-size: 18px;
+	/* © Clouded Leopard by Sandara on DA */
+	background: url(./clouded_leopard_by_sandara.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	/*make transparent effect*/
+	background-color: var(--color-primary-transparent);
+	background-blend-mode: lighten;	
+	
+}
+
+/******
+*this section for login
+******/
+/*main container*/
+.loginContainer{
+	/* prevent over resizing*/
+	width: 30%;
+	min-width: 300px;
+	max-width: 450px;
+	overflow: hidden;
+
+	margin: 10rem;
+	padding: 2rem;
+	box-shadow: 0 2px 15px rgb(77, 77, 77);
+	border-radius: var(--border-radius);
+	background: #ffffff;
+}
+
+/******
+* for the register form
+******/
+
+/** main container */
+.registerContainer{
+	/* prevent over resizing*/
+	width: 75%;
+	min-width: 300px;
+	max-width: 750px;
+	height: auto;
+	overflow: hidden;
+
+	margin: 5rem;
+	padding: 2rem;
+	box-shadow: 0 2px 15px rgb(77, 77, 77);
+	border-radius: var(--border-radius);
+	background: #ffffffaa;
+}
+
+/* 
+* fonts, for the register and login
+*/
+.loginContainer,
+.registerContainer,
+.formInput,
+.formButton{
+	font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-weight: 500;
+	font-size:1rem;
+}
+.formMessage{
+	text-align: center;
+	margin-bottom: 1rem;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/**
+* error and sccuess, TODO also used on the register
+*/
+.error{
+	color: var(--color-error);
+	border-color: var(--color-error);
+}
+.success{
+	color: var(--color-success);
+	border-color: var(--color-success);
+}
+
+.hidden{
+	display: none;
+}
+
+fieldset{
+	border-radius: var(--border-radius);
+}

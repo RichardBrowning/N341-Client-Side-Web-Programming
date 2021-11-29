@@ -1,0 +1,29 @@
+{
+    "users":[
+        {
+            "userName":"RichardBrowning",
+            "email":"mi888uzl@outlook.com",
+            "password":"Xx57187654"
+        },
+        {
+            "userName":"KatieHofgard",
+            "email":"khofgard@gmail.com",
+            "password":"khofgard1992"
+        },
+        {
+            "userName":"AlanWake",
+            "email":"awake@gmail.com",
+            "password":"CauldronLake2010"
+        },
+        {
+            "userName":"JackJoyce",
+            "email":"jjoyce@outlook.com",
+            "password":"Riverport2016"
+        },
+        {
+            "userName":"Koul92",
+            "email":"k92@gmail.com",
+            "password":"Fardreamer1992"
+        }
+    ]
+}

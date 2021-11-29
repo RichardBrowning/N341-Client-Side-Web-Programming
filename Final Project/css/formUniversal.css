@@ -1,0 +1,79 @@
+
+
+/*top1: title*/
+.formTitle{
+	text-align: center;
+}
+/**
+* username and password input feild
+*/
+.formInputGroup{
+	margin: 1rem auto;
+}
+.formInput{
+	display: block;
+	width: 100%;
+	padding: 0.75rem;
+	box-sizing: border-box;
+	border-radius: var(--border-radius);
+	border: 1px solid #dddddd;
+	background: #eeeeee;
+	transition: background 300ms;
+}
+.formInput:hover{
+	background-color: #f7f7f7;
+}
+.formInput:focus{
+	border-color: var(--color-primary);
+	background: #ffffff;
+}
+/**
+button in the form
+*/
+.formButton{
+	width: 100%;
+	padding: 1rem 2rem;
+	font-weight: 500;
+	font-size: 1.1rem;
+	color: #ffffff;
+	background-color: var(--color-primary);
+	border: none;
+	border-radius: var(--border-radius);
+}
+.formButton:hover{
+	background-color: var(--color-primary-dark);
+	box-shadow: 0 2px 15px rgb(228, 228, 228);
+	cursor: pointer;
+	transition: background 300ms;
+}
+.formButton:active{
+	transform: scale(0.98);
+}
+.formButton[disabled],
+.formButton[disabled]:hover,
+.formButton[disabled]:active{
+	background-color: darkgray;
+}
+
+/**
+* for the links, TODO used in the register form 
+*/
+.formText{
+	text-align: center;
+}
+.formLink{
+	text-decoration: none;
+	color: var(--color-secondary);
+	cursor: pointer;
+}
+.formLink:hover{
+	text-decoration: underline;
+	transition: background 300ms;
+}
+
+form :first-child{
+	margin-top: auto;
+}
+form :last-child{
+	margin-bottom: auto;
+}

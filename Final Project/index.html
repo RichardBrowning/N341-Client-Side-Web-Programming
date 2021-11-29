@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+	<!--basic configuration-->
+    <!--meta http-equiv="Content-Type" content="text/html; charset=UTF-8"-->
+    <meta charset="utf-8">
+    <!-- This <title> displays in the page tab -->
+    <title>Explore</title>
+	<!-- This will link to your CSS stylesheet for formatting as soon as you create the file. The page will work without it, though. -->	
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="./css/index.css">
+	<!--jQuery included in front of other libs-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+	<script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+	<!-- This links to the js code specific for this page -->
+</head>
+
+<body>
+
+<header class="navigationBar">Saloon
+	<ul>    <!-- Beginning of unordered list -->
+		<li><a href="#">Search</a></li>    <!--list item-->
+		<li><a href="#">Chat</a></li>    <!--list item-->
+		<li><a href="#">Trade</a></li>    <!--list item-->
+		<li><a href="#" id="submit">Submit</a></li>    <!--list item-->
+	</ul>   <!-- End of second list item -->
+</header>
+	<div class="sidebar">
+		<form action="" method="post" autocomplete="on" oninput="let currentYear =  new Date().getFullYear(); var birthdate = new Date($('#birthDate').val()); age.value = currentYear - birthdate.getFullYear()">
+				<!--accordian uncollaped as original form format-->
+				<div id="accordion">
+					<!--This is result type filter-->
+					<div>
+						<h3>
+							Search by Type
+						</h3>
+						<div>
+							<p>
+								<input type="checkbox" name="type" value="arts"/>Artworks<br/>
+								<input type="checkbox" name="type" value="artists"/>Artists/Users<br/>
+								<input type="checkbox" name="type" value="trades"/>Trades<br/>
+							</p>
+						</div>
+					</div>
+					<!--This is result CATEGORY filter-->
+					
+					<div>
+						<h3>
+							Search by Category
+						</h3>
+						<div>
+							<!--Professions Check List-->
+							<p>
+								Profession: <br/>
+								<input type="checkbox" name="profession" value="Filmmaking"/>Filmmaking<br/>
+								<input type="checkbox" name="profession" value="Digital Art"/>Digital Art<br/>
+								<input type="checkbox" name="profession" value="Traditional Art"/>Traditional Art<br/>
+								<input type="checkbox" name="profession" value="Graphic Design"/>Graphic Design<br/>
+								<input type="checkbox" name="profession" value="Fashion Design"/>Fashion Design<br/>
+								<input type="checkbox" name="profession" value="Spacial Design"/>Spacial Design<br/>
+								<input type="checkbox" name="profession" value="3D Product Design"/>3D Product Design<br/>
+								<input type="checkbox" name="profession" value="Fine Art"/>Fine Art<br/>
+								<input type="checkbox" name="profession" value="Ceramic Art"/>Ceramic Art<br/>
+								<input type="checkbox" name="profession" value="Illustration"/>Illustration<br/>
+								<input type="checkbox" name="profession" value="Graphic Novel"/>Graphic Novel<br/>
+								<input type="checkbox" name="profession" value="Photography"/>Photography<br/>
+								<input type="checkbox" name="profession" value="CG"/>Computer Graphics<br/>
+							</p>
+						</div>
+					</div>
+				</div>
+				<button class="formButton" id="submit" type="button" title="Review Info and Create Account">Submit</button>
+				<button class="formButton" type="reset" id="reset">Reset</button>
+				</div>
+			</form>
+	</div>
+</body>
+</html>
