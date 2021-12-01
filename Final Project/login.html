@@ -36,21 +36,20 @@
 		<div class="loginContainer">
 			<h1 class="formTitle">Login</h1>
 			<!--beginning of login form-->
-			<form action="index.html" onsubmit="return true" class="loginForm" id="login">
-				<div class="formMessage"></div>
+			<form action="index.html" onsubmit="return true;" class="loginForm" id="login" autocomplete="on">
 				<div class="formInputGroup">
 					<input class="formInput" type="text" name="account" placeholder="Username/Email" autofocus>
-					<div class="error">The username is Incorrect</div>
+					<div id="accountMessage" class="hidden error">The user does not exist, <a class="formLink" href="./register.html">Sign Up first?</a></div>
 				</div>
 				<div class="formInputGroup">
 					<input class="formInput" type="text" name="password" placeholder="Password">
-					<div class="error">The password is Incorrect</div>
+					<div id="passwordMessage" class="hidden error">The password/password does not match!</div>
 				</div>
-				<button class="formButton" id="loginButton" type="button" disabled>Log in</button>
+				<button class="formButton" id="loginButton" type="submit" >Log in</button>
 				<p class="formText">
-					<a class="formLink" href="#">Forgot Password?</a>
+					<a class="formLink" href="">Forgot Password?</a>
 					<br>
-					Don't have a Account? <a class="formLink" href="./" id="linkCreateAccount">Create One!</a>
+					Don't have a Account? <a class="formLink" href="./register.html">Create One!</a>
 				</p>
 				
 			</form>

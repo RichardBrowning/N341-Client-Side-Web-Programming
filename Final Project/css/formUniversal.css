@@ -1,4 +1,14 @@
+body{
+	/**Color Scheme*/
+	--color-primary: rgb(104, 226, 161);
+	--color-primary-transparent: rgba(104, 226, 161, 0.468);
+	--color-primary-dark: rgb(92, 196, 139);
+	--color-secondary:rgb(61, 210, 182);
+	--color-success: rgb(139, 235, 143);
+	--color-error: rgb(240, 128, 135);
 
+	--border-radius: 7px;
+}
 
 /*top1: title*/
 .formTitle{
@@ -71,9 +81,37 @@ button in the form
 	transition: background 300ms;
 }
 
+.formInput,
+.formButton{
+	font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-weight: 500;
+	font-size:1rem;
+}
+.formMessage{
+	text-align: center;
+	margin-bottom: 1rem;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/**
+* error and sccuess, TODO also used on the register
+*/
+.error{
+	color: var(--color-error);
+	border-color: var(--color-error);
+}
+.success{
+	color: var(--color-success);
+	border-color: var(--color-success);
+}
+
 form :first-child{
 	margin-top: auto;
 }
 form :last-child{
 	margin-bottom: auto;
+}
+
+.hidden{
+	display: none;
 }

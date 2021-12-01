@@ -15,16 +15,14 @@ body {
     height: auto;
     /*not items*/
     font-size: 18px;
-
     /*make transparent effect*/
     background-color: var(--color-primary-transparent);
     background-blend-mode: lighten;	
 }
 /**navigation bar style*/
 .navigationBar {
-    background-color: green;
+    background-color: var(--color-primary);
     width: 95%;
-    background-color: #2b9d68;
     border-radius: 6px;
     margin: 1rem auto;
     font-family:Arial, Helvetica, sans-serif;
@@ -44,6 +42,38 @@ body {
     margin: auto;
     padding: 0px 5px;
 }
+
+.sidebar{
+    width: 20%;
+    min-width: 200px;
+    max-width: 250px;
+
+    background-color: var(--color-primary);
+    box-shadow: 0 2px 15px #EEE;
+	height: auto;
+
+    margin: 1rem;
+	padding: 15px;
+	border-radius: 10px;
+
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.stage {			
+	width: 85%;
+    height: auto;
+	margin: 0 auto;
+    overflow: hidden;
+
+	box-shadow: 0 2px 15px #EEE;
+	min-height: 300px;
+	padding: 15px;
+	border-radius: 10px;
+	background-color: white;
+}
+
 /*Link buttons style*/
 a:link,a:visited{
     display:block;
@@ -60,15 +90,4 @@ a:hover,a:active{
     margin-left: auto;
     margin-right: 0;
     float: right;
-}
-.sidebar{
-    width: 20%;
-    min-width: 200px;
-    max-width: 250px;
-    background-color: var(--color-primary);
-    box-shadow: 0 2px 15px #EEE;
-	min-height: 300px;
-	padding: 15px;
-	border-radius: 10px;
-
 }

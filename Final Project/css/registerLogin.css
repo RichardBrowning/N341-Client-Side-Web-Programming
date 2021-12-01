@@ -81,33 +81,18 @@ body {
 * fonts, for the register and login
 */
 .loginContainer,
-.registerContainer,
-.formInput,
-.formButton{
+.registerContainer{
 	font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	font-weight: 500;
-	font-size:1rem;
-}
-.formMessage{
-	text-align: center;
-	margin-bottom: 1rem;
-	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	font-size: 1rem;
 }
 
-/**
-* error and sccuess, TODO also used on the register
-*/
-.error{
-	color: var(--color-error);
-	border-color: var(--color-error);
-}
-.success{
-	color: var(--color-success);
-	border-color: var(--color-success);
-}
-
-.hidden{
-	display: none;
+.avatar{
+	margin: 0 1rem;
+	border-radius: 50%;
+	width: 70px;
+	height: 70px;
+	object-fit:cover;
 }
 
 fieldset{
