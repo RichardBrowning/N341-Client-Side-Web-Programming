@@ -160,9 +160,14 @@ $(document).ready(function(){
 		dictUserInfo["city"] = $("#city").val();
 		dictUserInfo["state"] = $("#state").val();
 		dictUserInfo["zipcode"] = $("#zipcode").val()
-		
+		//reviced
 		var arrayProfessions = [];
 		$('form input[name="profession"]:checked').each(function (index) {
+			if (this.id == "other") {
+				//get input from input 
+				arrayProfessions.push($("#otherText").val().trim());
+				return;
+			}
 			arrayProfessions.push($(this).val());
 		});
 		dictUserInfo["profession"] = arrayProfessions.join(", ");
@@ -173,6 +178,13 @@ $(document).ready(function(){
 		console.log(dictUserInfo);//debug line
 		return dictUserInfo;
 	}
+
+	$("#other").change(function(e) {
+		if (this.checked){
+			//console.log(this);
+			$("#otherText").attr('required','required');
+		}	
+	});
 	/******************
     NAME: printInfo
     PURPOSE:	
