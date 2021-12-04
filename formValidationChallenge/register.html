@@ -1,18 +1,19 @@
 <!doctype html>
 <!--
- TITLE: formPrototype.html		
+ TITLE: register.html		
  AUTHOR: Luxi Liao	(LL)	
- PURPOSE: Page demostrate form prototype
- ORIGINALLY CREATED ON: 19 November 2021 
- LAST MODIFIED ON: 20 November 2021 
+ PURPOSE: Page demostrate form validation
+ ORIGINALLY CREATED ON: 01 December 2021 
+ LAST MODIFIED ON: 04 December 2021 
  LAST MODIFIED BY: Luxi Liao (LL)
  MODIFICATION HISTORY:
- 19 November 2021 - Adding basic content 
+ 01 December 2021 - Adding basic content 
  	Give the page a basic look (LL)
- 20 November 2021 - Debugging unsuccessful redirection (LL)
+ 02 December 2021 - Debugging unsuccessful submit prevention (LL)
+ 03 December 2021 - Modified the content to:
+	1. use JQ UI Plus-in to format chackbox and radio
+	2. password will echo ... with no extra message
 -->
-<!-- Tested on Microsoft Edge, Apple Safari, Google Chromium, and Mozilla FireFox -->
-<!-- button style differs across browsers -->
 
 <html lang="en">
 	<head>
@@ -22,7 +23,7 @@
         <!-- This <title> displays in the page tab -->
         <title>Sign Up</title>
 		<!-- This will link to your CSS stylesheet for formatting as soon as you create the file. The page will work without it, though. -->	
-        <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/smoothness/jquery-ui.css">
 		<link rel="stylesheet" type="text/css" href="./css/registerLogin.css">
 		<link rel="stylesheet" type="text/css" href="./css/formUniversal.css">	
 		<!-- This links to the jQuery library so js code will work -->
@@ -31,15 +32,18 @@
 		<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 		<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
 		<script src="../validation/dist/jquery.validate.js"></script>
+		<script src="../validation/dist/additional-methods.min.js"></script>
 		<!-- This links to the js code specific for this page -->
 		<script src="js/register.js"></script>
+
 	</head>
 	<body>
 		<!--accordion as main navigation method-->
 		<div class = "registerContainer">
+			<h1 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; width: 100%; display: block;">Form Validation Challenge</h1>
 			<h1 class="formTitle">Register for New Account</h1>
 			<!--register form-->
-			<form autocomplete="on" oninput="let currentYear = new Date().getFullYear(); var birthdate = new Date($('#birthDate').val()); age.value = currentYear - birthdate.getFullYear()">
+			<form id="register" autocomplete="on" oninput="let currentYear = new Date().getFullYear(); var birthdate = new Date($('#birthDate').val()); age.value = currentYear - birthdate.getFullYear()">
 				<!--accordian uncollaped as original form format-->
 				<div id="accordion">
 					<!--This is basic info-->
@@ -69,11 +73,12 @@
 								<!--add id for autocomplete-->
 							<p>
 								Make Real Name Visible?
-								<input id="realNameYes" type="radio" name="realNameVisable" value="yes" checked />
-								<label for="realNameYes">Yes </label>
-
-								<input id="realNameNo" type="radio" name="realNameVisable" value="no" />
-								<label for="realNameNo">No </label>
+								<label for="radio-1">Yes </label>
+								<input id="radio-1" type="radio" name="realNameVisable" value="yes" default checked />
+								
+								<label for="radio-2">No </label>
+								<input id="radio-2" type="radio" name="realNameVisable" value="no" />
+								
 							</p>
 							<!--pronounce-->
 							<p>
@@ -82,6 +87,7 @@
 									<option value="he/him">He/Him</option>
 									<option value="she/her">She/Her</option>
 									<option value="they/them">They/Them</option>
+									<option value="they/them">Mystery</option>
 								</select>
 							</p>
 							<!--birth date-->
@@ -107,12 +113,12 @@
 								<!--password-->
 								<p>
 									Password:
-									<input class="formInput" type="password" id="newPassword" name="newPassword" required title="Please Include at least One Uppercase Letter, Lowercase Letter and Digit."/><br/>
+									<input class="formInput" type="password" id="newPassword" name="newPassword" required>
 								</p>
 								<!--confirm password-->
 								<p>
 									Verify Password:
-									<input class="formInput" type="password" id="verifyPassword" name="verifyPassword" required><br/>
+									<input class="formInput" type="password" id="verifyPassword" name="verifyPassword" required>
 									<input type="hidden" id="uuid" name="uuid" value="{{uuid}}">
 								</p>
 								
@@ -177,37 +183,39 @@
 							<!--Professions Check List-->
 							<p title="Select all Applies">
 								Professions:<br>
-								<input id="filmmaking" type="checkbox" name="profession" value="Filmmaking"/>
-								<label for="filmmaking">Filmmaking</label><br/>
-								<input id="digitalArt" type="checkbox" name="profession" value="Digital Art"/>
-								<label for="digitalArt">Digital Art</label><br/>
-								<input id="traditionalArt" type="checkbox" name="profession" value="Traditional Art"/>
-								<label for="traditionalArt">Traditional Art</label><br/>
-								<input id="graphicDesign" type="checkbox" name="profession" value="Graphic Design"/>
-								<label for="graphicDesign">Graphic Design</label><br/>
-								<input id="fashionDesign" type="checkbox" name="profession" value="Fashion Design"/>
-								<label for="fashionDesign">Fashion Design</label><br/>
-								<input id="spacialDesign" type="checkbox" name="profession" value="Spacial Design"/>
-								<label for="spacialDesign">Spacial Design</label><br/>
-								<input id="3DProductDesign" type="checkbox" name="profession" value="3D Product Design"/>
-								<label for="3DProductDesign">3D Product Design</label><br/>
-								<input id="fineArt" type="checkbox" name="profession" value="Fine Art"/>
-								<label for="fineArt">Fine Art</label><br/>
-								<input id="ceramicArt" type="checkbox" name="profession" value="Ceramic Art"/>						
-								<label for="ceramicArt">Ceramic Art</label><br/>
-								<input id="illustration" type="checkbox" name="profession" value="Illustration"/>
-								<label for="illustration">Illustration</label><br/>
-								<input id="graphicNovel" type="checkbox" name="profession" value="Graphic Novel"/>
-								<label for="graphicNovel">Graphic Novel</label><br/>
-								<input id="photography" type="checkbox" name="profession" value="Photography"/>
-								<label for="photography">Photography</label><br/>
-								<input id="gameDev" type="checkbox" name="profession" value="Game Dev"/>
-								<label for="gameDev">Game Dev</label><br/>
-								<input id="other" type="checkbox" name="profession"  value="Other"><label for="other">other</label><input id="otherText" type="text" name="profession" placeholder="Other Professions?">
+								<label for="checkbox-1">Filmmaking</label>
+								<input id="checkbox-1" type="checkbox" name="profession" value="Filmmaking"/>
+								<label for="checkbox-2">Digital Art</label>
+								<input id="checkbox-2" type="checkbox" name="profession" value="Digital Art"/>
+								<label for="checkbox-3">Traditional Art</label>
+								<input id="checkbox-3" type="checkbox" name="profession" value="Traditional Art"/>
+								<label for="checkbox-4">Graphic Design</label>
+								<input id="checkbox-4" type="checkbox" name="profession" value="Graphic Design"/>
+								<label for="checkbox-5">Fashion Design</label>
+								<input id="checkbox-5" type="checkbox" name="profession" value="Fashion Design"/>
+								<label for="checkbox-6">Spacial Design</label>
+								<input id="checkbox-6" type="checkbox" name="profession" value="Spacial Design"/>
+								<label for="checkbox-7">3D Product Design</label>
+								<input id="checkbox-7" type="checkbox" name="profession" value="3D Product Design"/>
+								<label for="checkbox-8">Fine Art</label>
+								<input id="checkbox-8" type="checkbox" name="profession" value="Fine Art"/>
+								<label for="checkbox-9">Ceramic Art</label>
+								<input id="checkbox-9" type="checkbox" name="profession" value="Ceramic Art"/>						
+								<label for="checkbox-10">Illustration</label>
+								<input id="checkbox-10" type="checkbox" name="profession" value="Illustration"/>
+								<label for="checkbox-11">Graphic Novel</label>
+								<input id="checkbox-11" type="checkbox" name="profession" value="Graphic Novel"/>
+								<label for="checkbox-12">Photography</label>
+								<input id="checkbox-12" type="checkbox" name="profession" value="Photography"/>
+								<label for="checkbox-13">Game Dev</label>
+								<input id="checkbox-13" type="checkbox" name="profession" value="Game Dev"/><br>
+								<label for="checkbox-14">Other</label>
+								<input id="checkbox-14" type="checkbox" name="profession"  value="Other">
+								<input id="otherText" type="text" name="extraProfession" placeholder="Other Professions?">
 							</p>
 							<!--Artist Career Years-->
 							<p>
-								Artist for <input id="careerYears" name="careerYears" title="How many years on art career?"/> years<br/>
+								Artist for <input id="careerYears" name="careerYears" title="How many years on art career?"/> years
 							</p>
 							<!--Biography-->
 							<p>
@@ -233,7 +241,7 @@
 			
 				</div>
 				<div>
-					<p class="formText"><input id="agree" name="agree" value=”checked_value” type="checkbox">I have read and consent to <a href="">Policy</a> and <a href="">Terms of Service</a>.</p>
+					<input id="agree" name="agree" value=”checked_value” type="checkbox">I have read and consent to <a href="">Policy</a> and <a href="">Terms of Service</a>.
 					<button class="formButton" id="submit" type="submit" title="Review Info and Create Account" disabled>Submit</button>
 					<button class="formButton" type="reset" id="reset">Reset</button>
 				</div>

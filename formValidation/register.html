@@ -1,18 +1,19 @@
 <!doctype html>
 <!--
- TITLE: formPrototype.html		
+ TITLE: register.html		
  AUTHOR: Luxi Liao	(LL)	
- PURPOSE: Page demostrate form prototype
- ORIGINALLY CREATED ON: 19 November 2021 
- LAST MODIFIED ON: 20 November 2021 
+ PURPOSE: Page demostrate form validation
+ ORIGINALLY CREATED ON: 01 December 2021 
+ LAST MODIFIED ON: 04 December 2021 
  LAST MODIFIED BY: Luxi Liao (LL)
  MODIFICATION HISTORY:
- 19 November 2021 - Adding basic content 
+ 01 December 2021 - Adding basic content 
  	Give the page a basic look (LL)
- 20 November 2021 - Debugging unsuccessful redirection (LL)
+ 02 December 2021 - Debugging unsuccessful submit prevention (LL)
+ 03 December 2021 - Modified the content to:
+	1. use JQ UI Plus-in to format chackbox and radio
+	2. password will echo ... with no extra message
 -->
-<!-- Tested on Microsoft Edge, Apple Safari, Google Chromium, and Mozilla FireFox -->
-<!-- button style differs across browsers -->
 
 <html lang="en">
 	<head>
@@ -107,7 +108,7 @@
 								<!--password-->
 								<p>
 									Password:
-									<input class="formInput" type="password" id="newPassword" name="newPassword" required title="Please Include at least One Uppercase Letter, Lowercase Letter and Digit."/><br/>
+									<input class="formInput" type="password" id="newPassword" name="newPassword" required title="This field is required. Please Include at least One Uppercase Letter, Lowercase Letter and Digit."/><br/>
 								</p>
 								<!--confirm password-->
 								<p>

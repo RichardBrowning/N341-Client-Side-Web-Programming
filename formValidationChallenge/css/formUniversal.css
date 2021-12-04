@@ -9,6 +9,14 @@ body{
 	--border-radius: 7px;
 }
 
+form :first-child{
+	margin-top: auto;
+}
+form :last-child{
+	margin-bottom: auto;
+}
+
+
 /*top1: title*/
 .formTitle{
 	text-align: center;
@@ -94,6 +102,7 @@ button in the form
 	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+
 /**
 * error and sccuess, TODO also used on the register
 */
@@ -105,14 +114,7 @@ button in the form
 	color: var(--color-success);
 	border-color: var(--color-success);
 }
-
-form :first-child{
-	margin-top: auto;
-}
-form :last-child{
-	margin-bottom: auto;
-}
-
 .hidden{
 	display: none;
 }
+
