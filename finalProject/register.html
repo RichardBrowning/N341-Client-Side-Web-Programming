@@ -1,0 +1,249 @@
+<!doctype html>
+<!--
+ TITLE: formPrototype.html		
+ AUTHOR: Luxi Liao	(LL)	
+ PURPOSE: Page demostrate form prototype
+ ORIGINALLY CREATED ON: 19 November 2021 
+ LAST MODIFIED ON: 20 November 2021 
+ LAST MODIFIED BY: Luxi Liao (LL)
+ MODIFICATION HISTORY:
+ 19 November 2021 - Adding basic content 
+ 	Give the page a basic look (LL)
+ 20 November 2021 - Debugging unsuccessful redirection (LL)
+-->
+<!-- Tested on Microsoft Edge, Apple Safari, Google Chromium, and Mozilla FireFox -->
+<!-- button style differs across browsers -->
+
+<html lang="en">
+	<head>
+        <!--basic configuration-->
+        <!--meta http-equiv="Content-Type" content="text/html; charset=UTF-8"-->
+        <meta charset="utf-8">
+        <!-- This <title> displays in the page tab -->
+        <title>Sign Up</title>
+		<!-- This will link to your CSS stylesheet for formatting as soon as you create the file. The page will work without it, though. -->	
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+		<link rel="stylesheet" type="text/css" href="./css/registerLogin.css">
+		<link rel="stylesheet" type="text/css" href="./css/formUniversal.css">	
+		<!-- This links to the jQuery library so js code will work -->
+		<!--jQuery included in front of other libs-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+		<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+		<!--script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+		<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script-->
+		<script src="../validation/dist/jquery.validate.js"></script>
+		<!-- This links to the js code specific for this page -->
+		<script src="js/register.js"></script>
+	</head>
+	<body>
+		<!--accordion as main navigation method-->
+		<div class = "registerContainer">
+			<h1 class="formTitle">Register for New Account</h1>
+			<!--register form-->
+			<form method="post" autocomplete="on" oninput="let currentYear = new Date().getFullYear(); var birthdate = new Date($('#birthDate').val()); age.value = currentYear - birthdate.getFullYear()">
+				<!--accordian uncollaped as original form format-->
+				<div id="accordion">
+					<!--This is basic info-->
+					<div>
+						<h3>
+							Basic Infomation
+						</h3>
+						<div class="formInputGroup">
+							<!--username-->
+							<p>
+								User Name
+								<input class="formInput" id= "userName" name="userName" type="text" autofocus required/>
+								<!--id for checkRepeatUsername-->
+							</p>
+							<!--real name, if visible-->
+							<p>
+								First Name
+								<input class="formInput" id="firstName" name="firstName" type="text" required/>
+							</p>
+							<p>
+								Last Name
+								<input class="formInput" id="lastName" name="lastName" type="text" required/>
+							</p> 
+							<p>
+								Postfix
+								<input class="formInput" id="postfix" name="postfix" type="text" required/></p>
+								<!--add id for autocomplete-->
+							<p>
+								Make Real Name Visible?
+								<input id="realNameYes" type="radio" name="realNameVisable" value="yes" checked />
+								<label for="realNameYes">Yes </label>
+
+								<input id="realNameNo" type="radio" name="realNameVisable" value="no" />
+								<label for="realNameNo">No </label>
+							</p>
+							<!--pronounce-->
+							<p>
+								Pronounce
+								<select id="pronounce" name="pronounce">
+									<option value="he/him">He/Him</option>
+									<option value="she/her">She/Her</option>
+									<option value="they/them">They/Them</option>
+								</select>
+							</p>
+							<!--birth date-->
+							<fieldset>
+								<p>
+									Date of Birth: <input id="birthDate" name="birthDate" type="date" required>
+									Age: <output id="age" for="userAge" name="age"></output>
+								</p>
+							</fieldset>
+							<!--Phone and email-->
+							<p>Email <input class="formInput" id="email" name="email" type="email" required></p>
+							<p>Phone <input class="formInput" id="phone" name="phone" type="tel" required></p>
+							<!--Uplaod Avartar-->
+							<p>Upload Avatar <input id="avatar" type="file" accept="image/jpeg"></p>
+						</div>
+					</div>
+					<!--This is password-->
+					<div>
+						<h3>
+							Password
+						</h3>
+						<div>
+								<!--password-->
+								<p>
+									Password:
+									<input type="password" id="newPassword" name="newPassword" required title="Please Include at least One Uppercase Letter, Lowercase Letter and Digit."/><br/>
+								</p>
+								<!--confirm password-->
+								<p>
+									Verify Password:
+									<input type="password" id="verifyPassword" name="verifyPassword" required><br/>
+									<input type="hidden" id="uuid" name="uuid" value="{{uuid}}">
+								</p>
+								
+						</div>
+					</div>
+
+					<div>
+						<h3>
+							Region and Address 
+						</h3>
+						<div id="tabs">
+							<ul>
+								<li><a href="#tabs-1">Regin</a></li>
+								<li><a href="#tabs-2">Adddress</a></li>
+							  </ul>
+							  <div id="tabs-1">
+								<h4>Select your Country</h4>
+								<!--TODO this will/not be shown-->
+								<select id="country" name="country" required>
+									<option value="" disabled selected>Select your option</option>
+									<option value="United States">United States</option>
+									<option value="Canada">Canada</option>
+									<option value="China">China</option>
+									<option value="United Kindom">United Kindom</option>
+								</select>
+			
+								</div>
+							  <div id="tabs-2">
+								<h4>Detailed Adddress</h4>
+								<ul style="list-style-type: none">
+									<li>
+										
+										Address Line 1
+										<input class="formInput" type="text" id="address1" name="address1">
+									</li>
+									<li>
+										address Line 2
+										<input class="formInput" type="text" id="address2" name="address2">
+									</li>
+									<li>
+										City
+										<input class="formInput" type="text" id="city" name="city">
+									</li>
+									<li>
+										State/Region
+										<input class="formInput" type="text" id="state" name="state">
+									</li>
+									<li>
+										ZIP code
+										<input class="formInput" type="number" id="zipcode" name="zipcode">
+									</li>
+								</ul>
+								<!--TODO this will not be shown-->
+							  </div>
+						</div>
+					</div>
+					<div>
+						<h3>
+							Artistic Info
+						</h3>
+						<div>
+							<!--Professions Check List-->
+							<p title="Select all Applies">
+								Professions:<br>
+								<input id="filmmaking" type="checkbox" name="profession" value="Filmmaking"/>
+								<label for="filmmaking">Filmmaking</label><br/>
+								<input id="digitalArt" type="checkbox" name="profession" value="Digital Art"/>
+								<label for="digitalArt">Digital Art</label><br/>
+								<input id="traditionalArt" type="checkbox" name="profession" value="Traditional Art"/>
+								<label for="traditionalArt">Traditional Art</label><br/>
+								<input id="graphicDesign" type="checkbox" name="profession" value="Graphic Design"/>
+								<label for="graphicDesign">Graphic Design</label><br/>
+								<input id="fashionDesign" type="checkbox" name="profession" value="Fashion Design"/>
+								<label for="fashionDesign">Fashion Design</label><br/>
+								<input id="spacialDesign" type="checkbox" name="profession" value="Spacial Design"/>
+								<label for="spacialDesign">Spacial Design</label><br/>
+								<input id="3DProductDesign" type="checkbox" name="profession" value="3D Product Design"/>
+								<label for="3DProductDesign">3D Product Design</label><br/>
+								<input id="fineArt" type="checkbox" name="profession" value="Fine Art"/>
+								<label for="fineArt">Fine Art</label><br/>
+								<input id="ceramicArt" type="checkbox" name="profession" value="Ceramic Art"/>						
+								<label for="ceramicArt">Ceramic Art</label><br/>
+								<input id="illustration" type="checkbox" name="profession" value="Illustration"/>
+								<label for="illustration">Illustration</label><br/>
+								<input id="graphicNovel" type="checkbox" name="profession" value="Graphic Novel"/>
+								<label for="graphicNovel">Graphic Novel</label><br/>
+								<input id="photography" type="checkbox" name="profession" value="Photography"/>
+								<label for="photography">Photography</label><br/>
+								<input id="gameDev" type="checkbox" name="profession" value="Game Dev"/>
+								<label for="gameDev">Game Dev</label><br/>
+								<input id="other" type="checkbox" name="profession"  value="other"><label for="other">other</label><input type="text" name="profession" placeholder="Other Professions?">
+							</p>
+							<!--Artist Career Years-->
+							<p>
+								Artist for <input id="careerYears" name="careerYears" title="How many years on art career?"/> years<br/>
+							</p>
+							<!--Biography-->
+							<p>
+								Biography
+								<textarea name="bio" id="bio" placeholder="Tell people about yourself..."></textarea>
+							</p>
+							
+						</div>
+					</div>
+					<div>
+						<h3>
+							Varification
+						</h3>
+						<div>
+							<h2>Please Verify you are Human</h2>
+							<h4>Please slide the bar to the right</h4>
+							<!--slidebar-->
+							<div id="slider"></div>
+							<h2 id="verificationIndicator" style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color:rgb(32, 170, 255); display: none;">Verification Complete!</h2>
+						</div>
+					</div>
+			
+			
+				</div>
+				<div>
+					<p class="formText"><input id="agree" name="agree" value=”checked_value” type="checkbox">I have read and consent to <a href="">Policy</a> and <a href="">Terms of Service</a>.</p>
+					<button class="formButton" id="submit" type="submit" title="Review Info and Create Account" disabled>Submit</button>
+					<button class="formButton" type="reset" id="reset">Reset</button>
+				</div>
+			</form>
+			<div id="output"></div>
+		</div>
+	</body>
+</html>
+
+
+

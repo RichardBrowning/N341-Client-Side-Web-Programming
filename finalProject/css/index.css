@@ -1,0 +1,98 @@
+
+/**overall part*/
+body {
+    /**Color Scheme*/
+    --color-primary: rgb(104, 226, 161);
+    --color-primary-transparent: rgba(104, 226, 161, 0.468);
+    --color-primary-dark: rgb(92, 196, 139);
+    --color-secondary:rgb(61, 210, 182);
+    --color-success: rgb(139, 235, 143);
+    --color-error: rgb(240, 128, 135);
+
+    --border-radius: 7px;
+
+    margin: 0;
+    height: auto;
+    /*not items*/
+    font-size: 18px;
+    /*make transparent effect*/
+    background-color: var(--color-primary-transparent);
+    background-blend-mode: lighten;	
+}
+/**navigation bar style*/
+.navigationBar {
+    background-color: var(--color-primary);
+    width: 95%;
+    border-radius: 6px;
+    margin: 1rem auto;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:18px;
+    /*flexBox to centralise*/
+    display: flex;
+}
+/*This section is for horizontal menu below header*/
+.navigationBar ul{
+    list-style-type:none;
+    margin:0;
+    padding:0;
+    overflow:hidden;
+}
+.navigationBar li{
+    margin: auto;
+    padding: 0px 5px;
+    float: left;
+}
+
+.sidebar{
+    width: 20%;
+    min-width: 233px;
+    max-width: 250px;
+    margin: 1rem;
+	padding: 15px;
+	border-radius: var(--border-radius)*2;
+
+    display:inline;
+    float:left;
+
+    background-color: var(--color-primary);
+    box-shadow: 0 2px 15px #EEE;
+	height: auto;
+
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.stage {			
+	width: 60%;
+    height: auto;
+    
+    margin: 1rem;
+	padding: 15px;
+	border-radius: var(--border-radius)*2;
+    overflow: hidden;
+
+	box-shadow: 0 2px 15px #EEE;
+	min-height: 300px;
+	padding: 15px;
+	border-radius: 10px;
+	background-color: white;
+}
+
+/*Link buttons style*/
+a:link,a:visited{
+    display:block;
+    color:#FFFFFF;
+    text-align:center;
+    padding:4px;
+    text-decoration:none;
+}
+a:hover,a:active{
+    background-color:#388b86;
+    border-radius: 6px;
+}
+#submit {
+    margin-left: auto;
+    margin-right: 0;
+    float: right;
+}
