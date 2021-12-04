@@ -26,7 +26,6 @@ $(document).ready(function(){
 
 	$('form').validate();
 	
-	
 	//Init jQ UI
 	$( document ).tooltip();
 	$("#accordion > div").accordion({ header: "h3", collapsible: true });
@@ -224,6 +223,4 @@ $(document).ready(function(){
 		var $output = $("#output");
 		printInfo($output, dictUserInfo);
 	}
-	
-	//$("#submit").on("click", {}, submit);
 }); // end of $(document).ready()
