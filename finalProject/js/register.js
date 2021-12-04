@@ -16,7 +16,7 @@ $(document).ready(function(){
 	$.validator.setDefaults({
 		//handler
 		submitHandler: function(){
-				submit();
+			submit();
 		},
 		//insert vlaidation error message
 		errorPlacement: function(error, element){
@@ -105,18 +105,23 @@ $(document).ready(function(){
 	function verifyPassword() {
 		var newPassword = $('#newPassword').val();
 		var verifyPassword = $('#verifyPassword').val();
-		if(newPassword === verifyPassword){
-			//no set css property
-			$("#newPassword").css("border-color", "#dddddd");
-    		$("#verifyPassword").css("border-color", "#dddddd");
-			return true;
+		if (newPassword && verifyPassword) {
+			if(newPassword === verifyPassword){
+				//no set css property
+				$("#newPassword").css("border-color", "#dddddd");
+				$("#verifyPassword").css("border-color", "#dddddd");
+				return true;
+			}else{
+				//document.getElementById("newPassword").style.borderColor = "#ff0000";
+				$("#newPassword").css("border-color", "#rgb(240, 128, 135)");
+				$("#verifyPassword").css("border-color", "#rgb(240, 128, 135)");
+				//set css property
+				return false;
+			}
 		}else{
-			//document.getElementById("newPassword").style.borderColor = "#ff0000";
-			$("#newPassword").css("border-color", "#rgb(240, 128, 135)");
-    		$("#verifyPassword").css("border-color", "#rgb(240, 128, 135)");
-			//set css property
 			return false;
 		}
+
 	}
 	/******************
     NAME: parseInfo
