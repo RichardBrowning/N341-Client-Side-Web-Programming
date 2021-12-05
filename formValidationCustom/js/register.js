@@ -39,10 +39,14 @@ $(document).ready(function(){
 		return this.optional(element) || regex.test(value);
 	}, "Please enter a valid email address (eg. xxx@xxx.xxx).")
 	$.validator.addMethod("lettersonly", function(value, element) {
-		var regex = /^[a-z]+$/i;
+		var regex = /^[a-zA-Z]+$/i;
 		return this.optional(element) || regex.test(value);
 	}, "Letters only, please.")
-	$.validator.addMethod("noHTML",  function(value, element) {
+	$.validator.addMethod("digitssonly", function(value, element) {
+		var regex = /^[0-9]+$/i;
+		return this.optional(element) || regex.test(value);
+	}, "Digits only, please.")
+	$.validator.addMethod("noHTML", function(value, element) {
 		var regex = /\<+[a-zA-Z0-9\=\"\s]+\>+.+\<\/+[a-zA-Z0-9]+\>/gi;
 		return !regex.test(value);
 	}, "Sorry, no XSS-suspective info allows.")
@@ -52,25 +56,149 @@ $(document).ready(function(){
 	
 	$('#register').validate({
 		rules:{
-			noHTML: true, 
-			userName: {
+			userName:{
+				required: true,
+				maxlength: 16,
 				noSpace: true,
 			},
-			email: {
+			firstName:{
+				required: true,
+				noSpace: true,
+			},
+			lastName:{
+				required: true,
+				noSpace: true,
+			},
+			postfix:{
+				required: true,
+			},
+			realNameVisible:{
+				required: true,
+			},
+			pronounce:{
+				required: true,
+			},
+			birthDate:{
+				required: true,
+				date: true,
+			},
+			email:{
+				required: true,
 				customEmail: true,
 			},
-			phone: {
+			phone:{
+				required: true,
+				digits: true,
 				phoneUS: true,
 			},
-			//alpha only:
-			state: {
-				lettersonly: true,
+			newPassword:{
+				minlength: true,
 				required: true,
-			}, 
-			city: {
-				lettersonly: true,
+			},
+			
+			country:{
 				required: true,
-			}
+			},
+			address1:{
+				required: true,
+			},
+			address2:{
+				required: true,
+			},
+			city:{
+				required: true,
+				lettersonly: true,
+			},
+			state:{
+				required: true,
+				lettersonly: true,
+			},
+			zipcode:{
+				required: true,
+				digitsonly: true,
+			},
+			profession:{
+				required: true,
+			},
+			careerYears:{
+				required: true,
+				digits:true,
+			},
+			bio:{
+				required: true,
+			},
+		},
+		messages:{
+			userName:{
+				required: "Please specify a username",
+				maxlength: "Please make username no longer than 16 characters",
+				noSpace: "Please do not contain space",
+			},
+			firstName:{
+				required: "Please enter your First Name",
+				noSpace: "No space allowed here",
+			},
+			lastName:{
+				required: "Please enter your Last Name",
+				noSpace: "No space allowed here",
+			},
+			postfix:{
+				required: "Please specify. If none, enter none.",
+			},
+			realNameVisable:{
+				required: "Do you want people to view your real name?",
+			},
+			pronounce:{
+				required: "How would you like people to refer to you in 3rd person?",
+			},
+			birthDate:{
+				required: "Please enter your birthday",
+				date: "The date is invalid.",
+			},
+			email:{
+				required: "Please give us your email, we send no ADs, promise.",
+				customEmail: "Please enter a valid E-mail address. If yours is not standard, contact us",
+			},
+			phone:{
+				required: "Please input your phone number.",
+				digits: "Phone number contains letter? contact us if so.",
+				phoneUS: "Sorry we only support US phone number at this stage.",
+			},
+			newPassword:{
+				required:"Please input a password",
+				minlength:"Please be no shorter than 6."
+			},
+			country:{
+				required: "Please specify your country",
+			},
+			address1:{
+				required: "Please enter address",
+			},
+			address2:{
+				required: "Please enter address",
+			},
+			city:{
+				required: "Please enter your city name",
+				lettersonly: "No numbers allowed in city name",
+			},
+			state:{
+				required: "Please enter your state/province name",
+				lettersonly: "No numbers allowed in state/province name",
+			},
+			zipcode:{
+				required: "Please enter your shipping address.",
+				digits: "No letters allowed in zip code.",
+			},
+			profession:{
+				required: "Please do enter a profession, or hobby in art.",
+			},
+			careerYears:{
+				required: "Please enter your career years here.",
+				digits:"Clearly, number of years accepts no letters."
+			},
+			bio:{
+				required: "At least tell people something about yourself, please?",
+			},
 		}
 	});
 	
@@ -85,7 +213,7 @@ $(document).ready(function(){
 		icon: false
 	  });
 
-	var arrayPostfix = ["Jr.", "Sr.", "III"]
+	var arrayPostfix = ["Jr.", "Sr.", "III", "none"];
 	$("#postfix").autocomplete({source: arrayPostfix});
 	//disabled because of conflict with HTML picker. I do need date format to do calculation
 	//$("#birthDate").datepicker();
@@ -217,6 +345,8 @@ $(document).ready(function(){
 		dictUserInfo["email"] = $("#email").val();
 		dictUserInfo["phone"] = $("#phone").val()
 
+		dictUserInfo["password"] = $("#newPassword").val()
+		
 		dictUserInfo["country"] = $("#country").val()
 
 		dictUserInfo["address1"] = $("#address1").val();
@@ -271,12 +401,16 @@ $(document).ready(function(){
 				"<tr><td>birth Date: </td><td>"+dictUserInfo["birthDate"]+"</td>"+
 				"<tr><td>email: </td><td>"+dictUserInfo["email"]+"</td>"+
 				"<tr><td>phone: </td><td>"+dictUserInfo["phone"]+"</td>"+
+				
+				"<tr><td>password: </td><td>"+dictUserInfo["password"]+"</td>"+
+
 				"<tr><td>country: </td><td>"+dictUserInfo["country"]+"</td>"+
 				"<tr><td>address 1: </td><td>"+dictUserInfo["address1"]+"</td>"+
 				"<tr><td>address 2: </td><td>"+dictUserInfo["address2"]+"</td>"+
 				"<tr><td>city: </td><td>"+dictUserInfo["city"]+"</td>"+
 				"<tr><td>state: </td><td>"+dictUserInfo["state"]+"</td>"+
 				"<tr><td>zip code: </td><td>"+dictUserInfo["zipcode"]+"</td>"+
+				
 				"<tr><td>profession: </td><td>"+dictUserInfo["profession"]+"</td>"+
 				"<tr><td>career Years: </td><td>"+dictUserInfo["careerYears"]+"</td>"+
 				"<tr><td>Bios: </td><td>"+dictUserInfo["bio"]+"</td>"+
