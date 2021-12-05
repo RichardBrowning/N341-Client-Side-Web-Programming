@@ -92,10 +92,13 @@ $(document).ready(function(){
 				phoneUS: true,
 			},
 			newPassword:{
-				minlength: true,
+				minlength: 6,
 				required: true,
 			},
-			
+			verifyPassword:{
+				required: true,
+				equalTo: "#newPassword",
+			},
 			country:{
 				required: true,
 			},
@@ -115,7 +118,7 @@ $(document).ready(function(){
 			},
 			zipcode:{
 				required: true,
-				digitsonly: true,
+				digits: true,
 			},
 			profession:{
 				required: true,
@@ -167,6 +170,10 @@ $(document).ready(function(){
 			newPassword:{
 				required:"Please input a password",
 				minlength:"Please be no shorter than 6."
+			},
+			verifyPassword:{
+				required: "Please confirm your password.",
+				equalTo: "Does not match previous password, please check."
 			},
 			country:{
 				required: "Please specify your country",
