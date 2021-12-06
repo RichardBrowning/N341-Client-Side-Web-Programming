@@ -1,6 +1,6 @@
 # N341-Client-Side-Web-Programming
 ## Intro
-PU CSCI-N431 Student Course Pages, syllabus, including assignments(HTML, CSS, JavaScript), assignment requirement and expectations, study guide, etc.
+PU CSCI-N341 Student Course Pages, syllabus, including assignments(HTML, CSS, JavaScript), assignment requirement and expectations, study guide, etc.
 ## Extra Info
 - The Assignment Instruction can be found inside [assignmentRequirement](./assignmentRequirement "assignment instruction").
 - I only did the minimum and some of the Challenges. But all of them meet requirement format-wise, and follows the course guideline strictly.
