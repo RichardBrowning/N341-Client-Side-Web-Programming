@@ -39,7 +39,7 @@ $(document).ready(function(){
 		return this.optional(element) || regex.test(value);
 	}, "Please enter a valid email address (eg. xxx@xxx.xxx).")
 	$.validator.addMethod("lettersonly", function(value, element) {
-		var regex = /^[a-zA-Z]+$/i;
+		var regex = /^[a-zA-Z\s]+$/i;
 		return this.optional(element) || regex.test(value);
 	}, "Letters only, please.")
 	$.validator.addMethod("digitssonly", function(value, element) {
@@ -96,6 +96,7 @@ $(document).ready(function(){
 				required: true,
 			},
 			verifyPassword:{
+				minlength: 6,
 				required: true,
 				equalTo: "#newPassword",
 			},
@@ -177,6 +178,7 @@ $(document).ready(function(){
 			},
 			verifyPassword:{
 				required: "Please confirm your password.",
+				minlength:"Please be no shorter than 6.",
 				equalTo: "Does not match previous password, please check."
 			},
 			country:{
@@ -279,7 +281,26 @@ $(document).ready(function(){
 		  }
 		}
 	  });
-	
+/**section dedicate to toggle ability of elements */
+
+	/******************
+    NAME: 
+		toggleOtherInput
+    PURPOSE:	
+        toggle input according to other selection status
+    PARAMETERS:
+        none
+    RETURN VALUE:
+        void, but changed attr of elements
+    *******************/
+	function toggleOtherInput(){
+		if($("input[value='Other']").is(':checked')){
+			$("#otherText").removeAttr("disabled");
+		}else{
+			$("#otherText").attr("disabled", true);
+		}
+	}
+	$("input[value='Other']").change(toggleOtherInput)
 
 	/******************
     NAME: 
@@ -299,6 +320,8 @@ $(document).ready(function(){
 		}
 	}
 	$( "#agree" ).change(toggleSubmit)
+
+/**deprecated password match checker */
 	/******************
     NAME: 
 		verifyPassword
