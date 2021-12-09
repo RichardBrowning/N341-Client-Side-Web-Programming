@@ -123,6 +123,9 @@ $(document).ready(function(){
 			profession:{
 				required: true,
 			},
+			extraProfession:{
+				required: true,
+			},
 			careerYears:{
 				required: true,
 				digits:true,
@@ -199,6 +202,9 @@ $(document).ready(function(){
 			},
 			profession:{
 				required: "Please do enter a profession, or hobby in art.",
+			},
+			extraProfession:{
+				required: "What is your other profession?",
 			},
 			careerYears:{
 				required: "Please enter your career years here.",
