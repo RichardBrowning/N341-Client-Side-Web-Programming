@@ -126,6 +126,7 @@ $(document).ready(function(){
 			careerYears:{
 				required: true,
 				digits:true,
+				max: 60,
 			},
 			bio:{
 				required: true,
@@ -201,7 +202,8 @@ $(document).ready(function(){
 			},
 			careerYears:{
 				required: "Please enter your career years here.",
-				digits:"Clearly, number of years accepts no letters."
+				digits:"Clearly, number of years accepts no letters, symbols, or nagative years!",
+				max: "Please Input valid career years."
 			},
 			bio:{
 				required: "At least tell people something about yourself, please?",
@@ -235,8 +237,8 @@ $(document).ready(function(){
     *******************/
 	$("#careerYears").spinner({
 		spin: function( event, ui ) {
-		  if ( ui.value > 50 ) {
-			$( this ).spinner( "value", 50 );
+		  if ( ui.value > 60 ) {
+			$( this ).spinner( "value", 60 );
 			return false;
 		  } else if ( ui.value < 0 ) {
 			$( this ).spinner( "value", 0 );
