@@ -1,13 +1,14 @@
 /**************************************
- TITLE: formPrototype.js			
+ TITLE: register.js			
  AUTHOR: Luxi Liao	(LL)	
  PURPOSE: manipulate user sign up form form
- ORIGINALLY CREATED ON: 19 November 2021
- LAST MODIFIED ON: 19 November 2021
+ ORIGINALLY CREATED ON: 01 December 2021
+ LAST MODIFIED ON: 04 December 2021
  LAST MODIFIED BY: Luxi Liao (LL)	
  MODIFICATION HISTORY:
- 19 November 2021 - Modifying output message 
+ 03 December 2021 - Modifying output message 
 	to make the JS script output my own output message (LL)
+ 03 December 2021 - Modified for checkbox radio (LL)
 **************************************/
 
 // A $( document ).ready() block.
@@ -24,14 +25,210 @@ $(document).ready(function(){
 		}
 	})
 
-	$('form').validate();
+	
+
+	/*other validator*/
+	//first: email validator
+	//then: phone validator
+	//additionally: alphabetical city and state/region
+	//also userName do not take spaces
+	//finally: <html> are prevented
+	$.validator.addMethod("customEmail", function(value, element){
+		//source of grammar: Tutorial's Point 
+		var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{1,5})+$/;
+		return this.optional(element) || regex.test(value);
+	}, "Please enter a valid email address (eg. xxx@xxx.xxx).")
+	$.validator.addMethod("lettersonly", function(value, element) {
+		var regex = /^[a-zA-Z]+$/i;
+		return this.optional(element) || regex.test(value);
+	}, "Letters only, please.")
+	$.validator.addMethod("digitssonly", function(value, element) {
+		var regex = /^[0-9]+$/i;
+		return this.optional(element) || regex.test(value);
+	}, "Digits only, please.")
+	$.validator.addMethod("noHTML", function(value, element) {
+		var regex = /\<+[a-zA-Z0-9\=\"\s]+\>+.+\<\/+[a-zA-Z0-9]+\>/gi;
+		return !regex.test(value);
+	}, "Sorry, no XSS-suspective info allows.")
+	$.validator.addMethod("noSpace", function(value, element) { 
+		return value.indexOf(" ") < 0 && value != ""; 
+	}, "No space please and don't leave it empty"); 
+	
+	$('#register').validate({
+		rules:{
+			userName:{
+				required: true,
+				maxlength: 16,
+				noSpace: true,
+			},
+			firstName:{
+				required: true,
+				noSpace: true,
+			},
+			lastName:{
+				required: true,
+				noSpace: true,
+			},
+			postfix:{
+				required: true,
+			},
+			realNameVisible:{
+				required: true,
+			},
+			pronounce:{
+				required: true,
+			},
+			birthDate:{
+				required: true,
+				date: true,
+			},
+			email:{
+				required: true,
+				customEmail: true,
+			},
+			phone:{
+				required: true,
+				digits: true,
+				phoneUS: true,
+			},
+			newPassword:{
+				minlength: 6,
+				required: true,
+			},
+			verifyPassword:{
+				required: true,
+				equalTo: "#newPassword",
+			},
+			country:{
+				required: true,
+			},
+			address1:{
+				required: true,
+			},
+			address2:{
+				required: true,
+			},
+			city:{
+				required: true,
+				lettersonly: true,
+			},
+			state:{
+				required: true,
+				lettersonly: true,
+			},
+			zipcode:{
+				required: true,
+				digits: true,
+			},
+			profession:{
+				required: true,
+			},
+			extraProfession:{
+				required: true,
+			},
+			careerYears:{
+				required: true,
+				digits:true,
+				max: 60,
+			},
+			bio:{
+				required: true,
+			},
+		},
+		messages:{
+			userName:{
+				required: "Please specify a username",
+				maxlength: "Please make username no longer than 16 characters",
+				noSpace: "Please do not contain space",
+			},
+			firstName:{
+				required: "Please enter your First Name",
+				noSpace: "No space allowed here",
+			},
+			lastName:{
+				required: "Please enter your Last Name",
+				noSpace: "No space allowed here",
+			},
+			postfix:{
+				required: "Please specify. If none, enter none.",
+			},
+			realNameVisable:{
+				required: "Do you want people to view your real name?",
+			},
+			pronounce:{
+				required: "How would you like people to refer to you in 3rd person?",
+			},
+			birthDate:{
+				required: "Please enter your birthday",
+				date: "The date is invalid.",
+			},
+			email:{
+				required: "Please give us your email, we send no ADs, promise.",
+				customEmail: "Please enter a valid E-mail address. If yours is not standard, contact us",
+			},
+			phone:{
+				required: "Please input your phone number.",
+				digits: "Phone number contains letter? contact us if so.",
+				phoneUS: "Sorry we only support US phone number at this stage.",
+			},
+			newPassword:{
+				required:"Please input a password",
+				minlength:"Please be no shorter than 6."
+			},
+			verifyPassword:{
+				required: "Please confirm your password.",
+				equalTo: "Does not match previous password, please check."
+			},
+			country:{
+				required: "Please specify your country",
+			},
+			address1:{
+				required: "Please enter address",
+			},
+			address2:{
+				required: "Please enter address",
+			},
+			city:{
+				required: "Please enter your city name",
+				lettersonly: "No numbers allowed in city name",
+			},
+			state:{
+				required: "Please enter your state/province name",
+				lettersonly: "No numbers allowed in state/province name",
+			},
+			zipcode:{
+				required: "Please enter your shipping address.",
+				digits: "No letters allowed in zip code.",
+			},
+			profession:{
+				required: "Please do enter a profession, or hobby in art.",
+			},
+			extraProfession:{
+				required: "What is your other profession?",
+			},
+			careerYears:{
+				required: "Please enter your career years here.",
+				digits:"Clearly, number of years accepts no letters, symbols, or nagative years!",
+				max: "Please Input valid career years."
+			},
+			bio:{
+				required: "At least tell people something about yourself, please?",
+			},
+		}
+	});
 	
 	//Init jQ UI
 	$( document ).tooltip();
-	$("#accordion > div").accordion({ header: "h3", collapsible: true });
+	$("#accordion > div").accordion({ heightStyle: "content", header: "h3", collapsible: true});
 	$("#tabs").tabs();
-	
-	var arrayPostfix = ["Jr.", "Sr.", "III"]
+	$("input[type='radio']").checkboxradio({
+		icon: false
+	  });
+	$("form p input[type='checkbox']").checkboxradio({
+		icon: false
+	  });
+
+	var arrayPostfix = ["Jr.", "Sr.", "III", "none"];
 	$("#postfix").autocomplete({source: arrayPostfix});
 	//disabled because of conflict with HTML picker. I do need date format to do calculation
 	//$("#birthDate").datepicker();
@@ -46,8 +243,8 @@ $(document).ready(function(){
     *******************/
 	$("#careerYears").spinner({
 		spin: function( event, ui ) {
-		  if ( ui.value > 50 ) {
-			$( this ).spinner( "value", 50 );
+		  if ( ui.value > 60 ) {
+			$( this ).spinner( "value", 60 );
 			return false;
 		  } else if ( ui.value < 0 ) {
 			$( this ).spinner( "value", 0 );
@@ -163,6 +360,8 @@ $(document).ready(function(){
 		dictUserInfo["email"] = $("#email").val();
 		dictUserInfo["phone"] = $("#phone").val()
 
+		dictUserInfo["password"] = $("#newPassword").val()
+		
 		dictUserInfo["country"] = $("#country").val()
 
 		dictUserInfo["address1"] = $("#address1").val();
@@ -209,22 +408,26 @@ $(document).ready(function(){
 		target.html("<h2>Confirm your information:</h2>"+"<br>"+
 				"<table>" +
 				"<tr><td>Username: </td><td>" + dictUserInfo["userName"]+"</td>"+
-				"<tr><td>First: Name: </td><td>" +dictUserInfo["firstName"]+"</td>"+
-				"<tr><td>lastName: </td><td>"+dictUserInfo["lastName"]+"</td>"+
+				"<tr><td>First Name: </td><td>" +dictUserInfo["firstName"]+"</td>"+
+				"<tr><td>last Name: </td><td>"+dictUserInfo["lastName"]+"</td>"+
 				"<tr><td>postfix: </td><td>"+dictUserInfo["postfix"]+"</td>"+
-				"<tr><td>realNameVisible: </td><td>"+dictUserInfo["realNameVisible"]+"</td>"+
+				"<tr><td>real Name Visible: </td><td>"+dictUserInfo["realNameVisible"]+"</td>"+
 				"<tr><td>pronounce: </td><td>"+dictUserInfo["pronounce"]+"</td>"+
-				"<tr><td>birthDate: </td><td>"+dictUserInfo["birthDate"]+"</td>"+
+				"<tr><td>birth Date: </td><td>"+dictUserInfo["birthDate"]+"</td>"+
 				"<tr><td>email: </td><td>"+dictUserInfo["email"]+"</td>"+
 				"<tr><td>phone: </td><td>"+dictUserInfo["phone"]+"</td>"+
+				
+				"<tr><td>password: </td><td>"+dictUserInfo["password"]+"</td>"+
+
 				"<tr><td>country: </td><td>"+dictUserInfo["country"]+"</td>"+
-				"<tr><td>address1: </td><td>"+dictUserInfo["address1"]+"</td>"+
-				"<tr><td>address2: </td><td>"+dictUserInfo["address2"]+"</td>"+
+				"<tr><td>address 1: </td><td>"+dictUserInfo["address1"]+"</td>"+
+				"<tr><td>address 2: </td><td>"+dictUserInfo["address2"]+"</td>"+
 				"<tr><td>city: </td><td>"+dictUserInfo["city"]+"</td>"+
 				"<tr><td>state: </td><td>"+dictUserInfo["state"]+"</td>"+
-				"<tr><td>zipcode: </td><td>"+dictUserInfo["zipcode"]+"</td>"+
+				"<tr><td>zip code: </td><td>"+dictUserInfo["zipcode"]+"</td>"+
+				
 				"<tr><td>profession: </td><td>"+dictUserInfo["profession"]+"</td>"+
-				"<tr><td>careerYears: </td><td>"+dictUserInfo["careerYears"]+"</td>"+
+				"<tr><td>career Years: </td><td>"+dictUserInfo["careerYears"]+"</td>"+
 				"<tr><td>Bios: </td><td>"+dictUserInfo["bio"]+"</td>"+
 				"</table>"
 				)
