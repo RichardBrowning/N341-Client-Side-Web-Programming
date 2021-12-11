@@ -53,17 +53,16 @@ $(document).ready(function(){
 	//additionally: alphabetical city and state/region
 	//also soem fields do not take spaces
 	$.validator.addMethod("customEmail", function(value, element){
-		//regex variable is for checking if email address is valid
+		/*the following variable regex is a regex variable for checking if email address is valid, in this function*/
 		var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{1,5})+$/;
 		return this.optional(element) || regex.test(value);
 	}, "Please enter a valid email address (eg. xxx@xxx.xxx).")
 	$.validator.addMethod("lettersonly", function(value, element) {
-		//regex variable for ensuring alphabetical-only inoput
+		/*the following variable regex is a regex variable for ensuring alphabetical-only input, in this function*/
 		var regex = /^[a-zA-Z\s]+$/i;
 		return this.optional(element) || regex.test(value);
 	}, "Letters only, please.")
 	$.validator.addMethod("noSpace", function(value, element) { 
-		//regex variable for checking if field has space in input
 		return value.indexOf(" ") < 0 && value != "";
 	}, "No space please and don't leave it empty"); 
 	
@@ -243,7 +242,8 @@ $(document).ready(function(){
 	$("form p input[type='checkbox']").checkboxradio({
 		icon: false
 	  });
-	//array for jQ UI autocomplete options
+	/*the following variable is an array variable for autocomplete widget options*/
+
 	var arrayPostfix = ["Jr.", "Sr.", "III", "none"];
 	$("#postfix").autocomplete({source: arrayPostfix});
 
@@ -353,7 +353,9 @@ $(document).ready(function(){
 		 * dict means key/value pairs
 		 * also include an array recording the key names (cancelled)
 		*/
-		//variable object for user info
+		/*the following variable is a object variable 
+		for ensuring storing all info, in this function*/
+
 		var dictUserInfo ={
 			//current design is to left it initially empty
 		}
@@ -379,7 +381,9 @@ $(document).ready(function(){
 		dictUserInfo["city"] = $("#city").val();
 		dictUserInfo["state"] = $("#state").val();
 		dictUserInfo["zipcode"] = $("#zipcode").val()
-		//variable for parsed profession array
+		/*the following variable is a array variable 
+		for storing parsed profession info, in this function*/
+
 		var arrayProfessions = [];
 		$('form input[name="profession"]:checked').each(function (index) {
 			if (this.id == "other") {
@@ -452,7 +456,8 @@ $(document).ready(function(){
         void, but a output to the desired div in the HTML doc
     *******************/
 	function submit(){
-		//variable for taken infomation
+		/*the following variable is a object variable 
+		for parsed information, in this function*/
 		var dictUserInfo = parseInfo();
 		//important: none-displayed areas do not validate, using this step to re-check
 		for (var i in dictUserInfo){
@@ -462,7 +467,8 @@ $(document).ready(function(){
 			}
 		}
 		$("#emptyField").hide(500);
-		//variable for output target
+		/*the following variable is a jQuery selector variable 
+		for storing output target in jQuery, in this function*/
 		var $output = $("#output");
 		printInfo($output, dictUserInfo);
 	}
