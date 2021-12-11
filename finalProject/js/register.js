@@ -1,7 +1,7 @@
 /**************************************
  TITLE: register.js			
  AUTHOR: Luxi Liao	(LL)	
- PURPOSE: manipulate user sign up form form
+ PURPOSE: manipulate user register form
  ORIGINALLY CREATED ON: 01 December 2021
  LAST MODIFIED ON: 04 December 2021
  LAST MODIFIED BY: Luxi Liao (LL)	
@@ -9,6 +9,8 @@
  03 December 2021 - Modifying output message 
 	to make the JS script output my own output message (LL)
  03 December 2021 - Modified for checkbox radio (LL)
+ 07 December 2021 - Modified custom validation
+ 08 December 2021c - Disabling redundant components
 **************************************/
 
 // A $( document ).ready() block.
@@ -16,44 +18,56 @@ $(document).ready(function(){
 	//set defualt jQ validation
 	$.validator.setDefaults({
 		//handler
+		/******************
+		NAME: 
+			submitHandler
+		PURPOSE:	
+			how to handle submit action
+		PARAMETERS:
+			none
+		RETURN VALUE:
+			none
+		*******************/
 		submitHandler: function(){
 			submit();
 		},
 		//insert vlaidation error message
+		/******************
+		NAME: 
+			errorPlacement
+		PURPOSE:	
+			where to input error message
+		PARAMETERS:
+			error and element item
+		RETURN VALUE:
+			none
+		*******************/
 		errorPlacement: function(error, element){
 			error.insertAfter(element);
 		}
 	})
 
-	
-
-	/*other validator*/
+	/*other validators*/
 	//first: email validator
 	//then: phone validator
 	//additionally: alphabetical city and state/region
-	//also userName do not take spaces
-	//finally: <html> are prevented
+	//also soem fields do not take spaces
 	$.validator.addMethod("customEmail", function(value, element){
-		//source of grammar: Tutorial's Point 
+		//regex variable is for checking if email address is valid
 		var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{1,5})+$/;
 		return this.optional(element) || regex.test(value);
 	}, "Please enter a valid email address (eg. xxx@xxx.xxx).")
 	$.validator.addMethod("lettersonly", function(value, element) {
-		var regex = /^[a-zA-Z]+$/i;
+		//regex variable for ensuring alphabetical-only inoput
+		var regex = /^[a-zA-Z\s]+$/i;
 		return this.optional(element) || regex.test(value);
 	}, "Letters only, please.")
-	$.validator.addMethod("digitssonly", function(value, element) {
-		var regex = /^[0-9]+$/i;
-		return this.optional(element) || regex.test(value);
-	}, "Digits only, please.")
-	$.validator.addMethod("noHTML", function(value, element) {
-		var regex = /\<+[a-zA-Z0-9\=\"\s]+\>+.+\<\/+[a-zA-Z0-9]+\>/gi;
-		return !regex.test(value);
-	}, "Sorry, no XSS-suspective info allows.")
 	$.validator.addMethod("noSpace", function(value, element) { 
-		return value.indexOf(" ") < 0 && value != ""; 
+		//regex variable for checking if field has space in input
+		return value.indexOf(" ") < 0 && value != "";
 	}, "No space please and don't leave it empty"); 
 	
+
 	$('#register').validate({
 		rules:{
 			userName:{
@@ -96,6 +110,7 @@ $(document).ready(function(){
 				required: true,
 			},
 			verifyPassword:{
+				minlength: 6,
 				required: true,
 				equalTo: "#newPassword",
 			},
@@ -177,16 +192,17 @@ $(document).ready(function(){
 			},
 			verifyPassword:{
 				required: "Please confirm your password.",
+				minlength:"Please be no shorter than 6.",
 				equalTo: "Does not match previous password, please check."
 			},
 			country:{
 				required: "Please specify your country",
 			},
 			address1:{
-				required: "Please enter address",
+				required: "Please enter address 1",
 			},
 			address2:{
-				required: "Please enter address",
+				required: "Please enter address 2",
 			},
 			city:{
 				required: "Please enter your city name",
@@ -227,13 +243,15 @@ $(document).ready(function(){
 	$("form p input[type='checkbox']").checkboxradio({
 		icon: false
 	  });
-
+	//array for jQ UI autocomplete options
 	var arrayPostfix = ["Jr.", "Sr.", "III", "none"];
 	$("#postfix").autocomplete({source: arrayPostfix});
-	//disabled because of conflict with HTML picker. I do need date format to do calculation
-	//$("#birthDate").datepicker();
+
+	//enabled and prevented conflict with HTML picker. need date format to do calculation
+	$("#birthDate").datepicker();
 	/******************
-    NAME: Anonymous function
+    NAME: 
+		Anonymous function
     PURPOSE:	
         set spinner limit
     PARAMETERS:
@@ -271,15 +289,34 @@ $(document).ready(function(){
 			//$( "#verificationIndicator" ).html( ui.value ); //debug line
 		  	if(ui.value > 990){
 				//verification complete
-				$("#verificationIndicator").css("display", "block");
+				$("#verificationIndicator").slideDown(500);
 				toggleSubmit();
 		  	}else{
-				$("#verificationIndicator").css("display", "none");
+				$("#verificationIndicator").slideUp(500);
 				toggleSubmit();
 		  }
 		}
 	  });
-	
+/**section dedicate to toggle ability of elements */
+
+	/******************
+    NAME: 
+		toggleOtherInput
+    PURPOSE:	
+        toggle input according to other selection status
+    PARAMETERS:
+        none
+    RETURN VALUE:
+        void, but changed attr of elements
+    *******************/
+	function toggleOtherInput(){
+		if($("input[value='Other']").is(':checked')){
+			$("#otherText").removeAttr("disabled");
+		}else{
+			$("#otherText").attr("disabled", true);
+		}
+	}
+	$("input[value='Other']").change(toggleOtherInput)
 
 	/******************
     NAME: 
@@ -299,51 +336,24 @@ $(document).ready(function(){
 		}
 	}
 	$( "#agree" ).change(toggleSubmit)
-	/******************
-    NAME: 
-		verifyPassword
-    PURPOSE:	
-        if passwords is not same or empty, prompt the user
-    PARAMETERS:
-        none
-    RETURN VALUE:
-        void, but changed attr of elements
-    *******************/
-	function verifyPassword() {
-		var newPassword = $('#newPassword').val();
-		var verifyPassword = $('#verifyPassword').val();
-		if (newPassword && verifyPassword) {
-			if(newPassword === verifyPassword){
-				//no set css property
-				$("#newPassword").css("border-color", "#dddddd");
-				$("#verifyPassword").css("border-color", "#dddddd");
-				return true;
-			}else{
-				//document.getElementById("newPassword").style.borderColor = "#ff0000";
-				$("#newPassword").css("border-color", "#rgb(240, 128, 135)");
-				$("#verifyPassword").css("border-color", "#rgb(240, 128, 135)");
-				//set css property
-				return false;
-			}
-		}else{
-			return false;
-		}
 
-	}
+	/**deprecated password match checker */
+
 	/******************
     NAME: parseInfo
     PURPOSE:	
-        insert content using textContent
+        get content using jQuery
     PARAMETERS:
         none
     RETURN VALUE:
-        void, but a output to the desired div in the HTML doc
+        dict(key-value pairs) of info 
     *******************/
 	function parseInfo() {
-			/**create dict for info 
+		/**create dict for info 
 		 * dict means key/value pairs
 		 * also include an array recording the key names (cancelled)
 		*/
+		//variable object for user info
 		var dictUserInfo ={
 			//current design is to left it initially empty
 		}
@@ -369,7 +379,7 @@ $(document).ready(function(){
 		dictUserInfo["city"] = $("#city").val();
 		dictUserInfo["state"] = $("#state").val();
 		dictUserInfo["zipcode"] = $("#zipcode").val()
-		//reviced
+		//variable for parsed profession array
 		var arrayProfessions = [];
 		$('form input[name="profession"]:checked').each(function (index) {
 			if (this.id == "other") {
@@ -398,7 +408,7 @@ $(document).ready(function(){
 	/******************
     NAME: printInfo
     PURPOSE:	
-        insert content using alert for user to confirm
+        insert content using jQuery html
     PARAMETERS:
         target in jquery form and key-value pair object to record user info
     RETURN VALUE:
@@ -442,15 +452,17 @@ $(document).ready(function(){
         void, but a output to the desired div in the HTML doc
     *******************/
 	function submit(){
-		//check if password match
-		if (!verifyPassword()) {
-			//if no, indicate and return
-			alert('Please recheck if passwords matches');
-			return false;
-		}
-		//take infomation, store into var
+		//variable for taken infomation
 		var dictUserInfo = parseInfo();
-		//print info
+		//important: none-displayed areas do not validate, using this step to re-check
+		for (var i in dictUserInfo){
+			if(!dictUserInfo[i]){
+				$("#emptyField").show(500);
+				return false;
+			}
+		}
+		$("#emptyField").hide(500);
+		//variable for output target
 		var $output = $("#output");
 		printInfo($output, dictUserInfo);
 	}

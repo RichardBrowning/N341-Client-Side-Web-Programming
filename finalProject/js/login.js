@@ -35,21 +35,7 @@ $(document).ready(function(){
         }
         return false;
     }
-	/******************
-    NAME: 
-    PURPOSE:	
-        insert content using textContent
-    PARAMETERS:
-        The target div id name, The First part of the sentence, The Integer of the important number, and the Unit of the number
-    RETURN VALUE:
-        void, but a output to the desired div in the HTML doc
-    *******************/
-	function toggleLoginButton(){
-        //if all are valid
-        if(true){
-            //you will be good
-        }
-	}
+
 	/******************
     NAME: parseInfos
     PURPOSE:	
