@@ -47,7 +47,7 @@ $(document).ready(function(){
 		}
 	})
 
-	/*other additional validators*/
+	/*other validators*/
 	//first: email validator
 	//then: phone validator
 	//additionally: alphabetical city and state/region
@@ -460,7 +460,7 @@ $(document).ready(function(){
 		/*the following variable is a object variable 
 		for parsed information, in this function*/
 		var dictUserInfo = parseInfo();
-		//if any input successfully went through all validation emptily, JUST in case
+		//if any input went through all validation emptily, JUST in case
 		for (var i in dictUserInfo){
 			if(!dictUserInfo[i]){
 				$("#emptyField").show(500);

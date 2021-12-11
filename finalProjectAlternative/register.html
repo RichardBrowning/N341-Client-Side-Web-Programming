@@ -51,7 +51,7 @@
 			<form id="register" autocomplete="on" oninput=" var birthdate = new Date($('#birthDate').val()); age.value = birthdate ">
 				<!--accordian uncollaped as original form format-->
 				<div id="accordion">
-					<!--This is basic info: user name, first and last name, birthday, pronounce, phone (type) and email (type)-->
+					<!--This is basic info-->
 					<div>
 						<h3>
 							Basic Infomation
@@ -115,11 +115,11 @@
 								<label for="phone">Phone</label>  
 								<input class="formInput" id="phone" name="phone" type="tel" required>
 							</p>
-							<!--Upload Avartar-->
-							<!--Not included because of high issue rate-->
+							<!--Uplaod Avartar-->
+							<!--p>Upload Avatar <input id="avatar" type="file" accept="image/jpeg"></p-->
 						</div>
 					</div>
-					<!--This is password, new and confirm-->
+					<!--This is password-->
 					<div>
 						<h3>
 							Password
@@ -138,7 +138,7 @@
 								
 						</div>
 					</div>
-					<!--this is reagion and address, country/region (for assumed current supported areas), address 1&2,city, state, zipcode-->
+
 					<div>
 						<h3>
 							Region and Address 
@@ -150,7 +150,7 @@
 							  </ul>
 							  <div id="tabs-1">
 								<h4><label for="country">Select your Country</label></h4>
-								<!-- this will/not be shown-->
+								<!--TODO this will/not be shown-->
 								<select id="country" name="country" required>
 									<option value="" disabled selected>Select your option</option>
 									<option value="United States">United States</option>
@@ -188,7 +188,6 @@
 							  </div>
 						</div>
 					</div>
-					<!--this is artistic info, professions, career years, biology-->
 					<div>
 						<h3>
 							Artistic Info
@@ -252,6 +251,8 @@
 							<h2 id="verificationIndicator" style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color:rgb(32, 170, 255); display: none;">Verification Complete!</h2>
 						</div>
 					</div>
+			
+			
 				</div>
 				<div>
 					<input id="agree" name="agree" value=”checked_value” type="checkbox">I have read and consent to <a href="">Policy</a> and <a href="">Terms of Service</a>.
