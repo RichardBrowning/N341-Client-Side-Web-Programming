@@ -460,7 +460,7 @@ $(document).ready(function(){
 		/*the following variable is a object variable 
 		for parsed information, in this function*/
 		var dictUserInfo = parseInfo();
-		//important: none-displayed areas do not validate, using this step to re-check
+		//if any input went through all validation emptily, JUST in case
 		for (var i in dictUserInfo){
 			if(!dictUserInfo[i]){
 				$("#emptyField").show(500);
