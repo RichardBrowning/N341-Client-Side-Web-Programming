@@ -2,7 +2,7 @@
  TITLE: pickMe.js
  AUTHOR: Luxi Liao	(LL)	
  PURPOSE: print messages at the page
- ORIGINALLY CREATED ON: 29 October 2021 
+ CREATE DATE: 29 October 2021 
  LAST MODIFIED ON: 30 October 2021 
  LAST MODIFIED BY: Luxi Liao (LL)	
  MODIFICATION HISTORY:

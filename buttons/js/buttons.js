@@ -2,7 +2,7 @@
  TITLE: buttons.js
  AUTHOR: Luxi Liao	(LL)	
  PURPOSE: print messages at the page
- ORIGINALLY CREATED ON: 13 October 2021 
+ CREATE DATE: 13 October 2021 
  LAST MODIFIED ON: 14 October 2021 
  LAST MODIFIED BY: Luxi Liao (LL)	
  MODIFICATION HISTORY:

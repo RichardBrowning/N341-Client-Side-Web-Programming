@@ -2,7 +2,7 @@
  TITLE: externalAlert.js			
  AUTHOR: Luxi Liao	(LL)	
  PURPOSE: to display a message
- ORIGINALLY CREATED ON: 21 August 2021
+ CREATE DATE: 21 August 2021
  LAST MODIFIED ON: 21 August 2021
  LAST MODIFIED BY: Luxi Liao (LL)	
  MODIFICATION HISTORY:

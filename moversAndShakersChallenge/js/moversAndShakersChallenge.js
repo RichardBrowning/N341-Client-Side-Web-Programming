@@ -2,7 +2,7 @@
  TITLE: moversAndShakers.js		
  AUTHOR: Luxi Liao	(LL)	
  PURPOSE: Displaying a Page for jQuery to modify content
- ORIGINALLY CREATED ON: 04 November 2021 
+ CREATE DATE: 04 November 2021 
  LAST MODIFIED ON: 04 November 2021 
  LAST MODIFIED BY: Luxi Liao (LL)	
  MODIFICATION HISTORY:

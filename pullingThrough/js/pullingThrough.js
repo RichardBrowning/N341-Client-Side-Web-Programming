@@ -2,7 +2,7 @@
  TITLE: formPrototype.js			
  AUTHOR: Luxi Liao	(LL)	
  PURPOSE: manipulate user sign up form form
- ORIGINALLY CREATED ON: 19 November 2021
+ CREATE DATE: 19 November 2021
  LAST MODIFIED ON: 19 November 2021
  LAST MODIFIED BY: Luxi Liao (LL)	
  MODIFICATION HISTORY:

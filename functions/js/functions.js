@@ -2,7 +2,7 @@
  TITLE: functions.js
  AUTHOR: Luxi Liao	(LL)	
  PURPOSE: print messages at the page
- ORIGINALLY CREATED ON: 14 September 2021 
+ CREATE DATE: 14 September 2021 
  LAST MODIFIED ON: 15 September 2021 
  LAST MODIFIED BY: Luxi Liao (LL)	
  MODIFICATION HISTORY:

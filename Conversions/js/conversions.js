@@ -2,7 +2,7 @@
  TITLE: conversions.js
  AUTHOR: Luxi Liao	(LL)	
  PURPOSE: prompt user for input, do conversion, and print messages on the page
- ORIGINALLY CREATED ON: 09 September 2021
+ CREATE DATE: 09 September 2021
  LAST MODIFIED ON: 10 September 2021
  LAST MODIFIED BY: Luxi Liao (LL)	
  MODIFICATION HISTORY:

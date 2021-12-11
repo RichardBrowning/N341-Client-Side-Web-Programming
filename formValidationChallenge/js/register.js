@@ -2,7 +2,7 @@
  TITLE: register.js			
  AUTHOR: Luxi Liao	(LL)	
  PURPOSE: manipulate user sign up form form
- ORIGINALLY CREATED ON: 01 December 2021
+ CREATE DATE: 01 December 2021
  LAST MODIFIED ON: 04 December 2021
  LAST MODIFIED BY: Luxi Liao (LL)	
  MODIFICATION HISTORY:

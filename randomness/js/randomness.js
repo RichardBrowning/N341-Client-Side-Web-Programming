@@ -2,7 +2,7 @@
  TITLE: randomness.js
  AUTHOR: Luxi Liao	(LL)	
  PURPOSE: print messages at the page and conduct the guessing game
- ORIGINALLY CREATED ON: 19 September 2021 
+ CREATE DATE: 19 September 2021 
  LAST MODIFIED ON: 21 September 2021 
  LAST MODIFIED BY: Luxi Liao (LL)	
  MODIFICATION HISTORY:

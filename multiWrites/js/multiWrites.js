@@ -2,7 +2,7 @@
  TITLE: multiWrites.js
  AUTHOR: Luxi Liao	(LL)	
  PURPOSE: print messages at the page
- ORIGINALLY CREATED ON: 06 September 2021
+ CREATE DATE: 06 September 2021
  LAST MODIFIED ON: 08 September 2021
  LAST MODIFIED BY: Luxi Liao (LL)	
  MODIFICATION HISTORY:

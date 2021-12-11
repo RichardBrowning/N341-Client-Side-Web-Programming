@@ -2,7 +2,7 @@
  TITLE: iffyProgramming.js
  AUTHOR: Luxi Liao	(LL)	
  PURPOSE: prompt user for input, do conversion, and print messages on the page
- ORIGINALLY CREATED ON: 28 September 2021
+ CREATE DATE: 28 September 2021
  LAST MODIFIED ON: 29 September 2021
  LAST MODIFIED BY: Luxi Liao (LL)	
  MODIFICATION HISTORY:

@@ -2,7 +2,7 @@
  TITLE: ahoyJQuery.js
  AUTHOR: Luxi Liao	(LL)	
  PURPOSE: print messages at the page
- ORIGINALLY CREATED ON: 19 October 2021 
+ CREATE DATE: 19 October 2021 
  LAST MODIFIED ON: 20 October 2021 
  LAST MODIFIED BY: Luxi Liao (LL)	
  MODIFICATION HISTORY:

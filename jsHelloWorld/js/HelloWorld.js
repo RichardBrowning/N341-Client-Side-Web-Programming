@@ -2,7 +2,7 @@
  TITLE: HelloWorld.js
  AUTHOR: Luxi Liao	(LL)	
  PURPOSE: print message at the page load
- ORIGINALLY CREATED ON: 31 August 2021
+ CREATE DATE: 31 August 2021
  LAST MODIFIED ON: 03 September 2021
  LAST MODIFIED BY: Luxi Liao (LL)	
  MODIFICATION HISTORY:
