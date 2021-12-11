@@ -68,6 +68,7 @@ $(document).ready(function(){
 	
 
 	$('#register').validate({
+		ignore: "",
 		rules:{
 			userName:{
 				required: true,
